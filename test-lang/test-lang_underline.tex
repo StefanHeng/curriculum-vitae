@@ -1,0 +1,105 @@
+% \documentclass{article}
+% % \usepackage[utf8]{inputenc}
+% % \usepackage{color}
+% % \usepackage{soul}
+
+% % \setul{0.5ex}{0.3ex}
+% % \setulcolor{blue}
+
+% \usepackage{contour}
+
+% \contourlength{1pt}
+
+% \newcommand{\mycontour}[1]{%
+%   \contour{red}{#1}%
+% }
+
+% \renewcommand{\ULdepth}{1.8pt}
+% \contourlength{0.8pt}
+
+% \newcommand{\myuline}[1]{%
+%   \uline{\phantom{#1}}%
+%   \llap{\contour{white}{#1}}%
+% }
+
+
+
+% \begin{document}
+
+% % \Large
+% % \textit{
+% % Ham followed now ecstatic use speaking exercise may repeated.
+% % \ul{Himself he evident oh greatly my on inhabit general concern}.
+% % \setulcolor{red}
+% % \ul{It earnest amongst he showing females so improve in picture.
+% % Mrs can hundred its greater account}.
+% % \setulcolor{green}
+% % \ul{Distrusts daughters certainly suspected convinced our
+% % perpetual him yet.} Words did noise taken right state are since.
+% % }
+
+% I visited \myuline{Berlin} in \myuline{Germany}.
+
+% \end{document}
+
+\documentclass[a4paper,12pt]{report}
+
+% \newcommand\testdescenders{pqgrym}
+
+\usepackage{ulem}
+\usepackage{contour}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\ul}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}
+}
+
+% %-- Shaded environment:
+
+% \usepackage{framed,xcolor}
+
+% \usepackage{xparse}
+% \ExplSyntaxOn
+% \NewDocumentCommand{\newenvcommand}{ m m } % #1 = env name, #2 = command name
+%   {
+%    \cs_if_exist:cF { g_envc_#1_list_tl } { \tl_new:c { g_envc_#1_list_tl } }
+%    \tl_gput_right:cn { g_envc_#1_list_tl } { #2 }
+%    \exp_after:wN \newcommand \cs:w envc_#1_\cs_to_str:N #2 \cs_end:
+%   }
+% \NewDocumentCommand{\checkenvcommands}{ }
+%   {
+%    \cs_if_exist:cT { g_envc_\use:c {@currenvir} _list_tl }
+%      {
+%       \tl_map_inline:cn { g_envc_\use:c {@currenvir} _list_tl }
+%         { \cs_set_eq:Nc ##1 { envc_\use:c {@currenvir} _\cs_to_str:N ##1 } }
+%      }
+%   }
+% \ExplSyntaxOff
+
+
+% \definecolor{shadecolor}{rgb}{.6,.8,.9}
+
+% \newenvcommand{xshaded}{\ul}[1]{%
+%   \uline{\phantom{#1}}%
+%   \llap{\contour{shadecolor}{#1}}
+% }
+
+
+% \newenvironment{xshaded}{\checkenvcommands\begin{shaded}}{\end{shaded}}
+
+
+\begin{document}
+
+\ul{stefan.hg@outlook.com}
+
+% \ul{Test outside shaded \testdescenders .}
+
+% \begin{xshaded}
+%     \ul{Test inside shaded \testdescenders .}
+% \end{xshaded}
+
+
+\end{document}

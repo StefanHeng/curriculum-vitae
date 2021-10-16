@@ -99,6 +99,17 @@
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
+\colorlet{link}{accent}
+% Pretty links
+\RequirePackage{ulem}
+\RequirePackage{contour}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\ul}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}
+}
+
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
 \RequirePackage[skins]{tcolorbox}
@@ -147,7 +158,7 @@
   }{%
      \if@withhyper%
       \mbox{\textcolor{accent}{\normalfont #1}~
-      \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
+      \href{#3}{\utffriendlydetokenize{\ul{#2}}}\hspace{2em}}
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
@@ -254,7 +265,8 @@
     \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     \raggedright%
-    {\namefont\color{name}\MakeUppercase{\@name}\par}
+    % {\namefont\color{name}\MakeUppercase{\@name}\par}
+    {\namefont\color{name}{\@name}\par}
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip

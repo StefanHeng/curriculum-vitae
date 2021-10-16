@@ -4,31 +4,78 @@
 \setmainfont{opensans}
 
 \usepackage{paracol}
+% \hypersetup{colorlinks,linkcolor={cyan},citecolor={cyan},urlcolor={cyan}}
+% \hypersetup{
+%     colorlinks=true,
+%     citecolor=cyan,
+%     linkcolor=dark,
+%     filecolor=magenta,
+%     urlcolor=blue,
+% }
+
+\definecolor{MtlOrange}{HTML}{FF931E}
+\definecolor{MtlOrangeLite}{HTML}{FFA13A}
+\definecolor{MtlOrangeDark}{HTML}{DB7E1A}
+\definecolor{MtlPink}{HTML}{FF7BAC}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{MtlPink}
+\colorlet{heading}{MtlOrange}
+\colorlet{headingrule}{MtlOrange}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{MtlOrange}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\colorlet{Link}{MtlOrangeLite}
+\colorlet{link}{Link}
+% \colorlet{Link}{MtlOrangeLite}
+\newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
+\newcommand{\linked}[2]{\textcolor{Link}{\href{#1}{#2}}}
+
 
 \begin{document}
-
 \name{Stefan/Yuzhao Heng}
 \tagline{Software Engineer \& Researcher}
 \photoR{2.8cm}{img/face-mask}
 \personalinfo{%
+    % \printinfo{\faGlobe}{stefanheng.github.io}[https://stefanheng.github.io]
     \homepage{stefanheng.github.io}
     \linkedin{stefan-heng}
     \github{StefanHeng}
-    \printinfo{\faBlackTie}{Resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
+    % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+
+    % \printinfo{\faBlackTie}{Resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
 
     \email{stefan.hg@outlook.com}
+    % \email{}
     % \printinfo{\faPhone}{(301)454-9176}[tel:+13014549176]
     \location{Ann Arbor, MI}
 }
 
-
 \makecvheader{}
+
+% \linkedP{stefanheng.github.io}
+
+% \linked{tel:+13014549176}{(301)454-9176}
+% \textcolor{MtlOrangeDark}{\href{tel:+13014549176}{(301)454-9176}}
 
 \begin{fullwidth}
 
+    I'm broadly interested in applying computation to create art.
+
     Create art with technology.
+    Big questions.
 
 \end{fullwidth}
+
+
+
+
+
 
 \end{document}
 
