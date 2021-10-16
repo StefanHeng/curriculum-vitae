@@ -1,7 +1,8 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 \geometry{left=1.25cm, right=1.25cm, top=1.5cm, bottom=1.5cm, columnsep=1.2cm}
-\usepackage{fontspec}
 \setmainfont{opensans}
+
+% \usepackage[default]{opensans}
 
 \usepackage{paracol}
 % \hypersetup{colorlinks,linkcolor={cyan},citecolor={cyan},urlcolor={cyan}}
@@ -15,18 +16,27 @@
 
 \definecolor{MtlOrange}{HTML}{FF931E}
 \definecolor{MtlOrangeLite}{HTML}{FFA13A}
-\definecolor{MtlOrangeDark}{HTML}{DB7E1A}
+\definecolor{MtlOrangeDark}{HTML}{3F2407}
+
 \definecolor{MtlPink}{HTML}{FF7BAC}
+\definecolor{MtlPinkPastel}{HTML}{FFA6C6}
+
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{GreyOrange}{HTML}{806E66}
+% \definecolor{GreyOrangePastel}{HTML}{EDA65F}
+\definecolor{GreyOrangePastel}{HTML}{ED9B49}
+
 % \colorlet{name}{black}
-\colorlet{tagline}{MtlPink}
-\colorlet{heading}{MtlOrange}
-\colorlet{headingrule}{MtlOrange}
+\colorlet{tagline}{MtlPinkPastel}
+\colorlet{heading}{GreyOrange}
+\colorlet{headingrule}{GreyOrangePastel}
 % \colorlet{subheading}{PastelRed}
-\colorlet{accent}{MtlOrange}
+\colorlet{accent}{GreyOrangePastel}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
+\colorlet{body}{LightGrey}
+
 
 \colorlet{Link}{MtlOrangeLite}
 \colorlet{link}{Link}
@@ -37,7 +47,7 @@
 
 \begin{document}
 \name{Stefan/Yuzhao Heng}
-\tagline{Software Engineer \& Researcher}
+\tagline{Undergraduate Software Engineer \& Researcher}
 \photoR{2.8cm}{img/face-mask}
 \personalinfo{%
     % \printinfo{\faGlobe}{stefanheng.github.io}[https://stefanheng.github.io]
@@ -55,22 +65,66 @@
     % \printinfo{\faPhone}{(301)454-9176}[tel:+13014549176]
     \location{Ann Arbor, MI}
 }
-
 \makecvheader{}
 
-% \linkedP{stefanheng.github.io}
 
-% \linked{tel:+13014549176}{(301)454-9176}
-% \textcolor{MtlOrangeDark}{\href{tel:+13014549176}{(301)454-9176}}
 
-\begin{fullwidth}
+\small
+% Interests
+Art can be defined broadly as illusions as the audiences' sensations and meanings arise
+from the original artistic medium.
+My high-level goal is to develop computational tools to create artworks that helps
+fostering accessible art generation. I hope that the general public can produce and interact with
+pleasant pieces from simple inputs.
+Toward this end, I'm currently interested in image or sequence generation through
+Natural Language Processing, Representation Learning and Computer Vision. \par
+~\par
 
-    I'm broadly interested in applying computation to create art.
 
-    Create art with technology.
-    Big questions.
+\AtBeginEnvironment{itemize}{\small}
+\columnratio{0.6}
 
-\end{fullwidth}
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Education}
+
+\cvevent{B.S. in Computer Science}{University of Michigan}{Sep. 2020 - Present}{Ann Arbor, MI}
+\begin{itemize}
+    \item GPA: 4.0/4.
+    \item Featured courses: Data Structures \& Algorithms; Computer Organization;
+        Foundation of Computer Science; Machine Learning; Artificial Intelligence;
+        Conversational AI; Linear Algebra; Statistics \& Data Analysis
+\end{itemize}
+
+\cvevent{B.S. in Computer Science}{University of Maryland}{Aug. 2018 - May. 2020}{College Park, MD}
+\begin{itemize}
+    \item GPA: 3.97/4.
+    \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
+        Discrete Mathematics; Programming Languages; Algorithms;
+        Applied Probability \& Statistics; Logic; Symbolic Logic;
+        2D Design; Drawing; Digital Art \& Design; 3D Design;
+        Rights \& Wrongs of Killing People; Justice Matters
+\end{itemize}
+
+\divider
+
+
+\switchcolumn
+
+\cvsection{I admire}
+\begin{quote}
+    “When philosophy first noticed art it was in connection with the possibility of deception. ”
+\end{quote}
+
+- Arthur Danto
+
+Prisma. Magenta.
+
+\end{paracol}
+
+
 
 
 

@@ -42,7 +42,8 @@
 \RequirePackage[a-1b]{pdfx}
 \RequirePackage{accsupp}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage[fixed]{fontawesome5}
+% \RequirePackage[fixed]{fontawesome5}  # Seems some icons rendered without inner holes
+\RequirePackage{fontawesome}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
@@ -100,7 +101,7 @@
 \newcommand{\ratingmarker}{\faCircle}
 
 \colorlet{link}{accent}
-% Pretty links
+% Pretty underline, inspired by https://tex.stackexchange.com/a/518546
 \RequirePackage{ulem}
 \RequirePackage{contour}
 \renewcommand{\ULdepth}{1.8pt}
@@ -257,8 +258,13 @@
 \newcommand{\namefont}{\Huge\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
-\newcommand{\cvsectionfont}{\LARGE\bfseries}
-\newcommand{\cvsubsectionfont}{\large\bfseries}
+% \newcommand{\cvsectionfont}{\LARGE\bfseries}
+% Support `ltseries`, following https://tex.stackexchange.com/q/176722
+\newcommand{\ltseries}{%
+   \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
+}
+\newcommand{\cvsectionfont}{\LARGE\ltseries}
+\newcommand{\cvsubsectionfont}{\large\bfseries }
 
 \newcommand{\makecvheader}{%
   \begingroup
