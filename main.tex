@@ -1,5 +1,5 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-\geometry{left=1.25cm, right=1.25cm, top=1.5cm, bottom=1.5cm, columnsep=1.2cm}
+\geometry{left=1cm, right=1cm, top=1cm, bottom=1cm, columnsep=1.2cm}
 \setmainfont{opensans}
 
 % \usepackage[default]{opensans}
@@ -46,6 +46,9 @@
 % \colorlet{Link}{MtlOrangeLite}
 \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
 \newcommand{\linked}[2]{\textcolor{Link}{\href{#1}{#2}}}
+
+\def \logoPath {assets/svg/}
+\newcommand{\mytagI}[2]{\cvtagI{\includesvg[height=2ex]{\logoPath #1}}{#2}}
 
 
 \usepackage{nth}
@@ -163,44 +166,58 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 % \vspace*{-0.4cm}\includesvg[height=2ex]{assets/svg/DataSpell, modified} DataSpell
 
 \cvsection{Skills}
+\mytagI{Python}{Python}
+\mytagI{Cpp}{C/C++}
+\mytagI{Java}{Java} \\
 
-\cvtag{Python}
-\cvtag{C/C++}
-\cvtag{Java}
-\cvtag{Android} \\
 
-\cvtag{HTMl}
-\cvtag{LESS}
-\cvtag{JavaScript}
-\cvtag{Marko} \\
+\mytagI{HTML}{HTML}
+\mytagI{LESS}{LESS}
+\mytagI{JavaScript}{JavaScript} \\
 
-\cvtag{Ruby}
-\cvtag{OCaml}
-\cvtag{XML} \\
+\mytagI{Marko, edited}{Marko}
+\mytagI{MATLAB, modified}{MATLAB} \\
+\mytagI{Android, modified}{Android}
+\mytagI{ruby}{Ruby}
+\mytagI{OCaml, modified}{OCaml}
+\mytagI{XML, modified}{XML} \\
+\medskip
+\divider
+
+\mytagI{NumPy}{NumPy}
+\mytagI{pandas, modified}{pandas}
+\mytagI{Plotly, modified}{Dash} \\
+\mytagI{scikit_learn, modified}{scikit-learn}
+\mytagI{PyTorch, modified}{PyTorch} \\
+\mytagI{nodejs}{Node.js}
+\mytagI{ROS V2, modified.svg}{ROS}
+
 \medskip
 \divider
 
 
-\cvtag{Dash}
-\cvtag{PyTorch}
-\cvtag{Node.js} \\
+\mytagI{PyCharm}{PyCharm}
+\mytagI{DataSpell, modified}{DataSpell}
+\mytagI{Clion}{CLion} \\
+\mytagI{Visual Studio Code}{VSCode}
+\mytagI{Ubuntu, modified}{Linux/Ubuntu} \\
 \medskip
 \divider
 
 
-\cvtag{PyCharm}
-\cvtagI{\includesvg[height=2ex]{assets/svg/DataSpell, modified}}{DataSpell}
-\cvtag{CLion} \\
-
-\cvtag{UNIX}
-\cvtag{LINUX} \\
+\mytagI{Adobe Illustrator}{Illustrator}
+\mytagI{Adobe Photoshop}{Photoshop} \\
+\mytagI{Adobe Premiere Pro}{Premiere Pro}
+\mytagI{Figma}{Figma}
+\\
 \medskip
 \divider
 
 
-\cvtag{Adobe Photoshop}
-\cvtag{Adobe Illustrator} \\
-\cvtag{Adobe Premiere Pro}
+\mytagI{markdown}{Markdown}
+\mytagI{LaTeX, modified}{LaTeX} \\
+\cvtag{Chinese (native)}
+\mytagI{Postman, modified}{Postman}
 
 % \cvsection{I admire}
 % % \begin{quote}
