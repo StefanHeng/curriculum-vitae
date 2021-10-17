@@ -1,7 +1,7 @@
 # Mine
 templates/
 .vscode/
-.DS_Store/
+.DS_Store
 svg-inkscape/
 
 ## Core latex/pdflatex auxiliary files:
