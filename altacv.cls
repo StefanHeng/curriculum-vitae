@@ -320,6 +320,10 @@
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
+% Add SVG support
+\newcommand{\cvtagI}[2]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+}
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
