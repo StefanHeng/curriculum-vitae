@@ -1,6 +1,7 @@
 # Mine
 templates/
-vscode/
+.vscode/
+svg-inkscape/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -125,7 +125,8 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+% \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\textcolor{body!30}{\hdashrule[1.25ex]{\linewidth}{0.6pt}{0.5ex}}}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -263,7 +264,7 @@
 \newcommand{\ltseries}{%
    \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
 }
-\newcommand{\cvsectionfont}{\LARGE\ltseries}
+\newcommand{\cvsectionfont}{\Large\ltseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries }
 
 \newcommand{\makecvheader}{%
@@ -287,8 +288,8 @@
 \newcommand{\cvsection}[2][]{%
   \nointerlineskip\bigskip%  %% bugfix in v1.6.2
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
-  {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]%
+  {\color{headingrule}\rule{\linewidth}{0.75pt}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -309,7 +310,7 @@
 }
 
 \newcommand{\cvachievement}[3]{%
-  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\centering\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
   & #3
   \end{tabularx}%

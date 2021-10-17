@@ -26,9 +26,12 @@
 \definecolor{GreyOrange}{HTML}{806E66}
 % \definecolor{GreyOrangePastel}{HTML}{EDA65F}
 \definecolor{GreyOrangePastel}{HTML}{ED9B49}
+\definecolor{DarkOrangeShade}{HTML}{331D06}
+\definecolor{DarkPinkShade}{HTML}{663145}
 
-% \colorlet{name}{black}
-\colorlet{tagline}{MtlPinkPastel}
+\colorlet{name}{DarkOrangeShade}
+% \colorlet{tagline}{MtlPinkPastel}
+\colorlet{tagline}{DarkPinkShade}
 \colorlet{heading}{GreyOrange}
 \colorlet{headingrule}{GreyOrangePastel}
 % \colorlet{subheading}{PastelRed}
@@ -45,10 +48,19 @@
 \newcommand{\linked}[2]{\textcolor{Link}{\href{#1}{#2}}}
 
 
+\usepackage{nth}
+
+
+
+
+
 \begin{document}
+\small
+\AtBeginEnvironment{itemize}{\small}
+
 \name{Stefan/Yuzhao Heng}
 \tagline{Undergraduate Software Engineer \& Researcher}
-\photoR{2.8cm}{img/face-mask}
+\photoR{2.5cm}{img/face-mask}
 \personalinfo{%
     % \printinfo{\faGlobe}{stefanheng.github.io}[https://stefanheng.github.io]
     \homepage{stefanheng.github.io}
@@ -69,11 +81,10 @@
 
 
 
-\small
 % Interests
 Art can be defined broadly as illusions as the audiences' sensations and meanings arise
 from the original artistic medium.
-My high-level goal is to develop computational tools to create artworks that helps
+My high-level goal is to develop computational tools to understand and create artworks that helps
 fostering accessible art generation. I hope that the general public can produce and interact with
 pleasant pieces from simple inputs.
 Toward this end, I'm currently interested in image or sequence generation through
@@ -81,15 +92,11 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 ~\par
 
 
-\AtBeginEnvironment{itemize}{\small}
-\columnratio{0.6}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
+\columnratio{0.6}
 \begin{paracol}{2}
 
 \cvsection{Education}
-
 \cvevent{B.S. in Computer Science}{University of Michigan}{Sep. 2020 - Present}{Ann Arbor, MI}
 \begin{itemize}
     \item GPA: 4.0/4.
@@ -97,30 +104,109 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
         Foundation of Computer Science; Machine Learning; Artificial Intelligence;
         Conversational AI; Linear Algebra; Statistics \& Data Analysis
 \end{itemize}
+\divider
+
+
 
 \cvevent{B.S. in Computer Science}{University of Maryland}{Aug. 2018 - May. 2020}{College Park, MD}
 \begin{itemize}
     \item GPA: 3.97/4.
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
-        Discrete Mathematics; Programming Languages; Algorithms;
-        Applied Probability \& Statistics; Logic; Symbolic Logic;
-        2D Design; Drawing; Digital Art \& Design; 3D Design;
-        Rights \& Wrongs of Killing People; Justice Matters
+        Discrete Mathematics; Programming Languages;
+        Applied Probability \& Statistics; Logic;
+        2D \& 3D Design; Drawing; Digital Art \& Design;
+        Rights \& Wrongs of Killing People
 \end{itemize}
+\divider
+
+
+
+\cvevent{High School Diploma}{High School Affiliated to Renmin University of China}
+    {Aug. 2015 - Jul. 2018}{Beijing, CN}
+\begin{itemize}
+    \item GPA: 3.93/4.
+\end{itemize}
+
+
 
 \divider
 
 
 \switchcolumn
 
-\cvsection{I admire}
-\begin{quote}
-    “When philosophy first noticed art it was in connection with the possibility of deception. ”
-\end{quote}
+\cvsection{Honors \& Awards}
+\cvachievement{\faCertificate}{University Honors \& LSA Honors}
+    {Honors Program. 2019 - Present}
 
-- Arthur Danto
 
-Prisma. Magenta.
+\cvachievement{\faBook}{Dean's List \& University Honors \& James B. Angell Scholar}
+    {Academic excellence. 2018 - Present}
+
+
+\cvachievement{\faCogs}{\nth{4} place in eBike Challenge}
+    {2018 - 2019}
+
+
+
+\cvsection{Teaching}
+
+\cvevent{Art Museum Research Peer Mentor}{University of Maryland}{2020 --- 2020}{College Park, MD}
+\begin{itemize}
+    \item Mentored 36 students to complete weekly training on VR, AR, location intelligence and art museum experience
+
+    \item Introduced to AR development on Android, and tested Google AR tutorial with latest SDK and software
+
+    \item Reviewed training submissions and research proposals; Led discussions 3 times weekly on proposal feedbacks
+\end{itemize}
+
+
+\cvsection{Skills}
+
+\cvtag{Python}
+\cvtag{C/C++}
+\cvtag{Java}
+\cvtag{Android} \\
+
+\cvtag{HTMl}
+\cvtag{LESS}
+\cvtag{JavaScript}
+\cvtag{Marko} \\
+
+\cvtag{Ruby}
+\cvtag{OCaml}
+\cvtag{XML} \\
+\medskip
+\divider
+
+
+\cvtag{Dash}
+\cvtag{PyTorch}
+\cvtag{Node.js} \\
+\medskip
+\divider
+
+
+\cvtag{PyCharm}
+\cvtag{DataSpell}
+\cvtag{CLion} \\
+
+\cvtag{UNIX}
+\cvtag{LINUX} \\
+\medskip
+\divider
+
+
+\cvtag{Adobe Photoshop}
+\cvtag{Adobe Illustrator} \\
+\cvtag{Adobe Premiere Pro}
+
+% \cvsection{I admire}
+% % \begin{quote}
+% %     “When philosophy first noticed art it was in connection with the possibility of deception. ”
+% % \end{quote}
+% % - Arthur Danto
+
+% Prisma. Magenta. GPT-3. Joke detection.
 
 \end{paracol}
 
