@@ -1,0 +1,54 @@
+\documentclass{article}
+
+% This defines \example to be a command with two arguments,
+% referred to as #1 and #2 in the {<definition>}--nothing new so far.
+% But by adding a second optional argument to this \newcommand
+% (the [YYY]) the first argument (#1) of the newly defined
+% command \example is made optional with its default value being YYY.
+
+% Thus the usage of \example is either:
+
+% \example{BBB}
+% which prints:
+% Mandatory arg: BBB; Optional arg: YYY.
+% or:
+% \example[XXX]{AAA}
+% which prints:
+% Mandatory arg: AAA; Optional arg: XXX.
+\newcommand{\example}[2][YYY]{Mandatory arg: #2; Optional arg: #1.}
+
+
+\usepackage{xparse}
+
+
+\usepackage{ifthen}
+
+\newcommand{\dx}[3][]{%
+   \ifthenelse{ \equal{#1}{} }
+      {\ensuremath{\;\mathrm{d}x} #2 #3}
+      {\ensuremath{\;\mathrm{d}#1} #2 #3}
+}
+
+
+
+
+\begin{document}
+    \example{BBB} \par
+    \example[XXX]{AAA}
+
+
+    \DeclareDocumentCommand\sec{ m g }{%
+        {#1%
+            \IfNoValueF {#2} { and #2}%
+        }%
+    }
+    (\sec{Hello})
+    (\sec{Hello}{Hi})
+
+
+    $$\int x\dx{1}{2}$$
+    $$\int t\dx[t]{3}{4}$$
+
+
+
+\end{document}

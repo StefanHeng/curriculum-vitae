@@ -2,17 +2,7 @@
 \geometry{left=1cm, right=1cm, top=1cm, bottom=1cm, columnsep=1.2cm}
 \setmainfont{opensans}
 
-% \usepackage[default]{opensans}
-
 \usepackage{paracol}
-% \hypersetup{colorlinks,linkcolor={cyan},citecolor={cyan},urlcolor={cyan}}
-% \hypersetup{
-%     colorlinks=true,
-%     citecolor=cyan,
-%     linkcolor=dark,
-%     filecolor=magenta,
-%     urlcolor=blue,
-% }
 
 \definecolor{MtlOrange}{HTML}{FF931E}
 \definecolor{MtlOrangeLite}{HTML}{FFA13A}
@@ -40,16 +30,32 @@
 \colorlet{body}{LightGrey}
 \colorlet{body}{LightGrey}
 
+% Based on GreyOrangePastel & LightGrey
+\definecolor{ThemeGradient01}{HTML}{736c65}
+\definecolor{ThemeGradient02}{HTML}{817264}
+\definecolor{ThemeGradient03}{HTML}{8e7963}
+\definecolor{ThemeGradient04}{HTML}{9c7f63}
+\definecolor{ThemeGradient05}{HTML}{a98662}
+\definecolor{ThemeGradient06}{HTML}{b78c61}
+\definecolor{ThemeGradient07}{HTML}{c49261}
+\definecolor{ThemeGradient08}{HTML}{d29960}
+\definecolor{ThemeGradient09}{HTML}{df9f5f}
+\definecolor{ThemeGradient10}{HTML}{eda65f}
+
 
 \colorlet{Link}{MtlOrangeLite}
 \colorlet{link}{Link}
-% \colorlet{Link}{MtlOrangeLite}
 \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
 \newcommand{\linked}[2]{\textcolor{Link}{\href{#1}{#2}}}
 
+\usepackage{ifthen}
 \def \logoPath {assets/svg/}
 \newcommand{\mytagI}[2]{\cvtagI{\includesvg[height=2ex]{\logoPath #1}}{#2}}
-
+\newcommand{\mytagII}[3][]{%
+   \ifthenelse{ \equal{#1}{} }
+      {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
+      {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {\textcolor{#1}{#3}}}
+}
 
 \usepackage{nth}
 \usepackage[inkscapearea=nocrop]{svg}
@@ -166,6 +172,8 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 % \vspace*{-0.4cm}\includesvg[height=2ex]{assets/svg/DataSpell, modified} DataSpell
 
 \cvsection{Skills}
+% \mytagII{Python}{Python}
+\mytagII[ThemeGradient09]{Python}{Python}
 \mytagI{Python}{Python}
 \mytagI{Cpp}{C/C++}
 \mytagI{Java}{Java} \\
