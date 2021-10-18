@@ -7,6 +7,20 @@ def rgb2hex(c):
     return '%02x%02x%02x' % c
 
 
+def hex2rgb(h):
+    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+
+def mix(c1, c2, r=0.5):
+    """
+    Mixes two colors
+    """
+    def _mix(m1, m2):
+        return m1 * r + m2 * (1-r)
+
+    return tuple(map(lambda x: int(_mix(*x)), zip(c1, c2)))
+
+
 class ThemeGradients():
     BASE = 8
 
@@ -54,8 +68,19 @@ if __name__ == '__main__':
     # import os
     # os.chdir('..')
 
-    tg = ThemeGradients()
-    print(tg(n=8, exclusive=False))
-    # cs = tg()
-    # ic(cs)
-    # ic(cs[0])
+    def _gradients():
+        tg = ThemeGradients()
+        print(tg(n=8, exclusive=False))
+        # cs = tg()
+        # ic(cs)
+        # ic(cs[0])
+
+    def _my_mix():
+        slateGrey = hex2rgb('2E2E2E')
+        lightGrey = hex2rgb('666666')
+        m = mix(slateGrey, lightGrey, r=0.2)
+        ic(m)
+        ic(rgb2hex(m))
+
+    _my_mix()
+

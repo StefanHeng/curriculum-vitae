@@ -106,10 +106,8 @@
 \RequirePackage{contour}
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
-\newcommand{\ul}[1]{%
-  \uline{\phantom{#1}}%
-  \llap{\contour{white}{#1}}
-}
+\newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\colorlet{achievement}{emphasis}
 
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
@@ -311,7 +309,7 @@
 
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\centering\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
+  \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{achievement}{#2}\\
   & #3
   \end{tabularx}%
   \smallskip
