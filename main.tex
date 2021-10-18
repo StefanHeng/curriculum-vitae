@@ -44,11 +44,9 @@
 % \colorlet{link}{Link}
 % \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
 \colorlet{link}{emphasis}
-\newcommand{\linked}[3][]{%  # If optional arg, disable link highlgiht
-    \ifthenelse{ \equal{#1}{} }
-        {\textcolor{link}{\href{#3}{#2}}}
-        {\href{#3}{#2}}
-}
+% If optional arg, disable link highlight
+\newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{#2}}}{\href{#3}{#2}}}
+\newcommand{\linkedT}[2]{\textcolor{link}{\href{#2}{#1}}}
 
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
@@ -155,7 +153,8 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
     {Sep. 2021 - Present}{Ann Arbor, MI}
 \begin{itemize}
     \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at Barton Research Group.
-    \item Mentored by \href{https://brg.engin.umich.edu/people/}{Tyler Toner} asdasadasd
+    \item Mentored by \textcolor{red}{\href{https://brg.engin.umich.edu/people/}{Tyler Toner}} asdasadasd
+    \item Mentored by \linkedT{Tyler Toner}{https://brg.engin.umich.edu/people/} asdasadasd
 
     \item Investigating relative pose estimation between two robots while exploiting specific capacities of both robots
 \end{itemize}
