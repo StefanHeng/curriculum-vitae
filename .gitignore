@@ -3,6 +3,7 @@ templates/
 .vscode/
 .DS_Store
 svg-inkscape/
+tex_output/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

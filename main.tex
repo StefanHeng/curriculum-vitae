@@ -31,29 +31,24 @@
 \colorlet{body}{LightGrey}
 
 % Based on GreyOrangePastel & LightGrey
-% \definecolor{ThemeGradient01}{HTML}{736c65}
-% \definecolor{ThemeGradient02}{HTML}{817264}
-% \definecolor{ThemeGradient03}{HTML}{8e7963}
-% \definecolor{ThemeGradient04}{HTML}{9c7f63}
-% \definecolor{ThemeGradient05}{HTML}{a98662}
-% \definecolor{ThemeGradient06}{HTML}{b78c61}
-% \definecolor{ThemeGradient07}{HTML}{c49261}
-% \definecolor{ThemeGradient08}{HTML}{d29960}
-% \definecolor{ThemeGradient09}{HTML}{df9f5f}
-% \definecolor{ThemeGradient10}{HTML}{eda65f}
 \definecolor{ThemeGradient01}{HTML}{666666}
-\definecolor{ThemeGradient02}{HTML}{796f65}
-\definecolor{ThemeGradient03}{HTML}{8c7864}
-\definecolor{ThemeGradient04}{HTML}{9f8163}
-\definecolor{ThemeGradient05}{HTML}{b38a62}
-\definecolor{ThemeGradient06}{HTML}{c69361}
-\definecolor{ThemeGradient07}{HTML}{d99c60}
-\definecolor{ThemeGradient08}{HTML}{eda65f}
+\definecolor{ThemeGradient02}{HTML}{7b6462}
+\definecolor{ThemeGradient03}{HTML}{93645d}
+\definecolor{ThemeGradient04}{HTML}{ac6856}
+\definecolor{ThemeGradient05}{HTML}{bf7355}
+\definecolor{ThemeGradient06}{HTML}{d08256}
+\definecolor{ThemeGradient07}{HTML}{df935a}
+\definecolor{ThemeGradient08}{HTML}{eca55f}
 
-\colorlet{Link}{MtlOrangeLite}
-\colorlet{link}{Link}
-\newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
-\newcommand{\linked}[2]{\textcolor{Link}{\href{#1}{#2}}}
+% \colorlet{Link}{MtlOrangeLite}
+% \colorlet{link}{Link}
+% \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
+\colorlet{link}{emphasis}
+\newcommand{\linked}[3][]{%  # If optional arg, disable link highlgiht
+    \ifthenelse{ \equal{#1}{} }
+        {\textcolor{link}{\href{#3}{#2}}}
+        {\href{#3}{#2}}
+}
 
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
@@ -98,6 +93,8 @@
 
 
 
+
+
 % Interests
 Art can be defined broadly as illusions as the audiences' sensations and meanings arise
 from the original artistic medium.
@@ -110,13 +107,16 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 
 
 
+
+
 \columnratio{0.6}
 \begin{paracol}{2}
 
 \cvsection{Education}
-\cvevent{B.S. in Computer Science}{University of Michigan}{Sep. 2020 - Present}{Ann Arbor, MI}
+\cvevent{B.S. in Computer Science}{\linked[0]{University of Michigan}{https://umich.edu}}
+    {Sep. 2020 - Present}{Ann Arbor, MI}
 \begin{itemize}
-    \item GPA: 4.0/4.
+    \item \linked[0]{GPA: 4.0/4}{https://drive.google.com/file/d/18Z6RmLxUxkoLEGUMGuakUvX-WHzFTZuU/view?usp=sharing}
     \item Featured courses: Data Structures \& Algorithms; Computer Organization;
         Foundation of Computer Science; Machine Learning; Artificial Intelligence;
         Conversational AI; Linear Algebra; Statistics \& Data Analysis
@@ -127,7 +127,7 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 
 \cvevent{B.S. in Computer Science}{University of Maryland}{Aug. 2018 - May. 2020}{College Park, MD}
 \begin{itemize}
-    \item GPA: 3.97/4.
+    \item GPA: 3.97/4
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
         Discrete Mathematics; Programming Languages;
         Applied Probability \& Statistics; Logic;
@@ -143,10 +143,26 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \begin{itemize}
     \item GPA: 3.93/4.
 \end{itemize}
-
-
-
 \divider
+
+
+
+
+
+\cvsection{Research Experience}
+
+\cvevent{Multi-robot Collaboration Researcher}{\linked[0]{MDP @ UMich}{https://mdp.engin.umich.edu}}
+    {Sep. 2021 - Present}{Ann Arbor, MI}
+\begin{itemize}
+    \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at Barton Research Group.
+    \item Mentored by \href{https://brg.engin.umich.edu/people/}{Tyler Toner} asdasadasd
+
+    \item Investigating relative pose estimation between two robots while exploiting specific capacities of both robots
+\end{itemize}
+\divider{}
+
+
+
 
 
 \switchcolumn
@@ -198,7 +214,7 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \divider
 
 \mytagI[ThemeGradient07]{NumPy}{NumPy}
-\mytagI{pandas, modified}{pandas}
+\mytagI[ThemeGradient03]{pandas, modified}{pandas}
 \mytagI[ThemeGradient04]{Plotly, modified}{Dash} \\
 \mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn}
 \mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch} \\
@@ -229,7 +245,7 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \mytagI[ThemeGradient08]{markdown}{Markdown}
 \mytagI[ThemeGradient06]{LaTeX, modified}{LaTeX} \\
 \cvtag{\textcolor{ThemeGradient07}{Chinese (native)}}
-\mytagI[ThemeGradient01]{Postman, modified}{Postman}
+\mytagI[ThemeGradient02]{Postman, modified}{Postman}
 
 % \cvsection{I admire}
 % % \begin{quote}

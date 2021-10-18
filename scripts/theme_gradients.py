@@ -18,41 +18,36 @@ class ThemeGradients():
         self.theme = np.array(theme)
         self.zero = np.array(zero)
 
-    # def __call__(self, n=10, exclusive=True, exp='str', cnm='ThemeGradient'):
-    #     """
-    #     :param n: Number of distinct colors in between
-    #     :param exclusive: If True, exclusive start, inclusive end, i.e. (base, theme]
-    #     :param exp: Export type, array or string representation
-    #         If `str`, returns LaTeX `xcolor` compatible colors
-    #     :param cnm: Relevant to LaTeX export, the name defined for each gradient
-    #     """
-    #     # if exclusive:
-    #     #     diff = (self.theme - self.zero) / n
-    #     #     arr = list(map(lambda i: self.zero + (i+1) * diff, range(n)))
-    #     # else:
-    #     #     diff = (self.theme - self.zero) / (n-1)
-    #     #     arr = list(map(lambda i: self.zero + (i) * diff, range(n)))
-    #     # ic(diff, arr)
+    def __call__(self, n=10, exclusive=True, exp='str', cnm='ThemeGradient'):
+        """
+        :param n: Number of distinct colors in between
+        :param exclusive: If True, exclusive start, inclusive end, i.e. (base, theme]
+        :param exp: Export type, array or string representation
+            If `str`, returns LaTeX `xcolor` compatible colors
+        :param cnm: Relevant to LaTeX export, the name defined for each gradient
+        """
+        def _get(n_):
+            m = 2 ** self.BASE
+            c_strt = Color(rgb=self.zero / m)
+            c_end = Color(rgb=self.theme / m)
 
-    #     if exp == 'str':
-    #         s = ''
-    #         for i in range(n):
-    #             c = rgb2hex(tuple(arr[i].astype(int)))
-    #             s += f'\\definecolor{{{cnm}{i+1 :02}}}{{HTML}}{{{c}}}'
-    #             s += '\n'
-    #         return s
-    #     else:
-    #         return arr
+            def color2rgb(x):
+                return list(map(lambda e: int(e * m), x.rgb))
 
-    def __call__(self, n=10):
-        m = 2 ** self.BASE
-        c_strt = Color(rgb=self.zero / m)
-        c_end = Color(rgb=self.theme / m)
+            return list(map(color2rgb, c_strt.range_to(c_end, n_)))
 
-        def color2rgb(x):
-            return list(map(lambda e: int(e * m), x.rgb))
+        arr = _get(n+1)[:-1] if exclusive else _get(n)
+        # ic(arr)
 
-        return list(map(color2rgb, c_strt.range_to(c_end, n)))
+        if exp == 'str':
+            s = ''
+            for i in range(n):
+                c = rgb2hex(tuple(arr[i]))
+                s += f'\\definecolor{{{cnm}{i+1 :02}}}{{HTML}}{{{c}}}'
+                s += '\n'
+            return s
+        else:
+            return arr
 
 
 if __name__ == '__main__':
@@ -60,7 +55,7 @@ if __name__ == '__main__':
     # os.chdir('..')
 
     tg = ThemeGradients()
-    # print(tg(n=8, exclusive=False))
-    cs = tg()
-    ic(cs)
+    print(tg(n=8, exclusive=False))
+    # cs = tg()
+    # ic(cs)
     # ic(cs[0])

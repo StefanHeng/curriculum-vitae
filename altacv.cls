@@ -160,7 +160,7 @@
   }{%
      \if@withhyper%
       \mbox{\textcolor{accent}{\normalfont #1}~
-      \href{#3}{\utffriendlydetokenize{\ul{#2}}}\hspace{2em}}
+      \href{#3}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#2}}}}\hspace{2em}}
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
