@@ -31,17 +31,24 @@
 \colorlet{body}{LightGrey}
 
 % Based on GreyOrangePastel & LightGrey
-\definecolor{ThemeGradient01}{HTML}{736c65}
-\definecolor{ThemeGradient02}{HTML}{817264}
-\definecolor{ThemeGradient03}{HTML}{8e7963}
-\definecolor{ThemeGradient04}{HTML}{9c7f63}
-\definecolor{ThemeGradient05}{HTML}{a98662}
-\definecolor{ThemeGradient06}{HTML}{b78c61}
-\definecolor{ThemeGradient07}{HTML}{c49261}
-\definecolor{ThemeGradient08}{HTML}{d29960}
-\definecolor{ThemeGradient09}{HTML}{df9f5f}
-\definecolor{ThemeGradient10}{HTML}{eda65f}
-
+% \definecolor{ThemeGradient01}{HTML}{736c65}
+% \definecolor{ThemeGradient02}{HTML}{817264}
+% \definecolor{ThemeGradient03}{HTML}{8e7963}
+% \definecolor{ThemeGradient04}{HTML}{9c7f63}
+% \definecolor{ThemeGradient05}{HTML}{a98662}
+% \definecolor{ThemeGradient06}{HTML}{b78c61}
+% \definecolor{ThemeGradient07}{HTML}{c49261}
+% \definecolor{ThemeGradient08}{HTML}{d29960}
+% \definecolor{ThemeGradient09}{HTML}{df9f5f}
+% \definecolor{ThemeGradient10}{HTML}{eda65f}
+\definecolor{ThemeGradient01}{HTML}{666666}
+\definecolor{ThemeGradient02}{HTML}{796f65}
+\definecolor{ThemeGradient03}{HTML}{8c7864}
+\definecolor{ThemeGradient04}{HTML}{9f8163}
+\definecolor{ThemeGradient05}{HTML}{b38a62}
+\definecolor{ThemeGradient06}{HTML}{c69361}
+\definecolor{ThemeGradient07}{HTML}{d99c60}
+\definecolor{ThemeGradient08}{HTML}{eda65f}
 
 \colorlet{Link}{MtlOrangeLite}
 \colorlet{link}{Link}
@@ -50,8 +57,8 @@
 
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
-\newcommand{\mytagI}[2]{\cvtagI{\includesvg[height=2ex]{\logoPath #1}}{#2}}
-\newcommand{\mytagII}[3][]{%
+% \newcommand{\mytagI}[2]{\cvtagI{\includesvg[height=2ex]{\logoPath #1}}{#2}}
+\newcommand{\mytagI}[3][]{%
    \ifthenelse{ \equal{#1}{} }
       {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
       {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {\textcolor{#1}{#3}}}
@@ -172,60 +179,57 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 % \vspace*{-0.4cm}\includesvg[height=2ex]{assets/svg/DataSpell, modified} DataSpell
 
 \cvsection{Skills}
-% \mytagII{Python}{Python}
-\mytagII[ThemeGradient09]{Python}{Python}
-\mytagI{Python}{Python}
-\mytagI{Cpp}{C/C++}
-\mytagI{Java}{Java} \\
+\mytagI[ThemeGradient08]{Python}{Python}
+\mytagI[ThemeGradient03]{Cpp}{C/C++}
+\mytagI[ThemeGradient02]{Java}{Java} \\
 
 
-\mytagI{HTML}{HTML}
-\mytagI{LESS}{LESS}
-\mytagI{JavaScript}{JavaScript} \\
+\mytagI[ThemeGradient05]{HTML}{HTML}
+\mytagI[ThemeGradient02]{LESS}{LESS}
+\mytagI[ThemeGradient05]{JavaScript}{JavaScript} \\
 
-\mytagI{Marko, edited}{Marko}
-\mytagI{MATLAB, modified}{MATLAB} \\
-\mytagI{Android, modified}{Android}
-\mytagI{ruby}{Ruby}
-\mytagI{OCaml, modified}{OCaml}
-\mytagI{XML, modified}{XML} \\
+\mytagI[ThemeGradient05]{Marko, edited}{Marko}
+\mytagI[ThemeGradient02]{MATLAB, modified}{MATLAB}
+\cvtag{\textcolor{ThemeGradient02}{XML}} \\
+\mytagI[ThemeGradient02]{Android, modified}{Android}
+\mytagI[ThemeGradient01]{ruby}{Ruby}
+\mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
 \medskip
 \divider
 
-\mytagI{NumPy}{NumPy}
+\mytagI[ThemeGradient07]{NumPy}{NumPy}
 \mytagI{pandas, modified}{pandas}
-\mytagI{Plotly, modified}{Dash} \\
-\mytagI{scikit_learn, modified}{scikit-learn}
-\mytagI{PyTorch, modified}{PyTorch} \\
-\mytagI{nodejs}{Node.js}
-\mytagI{ROS V2, modified.svg}{ROS}
-
+\mytagI[ThemeGradient04]{Plotly, modified}{Dash} \\
+\mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn}
+\mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch} \\
+\mytagI[ThemeGradient03]{nodejs}{Node.js}
+\mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS} \\
 \medskip
 \divider
 
 
-\mytagI{PyCharm}{PyCharm}
-\mytagI{DataSpell, modified}{DataSpell}
-\mytagI{Clion}{CLion} \\
-\mytagI{Visual Studio Code}{VSCode}
-\mytagI{Ubuntu, modified}{Linux/Ubuntu} \\
+\mytagI[ThemeGradient05]{PyCharm}{PyCharm}
+\mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell}
+\mytagI[ThemeGradient03]{Clion}{CLion} \\
+\mytagI[ThemeGradient05]{Visual Studio Code}{VSCode}
+\mytagI[ThemeGradient02]{Ubuntu, modified}{Linux/Ubuntu} \\
 \medskip
 \divider
 
 
-\mytagI{Adobe Illustrator}{Illustrator}
-\mytagI{Adobe Photoshop}{Photoshop} \\
-\mytagI{Adobe Premiere Pro}{Premiere Pro}
-\mytagI{Figma}{Figma}
+\mytagI[ThemeGradient07]{Adobe Photoshop}{Photoshop}
+\mytagI[ThemeGradient04]{Adobe Illustrator}{Illustrator} \\
+\mytagI[ThemeGradient02]{Adobe Premiere Pro}{Premiere Pro}
+\cvtag{\textcolor{ThemeGradient02}{Figma}}
 \\
 \medskip
 \divider
 
 
-\mytagI{markdown}{Markdown}
-\mytagI{LaTeX, modified}{LaTeX} \\
-\cvtag{Chinese (native)}
-\mytagI{Postman, modified}{Postman}
+\mytagI[ThemeGradient08]{markdown}{Markdown}
+\mytagI[ThemeGradient06]{LaTeX, modified}{LaTeX} \\
+\cvtag{\textcolor{ThemeGradient07}{Chinese (native)}}
+\mytagI[ThemeGradient01]{Postman, modified}{Postman}
 
 % \cvsection{I admire}
 % % \begin{quote}
