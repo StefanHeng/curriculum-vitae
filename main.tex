@@ -45,8 +45,8 @@
 % \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
 \colorlet{link}{emphasis}
 % If optional arg, disable link highlight
-\newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{#2}}}{\href{#3}{#2}}}
-\newcommand{\linkedT}[2]{\textcolor{link}{\href{#2}{#1}}}
+\newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
+\newcommand{\linkedT}[2]{\textcolor{link}{\href{#2}{\ul{#1}}}}
 
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
@@ -111,10 +111,11 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \begin{paracol}{2}
 
 \cvsection{Education}
-\cvevent{B.S. in Computer Science}{\linked[0]{University of Michigan}{https://umich.edu}}
+\cvevent{\linked[0]{B.S. in Computer Science}{https://cse.engin.umich.edu}}
+    {\linked[0]{University of Michigan}{https://umich.edu}}
     {Sep. 2020 - Present}{Ann Arbor, MI}
 \begin{itemize}
-    \item \linked[0]{GPA: 4.0/4}{https://drive.google.com/file/d/18Z6RmLxUxkoLEGUMGuakUvX-WHzFTZuU/view?usp=sharing}
+    \item \linked{GPA: 4.0/4}{https://drive.google.com/file/d/18Z6RmLxUxkoLEGUMGuakUvX-WHzFTZuU/view?usp=sharing}
     \item Featured courses: Data Structures \& Algorithms; Computer Organization;
         Foundation of Computer Science; Machine Learning; Artificial Intelligence;
         Conversational AI; Linear Algebra; Statistics \& Data Analysis
@@ -123,9 +124,11 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 
 
 
-\cvevent{B.S. in Computer Science}{University of Maryland}{Aug. 2018 - May. 2020}{College Park, MD}
+\cvevent{\linked[0]{B.S. in Computer Science}{https://www.cs.umd.edu}}
+    {\linked[0]{University of Maryland}{https://www.umd.edu}}
+    {Aug. 2018 - May. 2020}{College Park, MD}
 \begin{itemize}
-    \item GPA: 3.97/4
+    \item \linked{GPA: 3.97/4}{https://drive.google.com/file/d/1IqpCTBEkcdhKyk91oPCXjJVoOFmAXcOi/view?usp=sharing}
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
         Discrete Mathematics; Programming Languages;
         Applied Probability \& Statistics; Logic;
@@ -136,7 +139,8 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 
 
 
-\cvevent{High School Diploma}{High School Affiliated to Renmin University of China}
+\cvevent{High School Diploma}
+    {\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
     {Aug. 2015 - Jul. 2018}{Beijing, CN}
 \begin{itemize}
     \item GPA: 3.93/4.
@@ -152,9 +156,23 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \cvevent{Multi-robot Collaboration Researcher}{\linked[0]{MDP @ UMich}{https://mdp.engin.umich.edu}}
     {Sep. 2021 - Present}{Ann Arbor, MI}
 \begin{itemize}
-    \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at Barton Research Group.
-    \item Mentored by \textcolor{red}{\href{https://brg.engin.umich.edu/people/}{Tyler Toner}} asdasadasd
-    \item Mentored by \linkedT{Tyler Toner}{https://brg.engin.umich.edu/people/} asdasadasd
+    \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
+
+    \item Investigating relative pose estimation between two robots while exploiting specific capacities of both robots
+\end{itemize}
+\divider{}
+
+
+
+\cvevent{ECG Signal Processing Researcher}{\linked[0]{UROP @ UMich}{https://mdp.engin.umich.edu}}
+    {Sep. 2021 - Present}{Ann Arbor, MI}
+\begin{itemize}
+    \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
+        at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}.
+    \item Mentored by \linkedT{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
+        at.
+    \item Mentored by \ul{Dr. Mohammed Saeed}
+        at.
 
     \item Investigating relative pose estimation between two robots while exploiting specific capacities of both robots
 \end{itemize}
@@ -235,8 +253,7 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \mytagI[ThemeGradient07]{Adobe Photoshop}{Photoshop}
 \mytagI[ThemeGradient04]{Adobe Illustrator}{Illustrator} \\
 \mytagI[ThemeGradient02]{Adobe Premiere Pro}{Premiere Pro}
-\cvtag{\textcolor{ThemeGradient02}{Figma}}
-\\
+\cvtag{\textcolor{ThemeGradient02}{Figma}} \\
 \medskip
 \divider
 
@@ -244,7 +261,12 @@ Natural Language Processing, Representation Learning and Computer Vision. \par
 \mytagI[ThemeGradient08]{markdown}{Markdown}
 \mytagI[ThemeGradient06]{LaTeX, modified}{LaTeX} \\
 \cvtag{\textcolor{ThemeGradient07}{Chinese (native)}}
-\mytagI[ThemeGradient02]{Postman, modified}{Postman}
+\mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
+\medskip
+\divider
+
+\cvtag{Organized}
+\cvtag{Presentation}
 
 % \cvsection{I admire}
 % % \begin{quote}
