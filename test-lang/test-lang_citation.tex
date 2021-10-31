@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{comment}
+
+% \usepackage[backend=biber, style=alphabetic,sorting=ynt]{biblatex}
+\usepackage[backend=biber,style=authoryear,sorting=ydnt,maxnames=10,url=false]{biblatex}
+\addbibresource{test-lang_citation, examples.bib}
+
+\title{Bibliography management: \texttt{biblatex} package}
+\author{Overleaf}
+\date{ }
+
+\begin{document}
+
+\maketitle
+
+Using \texttt{biblatex} you can display bibliography divided into sections,
+depending of citation type.
+Let's cite! The Einstein's journal paper \cite{einstein} and the Dirac's
+book \cite{dirac} are physics related items.
+Next, \textit{The \LaTeX\ Companion} book \cite{latexcompanion}, the Donald
+Knuth's website \cite{knuthwebsite}, \textit{The Comprehensive Tex Archive
+Network} (CTAN) \cite{ctan} are \LaTeX\ related items; but the others Donald
+Knuth's items \cite{knuth-fa,knuth-acp} are dedicated to programming.
+
+
+\begin{enumerate}
+    \item \cite{einstein}
+    \item \cite{dirac}
+    \item \cite{latexcompanion} This
+    \item \cite{ctan} and this is not part of the sample?
+    \item \cite{knuth-fa,knuth-acp}
+    \item \cite{knuth-fa}
+    \item \cite{knuth-acp} also not a part?
+\end{enumerate}
+
+\medskip
+
+\printbibliography
+
+\end{document}

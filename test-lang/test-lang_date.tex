@@ -1,0 +1,56 @@
+% \documentclass{article}
+% \usepackage{advdate}
+% \usepackage[dayofweek]{datetime}
+
+% \renewcommand{\shortdayofweeknameidenglish}[1]{%
+% \ifcase#1\relax
+% \or Su%
+% \or Mo%
+% \or Tu%
+% \or We%
+% \or Th%
+% \or Fr%
+% \or Sa%
+% \fi}
+
+% \newdateformat{syldate}{\THEMONTH/\THEDAY%
+% (\shortdayofweekname%
+% {\THEDAY}{\THEMONTH}{\THEYEAR})}
+% \newenvironment{schedule}
+%   {\par\syldate\renewcommand{\item}{\par%
+%     \stepcounter{mycntr}\ifnum\value{mycntr}>2\relax%
+%       \setcounter{mycntr}{0}\AdvanceDate[3]%
+%     \else
+%       \AdvanceDate[2]%
+%     \fi\today\quad}
+%   }{\par}
+% \SetDate[01/07/2013]
+% \newcounter{mycntr}
+% \begin{document}
+% \begin{schedule}
+%   \item Something
+%   \item Something else
+%   \item Relax
+%   \item Go to the sea
+%   \item Something
+%   \item Something else
+%   \item Relax
+%   \item Go to the sea
+
+% \end{schedule}
+
+% \shortdayofweekname{\today}
+
+
+% \end{document}
+
+\documentclass{minimal}
+\usepackage{datetime}
+\begin{document}
+Today is \shortdayofweekname{\day}{\month}{\year}.
+
+May 11, 2011 was \dayofweekname{11}{5}{2011}.
+\shortmonthname
+
+
+\end{document}
