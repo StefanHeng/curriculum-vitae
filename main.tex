@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 \geometry{left=1cm, right=1cm, top=1cm, bottom=1cm, columnsep=1.2cm}
+\usepackage[activate={true,nocompatibility},final,tracking,protrusion,expansion,factor=1100,stretch=10,shrink=10]{microtype}
 \setmainfont{opensans}
 
 \usepackage{paracol}
@@ -48,11 +49,9 @@
 \colorlet{link}{emphasis}
 % If optional arg, disable link highlight
 \newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
-\newcommand{\linkedT}[2]{\textcolor{link}{\href{#2}{\ul{#1}}}}
 
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
-% \newcommand{\mytagI}[2]{\cvtagI{\includesvg[height=2ex]{\logoPath #1}}{#2}}
 \newcommand{\mytagI}[3][]{%
    \ifthenelse{ \equal{#1}{} }
       {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
@@ -66,6 +65,8 @@
 
 % \usepackage{advdate}
 \usepackage[short]{datetime}
+\newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
+
 
 
 
@@ -96,13 +97,15 @@
 
 
 % Interests
-I define art broadly as illusions beyond the creative medium
-and pieces of work that invoke the audiences' feelings and thoughts.
-My high-level goal is to develop computational tools to understand and create artworks that help
-foster accessible art generation. I hope the general public can
-produce and interact with pleasant pieces based on simple inputs to such tools.
-Toward this end, I'm currently interested in image or sequence generation through
-Natural Language Processing, Representation Learning, and Computer Vision.  \par
+I define art broadly as illusions beyond the creative medium,
+intending to resonate or shock and invoke emotions and thoughts.
+My high-level objective is the computational formalization of the emotional side of humanity -
+Can machines \textit{create} publicly-accepted art? \par \vspace{0.375em}
+
+Toward this end, I’m currently interested in sequence or image generation by
+applying Natural Language Processing, Representation Learning, and Computer Vision
+to understand and create works that resemble art and to foster accessible human art generation.
+I hope the general public can produce and interact with pleasant pieces with simple inputs. \par
 ~\par
 
 
@@ -244,6 +247,7 @@ Natural Language Processing, Representation Learning, and Computer Vision.  \par
     \item Implemented interactive primary color selection and color magnitudes charts
 \end{itemize}
 \divider{}
+\pagebreak
 
 
 
@@ -262,12 +266,12 @@ Natural Language Processing, Representation Learning, and Computer Vision.  \par
     \item Presented architecture, API challenges and next steps with live demo to team of 40+
 \end{itemize}
 \divider{}
-\pagebreak
 
 
 
 
-\cvsection{Work Experience \lowercase{cont.}}
+
+% \cvsection{Work Experience \lowercase{cont.}}
 \cvevent{UX/UI Design Intern}
     {\linked[0]{OpptIn}{https://www.opptin.com}{\normalfont\textcolor{body}{, a start-up company}}}
     {Mar. 2020 - May. 2020}{Scranton, PA (remote)}
@@ -334,8 +338,8 @@ Natural Language Processing, Representation Learning, and Computer Vision.  \par
 
 
 
-Last modified: \shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, 2021.
-
+% Last modified: \shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}.
+Last modified: \mydate. \par
 
 
 
