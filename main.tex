@@ -27,6 +27,7 @@
 \colorlet{heading}{GreyOrange}
 \colorlet{headingrule}{GreyOrangePastel}
 \colorlet{achievement}{GreyMid}
+\colorlet{affiliation}{GreyMid}
 % \colorlet{subheading}{PastelRed}
 \colorlet{accent}{GreyOrangePastel}
 \colorlet{emphasis}{SlateGrey}
@@ -45,7 +46,6 @@
 
 % \colorlet{Link}{MtlOrangeLite}
 % \colorlet{link}{Link}
-% \newcommand{\linkedP}[1]{\textcolor{Link}{#1}}
 \colorlet{link}{emphasis}
 % If optional arg, disable link highlight
 \newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
@@ -63,27 +63,13 @@
 \usepackage[super]{nth}
 \usepackage[inkscapearea=nocrop]{svg}
 
-% \usepackage{advdate}
 \usepackage[short]{datetime}
 \newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
 
 \usepackage{fancyhdr}
-\usepackage{etoolbox}
-
-\makeatletter
-\patchcmd{\f@nch@head}{\rlap}{\small\color{body}\rlap}{}{}
-\patchcmd{\headrule}{\hrule}{\small\color{body}\hrule}{}{}
-\patchcmd{\f@nch@foot}{\rlap}{\small\color{body}\rlap}{}{}
-\patchcmd{\footrule}{\hrule}{\small\color{body}\hrule}{}{}
-\makeatother
-% \pagestyle{fancy}
-% \fancyhf{}
-% \renewcommand{\headrule}{\hbox to\headwidth{%
-%   \color{headercolor}\leaders\hrule height \headrulewidth\hfill}}
 \setlength\headheight{16pt}
 \renewcommand{\headrulewidth}{0.0025pt}
 \setlength{\headsep}{16pt}
-% \renewcommand{\headsep}{0pt}
 \fancypagestyle{titlepage}{%
     \renewcommand{\headrulewidth}{0pt}
     \fancyhead[L]{}
@@ -95,8 +81,15 @@
 }%
 \fancyhf{}
 \fancyfoot[R]{\thepage}
-% \pagestyle{nontitlepage}
-% \fancyhf{}
+
+% Style all headers& footers
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\f@nch@head}{\rlap}{\small\color{body}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\small\color{body}\hrule}{}{}
+\patchcmd{\f@nch@foot}{\rlap}{\small\color{body}\rlap}{}{}
+\patchcmd{\footrule}{\hrule}{\small\color{body}\hrule}{}{}
+\makeatother
 
 
 
@@ -138,7 +131,7 @@ Can machines \textit{create} publicly-accepted art? \par \vspace{0.375em}
 
 Toward this end, I’m currently interested in sequence or image generation by
 applying Natural Language Processing, Representation Learning, and Computer Vision
-to understand and create works that resemble art and to foster accessible human art generation.
+1) to understand and create works that resemble art and 2) to foster accessible human art generation.
 I hope the general public can produce and interact with pleasant pieces with simple inputs. \par
 ~\par
 
@@ -365,7 +358,7 @@ I hope the general public can produce and interact with pleasant pieces with sim
 
     \item Took photos, shot videos and colleted comments from members for posts on subscription account in WeChat
 
-    \item Raised $\sim$\$2,000 funding for costumes and props purchase
+    \item Raised \~{}\$2,000 funding for costumes and props purchase
 \end{itemize}
 \divider{}
 
@@ -429,15 +422,16 @@ Last modified: \mydate. \par
 \large \printinfo{\faFileText}{Report} \smallskip
 \begin{itemize}
     \item \linked[0]{“Localization of Ventricular Activation Origin from the 12-Lead ECG with Machine Learning”}
-        {https://drive.google.com/file/d/17a_DMnwxXoumi6AQ3jaCvCKmViPJFs4m/view?usp=sharing}. UROP Research Proposal 2021.
+        {https://drive.google.com/file/d/17a_DMnwxXoumi6AQ3jaCvCKmViPJFs4m/view?usp=sharing}.
+        \textit{\linked[0]{UROP}{https://lsa.umich.edu/urop} Research Proposal}, 2021-2022.
 
     \item \linked[0]{“Bearing Remaining Useful Life Prediction Model Portability Case Study: FEMTO Bearing Dataset”}
         {https://drive.google.com/file/d/1iIVxVUF88lDgJvoEh-kfEueUPisKlxVn/view?usp=sharing}.
-        MDP Final Report 2021.
+        \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, Spring 2021.
 
     \item \linked[0]{“Visualization of Color Theory”}
         {https://drive.google.com/file/d/1EIvLS_hZi8ZdOsr07P1dImNUmR-VRysp/view?usp=sharing}.
-        FIRE Final Report 2020.
+        \textit{\linked[0]{FIRE}{https://www.fire.umd.edu} Final Report}, 2020-2021.
 \end{itemize}
 \pagebreak
 
@@ -508,29 +502,58 @@ Last modified: \mydate. \par
 
 
 
-
-
-
-\cvsection{Community Services}
-\cvevent{Christian Fellowship}{
-    \linked[0]{Haidian Christian Church}{http://www.english.hdchurch.org}\norm{, \\}
-    \linked[0]{4Corners International Group}{https://terplink.umd.edu/organization/umd4corners}
-    }{Since 2017}{Beijing \& MD \& MI}
+\cvsection{Affiliations}
+\cvaffiliation{
+        \linked[0]{UROP Research Scholars}{https://lsa.umich.edu/urop/Prospective-Students/fall-winter-programs/research-scholars-program.html}
+    }{\linked[0]{Machine Learning for Cardiovascular Medicine}{https://www.uofmhealth.org}
+    }{Sep. 2021 - Present}{\linked[0]{LSA @ UMich}{https://lsa.umich.edu}}
 \begin{itemize}
-    \item Designed posters for advertising and social subscription account
+    \item Undergraduate Research Opportunity Program, \~{}75 students enrolled
 \end{itemize}
 \divider{}
 
 
 
 
+\cvaffiliation{
+        \linked[0]{Multidisciplinary Design Program (MDP)}{https://mdp.engin.umich.edu}
+    }{\linked[0]{Secure Cloud Manufacturing}{https://mdp.engin.umich.edu/research_teams/secure-cloud-manufacturing/}
+    }{Jan. 2020 - Present}{\linked[0]{CoE @ UMich}{https://www.engin.umich.edu}}
+\begin{itemize}
+    \item Undergraduate research \& industry project program, \~{}600 students enrolled
+\end{itemize}
+\divider{}
+
+
+
+\cvaffiliation{
+        \linked[0]{UROP Changing Gears}{https://lsa.umich.edu/urop/Prospective-Students/fall-winter-programs/changing-gears-program.html}
+    }{\linked[0]{ECG Signal Visualization \& Annotation}{https://www.uofmhealth.org}}
+    {Sep. 2020 - May. 2021}{\linked[0]{LSA @ UMich}{https://lsa.umich.edu}}
+\begin{itemize}
+    \item Undergraduate Research Opportunity Program, \~{}1,100 students enrolled
+\end{itemize}
+\divider{}
+
+
+
+
+\cvaffiliation{
+        \linked[0]{First Year Innovation \& Research Experience (FIRE)}{https://www.fire.umd.edu}
+    }{\linked[0]{Philips Virtual Culture}{https://www.mbrc.umd.edu}
+    }{Aug. 2018 - May. 2020}{\linked[0]{UMD}{https://www.umd.edu}}
+\begin{itemize}
+    \item Undergraduate research program, \~{}1,200 students enrolled
+\end{itemize}
+\divider{}
+\pagebreak
+
+
+
+
+
 
 \cvsection{I admire}
-% \begin{quote}
-%     “When philosophy first noticed art it was in connection with the possibility of deception. ”
-% \end{quote}
-% - Arthur Danto
-
 \begin{itemize}
     \item \linked{GAN-generated portrait}{https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx}
     % by \linked{Obvious}{https://obvious-art.com}
@@ -544,6 +567,22 @@ Last modified: \mydate. \par
 
     \item Cross-time \linked{logograms}{https://www.wired.com/2016/11/arrivals-designers-crafted-mesmerizing-alien-alphabet/} in Arrival
 \end{itemize}
+\medskip
+
+
+
+
+
+
+\cvsection{Community Services}
+\cvevent{Christian Fellowship}{
+    \linked[0]{Haidian Christian Church}{http://www.english.hdchurch.org}\norm{, \\}
+    \linked[0]{4Corners International Group}{https://terplink.umd.edu/organization/umd4corners}
+    }{Since 2017}{Beijing \& MD \& MI}
+\begin{itemize}
+    \item Designed posters for advertising and social subscription account
+\end{itemize}
+\divider{}
 
 
 
