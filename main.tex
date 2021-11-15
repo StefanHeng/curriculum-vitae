@@ -1,5 +1,5 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-\geometry{left=1cm, right=1cm, top=1cm, bottom=1cm, columnsep=1.2cm}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1.5cm, columnsep=1.2cm}
 \usepackage[activate={true,nocompatibility},final,tracking,protrusion,expansion,factor=1100,stretch=10,shrink=10]{microtype}
 \setmainfont{opensans}
 
@@ -67,11 +67,45 @@
 \usepackage[short]{datetime}
 \newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
 
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\f@nch@head}{\rlap}{\small\color{body}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\small\color{body}\hrule}{}{}
+\patchcmd{\f@nch@foot}{\rlap}{\small\color{body}\rlap}{}{}
+\patchcmd{\footrule}{\hrule}{\small\color{body}\hrule}{}{}
+\makeatother
+% \pagestyle{fancy}
+% \fancyhf{}
+% \renewcommand{\headrule}{\hbox to\headwidth{%
+%   \color{headercolor}\leaders\hrule height \headrulewidth\hfill}}
+\setlength\headheight{16pt}
+\renewcommand{\headrulewidth}{0.0025pt}
+\setlength{\headsep}{16pt}
+% \renewcommand{\headsep}{0pt}
+\fancypagestyle{titlepage}{%
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[L]{}
+    \fancyhead[R]{}
+}%
+\fancypagestyle{nontitlepage}{%
+    \fancyhead[L]{Curriculum Vitae}
+    \fancyhead[R]{\linked[0]{Stefan/Yuzhao Heng}{https://stefanheng.github.io}}
+}%
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+% \pagestyle{nontitlepage}
+% \fancyhf{}
 
 
 
 
 \begin{document}
+\vspace*{-2\baselineskip}
+% \fancyhf{}
+\thispagestyle{titlepage}
+\pagestyle{nontitlepage}
 \small
 \AtBeginEnvironment{itemize}{\small}
 
@@ -338,7 +372,7 @@ I hope the general public can produce and interact with pleasant pieces with sim
 
 
 
-% Last modified: \shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}.
+\small
 Last modified: \mydate. \par
 
 
@@ -516,7 +550,11 @@ Last modified: \mydate. \par
 
 
 \cvsection{Hobbies}
+\small
 Cook Chinese dishes. Check out art exhibitions \& make digital art.
+\pagebreak
+
+
 
 \end{paracol}
 
