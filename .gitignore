@@ -4,6 +4,7 @@ templates/
 .DS_Store
 svg-inkscape/
 tex_output/
+CV log.md
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

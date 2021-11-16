@@ -297,12 +297,14 @@
 }
 
 % v1.1.4: fixes inconsistent font size
-\newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
+\newcommand{\cvevent}[5]{%
+  {\large\color{accent}#1
+    \ifstrequal{#5}{}{\par}{\hfill}  % If #5 specified, align #2 to the right
+  }
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
-  \smallskip}
+    \ifstrequal{#5}{}{\hfill}{}{\bfseries\color{emphasis}#2}\par\smallskip
+  }
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
   \medskip\normalsize
