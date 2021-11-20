@@ -5,6 +5,7 @@ templates/
 svg-inkscape/
 tex_output/
 CV log.md
+options/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
