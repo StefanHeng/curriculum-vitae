@@ -92,6 +92,9 @@
 \patchcmd{\footrule}{\hrule}{\small\color{body}\hrule}{}{}
 \makeatother
 
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{nicefrac}
+
 
 
 
@@ -107,7 +110,7 @@
 \name{Stefan/Yuzhao Heng}
 \tagline{Undergraduate Software Engineer \& Researcher}
 % \photoR{2.5cm}{assets/img/face-mask}
-\photoR{2.5cm}{assets/img/face_mononoke}
+% \photoR{2.5cm}{assets/img/face_mononoke}
 \personalinfo{%
     \homepage{stefanheng.github.io}
     \github{StefanHeng}
@@ -129,8 +132,8 @@
 I define art broadly as illusions beyond the creative medium,
 intending to resonate or shock and invoke emotions and thoughts.
 My high-level objective is the computational formalization of the emotional side of humanity -
-Can machines \textit{create} publicly-accepted art? \par \vspace{0.375em}
-
+Can machines \textit{create} publicly-accepted art?
+% \par \vspace{0.375em}
 Toward this end, I’m currently interested in sequence or image generation or manipulation by
 applying Natural Language Processing, Representation Learning, and Computer Vision to
 1) understand and create works that resemble art and 2) foster accessible human art generation.
@@ -150,7 +153,7 @@ create and curate appealing pieces with simple inputs. \par
     {\linked[0]{University of Michigan}{https://umich.edu}}
     {Sep. 2020 - Present}{Ann Arbor, MI}{1}
 \begin{itemize}
-    \item \linked{GPA: 4.0/4}{https://drive.google.com/file/d/18Z6RmLxUxkoLEGUMGuakUvX-WHzFTZuU/view?usp=sharing}
+    \item \linked{GPA: 4.0/4.0}{https://drive.google.com/file/d/18Z6RmLxUxkoLEGUMGuakUvX-WHzFTZuU/view?usp=sharing}
     \item Featured courses: Data Structures \& Algorithms; Computer Organization;
         Foundation of Computer Science; Machine Learning; Artificial Intelligence;
         Conversational AI; Linear Algebra; Statistics \& Data Analysis
@@ -163,7 +166,7 @@ create and curate appealing pieces with simple inputs. \par
     {\linked[0]{University of Maryland}{https://www.umd.edu}}
     {Aug. 2018 - May. 2020}{College Park, MD}{1}
 \begin{itemize}
-    \item \linked{GPA: 3.97/4}{https://drive.google.com/file/d/1IqpCTBEkcdhKyk91oPCXjJVoOFmAXcOi/view?usp=sharing}
+    \item \linked{GPA: 3.97/4.0}{https://drive.google.com/file/d/1IqpCTBEkcdhKyk91oPCXjJVoOFmAXcOi/view?usp=sharing}
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
         Discrete Mathematics; Programming Languages;
         Applied Probability \& Statistics; Logic;
@@ -178,7 +181,7 @@ create and curate appealing pieces with simple inputs. \par
     {\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
     {Aug. 2015 - Jul. 2018}{Beijing, CN}{}
 \begin{itemize}
-    \item GPA: 3.93/4.
+    \item GPA: 3.93/4.0
     \item Featured Courses: A-Level Further Mathematics, Computer Science, Economics, Physics
 \end{itemize}
 \divider
@@ -189,37 +192,36 @@ create and curate appealing pieces with simple inputs. \par
 
 \cvsection{Research Experience}
 \cvevent{Music Generation Researcher}
-    {\linked[0]{UMich}{https://umich.edu}}
+    {\linked[0]{University of Michigan}{https://umich.edu}}
     {Oct. 2021 - Present}{Ann Arbor, MI}{1}
 \begin{itemize}
     \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
         at \linked[0]{Language \& Information Technologies}{https://lit.eecs.umich.edu}
 
-    \item Why: Existing music generation lacks music theory insights \& structure
+    \item Proposed NLP-inspired symbolic, monophonic melody generation
+    to incorporate music theory insights \& structure
 
-    \item Proposed symbolic representation of monophonic melody \& melody generation
-    using \linked[0]{BERT}{https://arxiv.org/abs/1902.04094}
-
-    \item Exploring heuristics to extract melody from MIDI music files
+    \item Explored heuristics to extract melody from MIDI \& MXL files;
+    Devised music-note-based
+    melody representation, enforcing bar separation
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{ECG Understanding Researcher}
-    {\linked[0]{UROP @ UMich}{https://lsa.umich.edu/urop}}
+    {\linked[0]{University of Michigan}{https://lsa.umich.edu/urop}}
     {Sep. 2021 - Present}{Ann Arbor, MI}{1}
 \begin{itemize}
     \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
         at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
 
-    \item Why: Heart Arrhythmia contributes millions of deaths; ECG signal analysis aids diagnosis
-    \& ablation surgery efficiency
+    \item Proposed Machine-Learning-based
+    Premature Ventricular Contraction (PVC) exit site prediction to
+    aid diagnosis \& ablation surgery efficiency
+    % in response to Heart Arrhythmia that contributes millions of deaths
 
-    \item Proposed Machine Learning models for
-    Premature Ventricular Contraction (PVC) exit site classification
-
-    \item Proposed NLP-inspired sequence mapping for general ECG understanding
+    \item Proposed NLP-inspired general ECG understanding model
 
     \item Devised symbolic representation for multivariate ECG time series
 \end{itemize}
@@ -230,33 +232,35 @@ create and curate appealing pieces with simple inputs. \par
 
 \cvsection{Research Experience \lowercase{cont.}}
 \cvevent{Multi-robot Localization Researcher}
-    {\linked[0]{MDP @ UMich}{https://mdp.engin.umich.edu}}
-    {Sep. 2021 - Present}{Ann Arbor, MI}{1}
+    {\linked[0]{University of Michigan}{https://mdp.engin.umich.edu}}
+    {Sep. 2021 - Present}{Ann Arbor, MI}{}
 \begin{itemize}
     \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
 
-    \item Why: For the sake of robot collaboration,
-    global-positioning-based relative pose introduces additional source of noise
+    \item Estimating relative pose between two robots as alternative to
+    global-positioning-based localization which incurs additional source of noise
 
-    \item Estimating relative pose between two robots using laser scans,
-    exploiting the shapes of robot base
+    \item Devised algorithmic formaliaztion given laser scans and robot base shapes
+    for two robots that collaborates without moving
+
+    \item Studied the case of two robots in lab as a point-matching problem
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{ECG Visualization Researcher}
-    {\linked[0]{UROP @ UMich}{https://lsa.umich.edu/urop}}
+    {\linked[0]{University of Michigan}{https://lsa.umich.edu/urop}}
     {Sep. 2020 - Apr. 2021}{Ann Arbor, MI}{1}
 \begin{itemize}
     \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
         at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
 
-    \item Why: No existing, published ECG viewer for research study
+    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based web app for ECG retrospective study,
+    for a public cardiovascular disease management and analytics infrastructure
 
-    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based web app for ECG retrospective analysis
-
-    \item Designed user interface; Brainstormed features; Optimized efficiency for binary signal of GBs
+    \item Designed user interface \& Brainstormed features from cardiologist needs;
+    Optimized visualization efficiency for signal records of GBs
 
     \item Implemented global thumbnail preview, dynamic channel selection, box-selection measurements
     \& commenting
@@ -266,53 +270,48 @@ create and curate appealing pieces with simple inputs. \par
 
 
 \cvevent{Predictive Maintenance Portability Researcher}
-    {\linked[0]{MDP @ UMich}{https://mdp.engin.umich.edu}}
+    {\linked[0]{University of Michigan}{https://mdp.engin.umich.edu}}
     {Jan. 2021 - Apr. 2021}{Ann Arbor, MI}{}
 \begin{itemize}
     \item Mentored by \linked[0]{Max Toothman}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
 
-    \item Why: Test if previous bearing failure prediction model generalize well
+    \item Evaluated generalizability of previous bearing failure prediction model
 
-    \item Reviewed \& organized existing code, Broke down prior method into components
-    \& extracted selection criteria to apply to another dataset
-\end{itemize}
-\divider{}
-
-
-
-\cvevent{Bioengineering Imaging Research Assistant\hspace{-1em}}
-    {\linked[0]{AJC @ UMD}{https://eng.umd.edu}}
-    {May. 2019 - Jul. 2019}{College Park, MD}{1}
-\begin{itemize}
-    \item Mentored by \linked[0]{Prof. Yu Chen}{https://bbi.umd.edu/clark/faculty/371/Yu-Chen} and Xi Qin
-
-    \item Why: Blood vessel morphologies in kidney crosssection images aid transplant
-    success prediction; Improve lumen segmentation approaches in lab
-
-    \item Discussed annotation criteria with a group of 6;
-    Refined 40 biomedical kidney image segmentation manually;
-    Noticed that existing approach struggles to differentiate imaging noise
-
-    \item Learned \& implemented texture analysis \& image segmentation
+    \item Organized existing code; Formalized prior method into components
+    \& indicator selection criteria to apply model to a similar system
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{Art Museum Experience Researcher}
-    {\linked[0]{FIRE @ UMD}{https://www.fire.umd.edu}}
-    {Apr. 2019 - May. 2020}{College Park, MD}{1}
+    {\linked[0]{University of Maryland}{https://www.fire.umd.edu}}
+    {Apr. 2019 - May. 2020}{College Park, MD}{}
 \begin{itemize}
     \item Mentored by Prof. Kyungjin Yoo
 
-    \item Why: Raise yong art-museum-goers' engagement \& Educate on art
-
     \item Developed \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
-    that renders paintings in single-color representations based on
-    user interactions
+    to help museum visitors understand color theory by interacting with paintings \& raise engagement
 
-    \item Explored artistic primary color extraction; Color magnitude visualization in 3D;
-    color filter file parsing; semantic color-based segmentation of a 3D block
+    \item Explored artistic primary \& secondary color saturation extraction \& visualization;
+    color map file parsing; color-\&-object-based 3D block segmentation
+\end{itemize}
+\divider{}
+
+
+
+\cvevent{Bioengineering Imaging Research Assistant\hspace{-1em}}
+    {\linked[0]{University of Maryland}{https://eng.umd.edu}}
+    {May. 2019 - Jul. 2019}{College Park, MD}{}
+\begin{itemize}
+    \item Mentored by \linked[0]{Prof. Yu Chen}{https://bbi.umd.edu/clark/faculty/371/Yu-Chen} and Xi Qin
+
+    \item Discussed biomedical kidney imaging segmentation manual annotation criteria
+    with a group of 6 \& Refined 40 labels for
+    existing lab blood vessel segmentation model, which aids transplant
+    success prediction
+
+    \item Proposed \& Implemented texture analysis to differentiate imaging noise
 \end{itemize}
 \divider{}
 \pagebreak
@@ -323,15 +322,15 @@ create and curate appealing pieces with simple inputs. \par
 
 \cvsection{Work Experience}
 \cvevent{Front-end Software Engineer Intern}
-    {\linked[0]{eBay}{https://www.ebay.com}}
+    {\linked[0]{eBay Inc.}{https://www.ebay.com}}
     {May. 2021 - Jul. 2021}{San Jose, CA (remote)}{1}
 \begin{itemize}
     \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
 
-    \item Why: Videos boost sales by building trust between sellers and buyers
-
     \item Built front-end groundwork for video support in \linked[0]{node.js}{https://nodejs.dev}-
-        \& \linked[0]{marko}{https://markojs.com}-based item listing tool
+        \& \linked[0]{marko}{https://markojs.com}-based item listing tool,
+        as videos build trust between sellers and buyers
+        % \& boost sales
 
     \item Presented implementation architecture,
     challenges with upstream services, next steps and live demo to the Selling division of 40+
@@ -346,7 +345,7 @@ create and curate appealing pieces with simple inputs. \par
     {\linked[0]{OpptIn}{https://www.opptin.com}{\normalfont\textcolor{body}{, a start-up company}}}
     {Mar. 2020 - May. 2020}{Scranton, PA (remote)}{1}
 \begin{itemize}
-    \item Why: Localized search; Automatic attendance; Slide annoation sharing
+    % \item Why: Localized search; Automatic attendance; Slide annotation sharing
 
     \item Brainstormed a framework with functional widgets that augments location-specific spaces,
     e.g. coffee shop, classroom
@@ -368,11 +367,13 @@ create and curate appealing pieces with simple inputs. \par
 \cvsection{Engineering Projects}
 \cvevent{Image Bubble Generator}{}{Sep. 2021}{}{}
 \begin{itemize}
-    \item Implemented \linked[0]{a utility that outputs randomly-clustered image bubbles
-    given a list of SVGs}{https://github.com/StefanHeng/Image-Cloud-Generator}
+    \item Implemented \linked[0]{a utility that outputs random \& clustered image bubbles
+    given a list of SVGs}{https://github.com/StefanHeng/Image-Cloud-Generator},
+    intended to visualize skillsets
 
-    \item Extracted ocean wave shapes in \linked[0]{Ai}{https://www.adobe.com/products/illustrator.html};
-    Manipulated images with \linked[0]{Pillow}{https://pypi.org/project/Pillow/}
+    \item Extracted ocean wave shapes from an illustration image
+        using \linked[0]{Illustrator}{https://www.adobe.com/products/illustrator.html};
+    Manipulated image hue and positioning with \linked[0]{Pillow}{https://pypi.org/project/Pillow/}
 \end{itemize}
 \divider{}
 
@@ -380,7 +381,7 @@ create and curate appealing pieces with simple inputs. \par
 
 
 \cvevent{Conversational Course Assistant}{
-    \linked[0]{UMich}{https://umich.edu}
+    \linked[0]{University of Michigan}{https://umich.edu}
 }{Sep. 2021 - Present}{Ann Arbor, MI}{1}
 \begin{itemize}
     \item A class project under \linked[0]{Prof. Jason Mars}{https://www.jasonmars.org}
@@ -388,14 +389,15 @@ create and curate appealing pieces with simple inputs. \par
     \item Developing python-based agent that locates related lecture content,
     answers conceptual questions \& summarizes lectures
 
-    \item Scrapped \linked[0]{100+ TED talk summaries}{https://tedsummaries.com} with python
+    \item Scrapped \linked[0]{100+ TED talk summaries}{https://tedsummaries.com}
+    to tune summarization
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{E-Bike Challenge}
-    {\linked[0]{AJC @ UMD}{https://eng.umd.edu}}
+    {\linked[0]{University of Maryland}{https://eng.umd.edu}}
     {Sep. 2018 - Oct. 2019}{College Park, MD}{1}
 \begin{itemize}
     \item An \linked[0]{e-bike challenge}{https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}
@@ -412,7 +414,7 @@ create and curate appealing pieces with simple inputs. \par
 
 
 \cvevent{Game Intelligence}{
-    \linked[0]{UMD}{https://www.umd.edu}
+    \linked[0]{University of Maryland}{https://www.umd.edu}
 }{Nov. 2018 - Feb. 2019}{College Park, MD}{1}
 \begin{itemize}
     \item A class challenge to beat the "smart" soldiers fighting under a 2D-grid battlefield,
@@ -420,7 +422,7 @@ create and curate appealing pieces with simple inputs. \par
 
     \item Read about \linked[0]{AI and Games}{http://gameaibook.org};
     Implemented neural-network-based genetic search by
-    desinging game rewards with statistics \& exploiting game repetition through mouse-click script
+    designing game rewards with statistics \& exploiting game repetition through mouse-click script
 \end{itemize}
 \divider{}
 
@@ -446,7 +448,8 @@ Last modified \mydate. \par
     {UMD \& UMich academic excellence. 2018 - Present}
 
 
-\cvachievement{\faCogs}{\nth{4} place in \linked[0]{125 Mile E-Bike Challenge}
+% \cvachievement{\faCogs}{$\nicefrac{\text{\nth{4}}}{\text{20}}$ place in \linked[0]{125 Mile E-Bike Challenge}
+\cvachievement{\faCogs}{\nth{4}/20 place in \linked[0]{125 Mile E-Bike Challenge}
     {https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}}
     {A. James Clark School of Engineering. 2018 - 2019}
 
@@ -460,7 +463,7 @@ Last modified \mydate. \par
     \item Mentored 36 students on VR, AR, location intelligence training \& art museum experience;
     Reviewed homework submissions
 
-    \item Written AR development tutorial using latest Google SDK in Android Studio
+    \item Wrote AR development tutorial using latest Google SDK in Android Studio
 
     \item Led discussions \& provided feedbacks on research proposals 3 times weekly
 \end{itemize}
@@ -484,13 +487,17 @@ Last modified \mydate. \par
 
 \large \printinfo{\faFileText}{Report} \smallskip
 \begin{itemize}
+    \item \linked[0]{“Multi-Robot Relative Pose Estimation with Point Cloud Matching Case Study: KUKA and HSR Robots”}
+        {https://drive.google.com/file/d/1iJ5H4kr64rnm6v06gjXiZAUbz8xSi0rQ/view?usp=sharing}.
+        \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, Fall 2021.
+
     \item \linked[0]{“Localization of Ventricular Activation Origin from the 12-Lead ECG with Machine Learning”}
         {https://drive.google.com/file/d/17a_DMnwxXoumi6AQ3jaCvCKmViPJFs4m/view?usp=sharing}.
         \textit{\linked[0]{UROP}{https://lsa.umich.edu/urop} Research Proposal}, 2021-2022.
 
     \item \linked[0]{“Bearing Remaining Useful Life Prediction Model Portability Case Study: FEMTO Bearing Dataset”}
         {https://drive.google.com/file/d/1iIVxVUF88lDgJvoEh-kfEueUPisKlxVn/view?usp=sharing}.
-        \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, Spring 2021.
+        \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, Winter 2021.
 
     \item \linked[0]{“Visualization of Color Theory”}
         {https://drive.google.com/file/d/1EIvLS_hZi8ZdOsr07P1dImNUmR-VRysp/view?usp=sharing}.
@@ -561,7 +568,7 @@ Last modified \mydate. \par
 
 
 \mytagI[ThemeGradient08]{markdown}{Markdown}
-\mytagI[ThemeGradient07]{LaTeX, modified}{LaTeX} \\
+\mytagI[ThemeGradient08]{LaTeX, modified}{LaTeX} \\
 \cvtag{\textcolor{ThemeGradient07}{Chinese (native)}}
 \mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
 \medskip
@@ -608,10 +615,12 @@ Last modified \mydate. \par
     \item Undergraduate Research Opportunity Program, \~{}1,100 students enrolled
 \end{itemize}
 \divider{}
+\pagebreak
 
 
 
 
+\cvsection{Affiliations \lowercase{cont.}}
 \cvaffiliation{
         \linked[0]{First-Year Innovation \& Research Experience (FIRE)}{https://www.fire.umd.edu}
     }{\linked[0]{Philips Virtual Culture}{https://www.mbrc.umd.edu}
@@ -620,7 +629,6 @@ Last modified \mydate. \par
     \item Undergraduate research program, \~{}1,200 students enrolled
 \end{itemize}
 \divider{}
-\pagebreak
 
 
 
@@ -631,7 +639,7 @@ Last modified \mydate. \par
 \cvevent{Christian Fellowship}{
     \linked[0]{Haidian Christian Church}{http://www.english.hdchurch.org}\norm{, \\ \hfill}
     \linked[0]{4Corners International Group}{https://terplink.umd.edu/organization/umd4corners}
-    }{Since 2017}{Beijing \& MD \& MI}{}
+    }{2017 - Present}{Beijing \& MD \& MI}{}
 \begin{itemize}
     \item Designed posters for advertising and social subscription account
 \end{itemize}
@@ -672,7 +680,7 @@ Cook Chinese dishes. Check out art exhibitions/museums \& make digital art.
 
 
 \cvsection{Art Projects}
-\cvevent{Digital Content Creator}{}{Since Jul. 2016}{}{}
+\cvevent{Digital Content Creator}{}{Jul. 2016 - Present}{}{}
 \begin{itemize}
     \item Posting on \linked[0]{instagram}{https://www.instagram.com/the.aaaak/}
     about 1) modern art museum pieces and 2) my creative works including those
@@ -688,7 +696,7 @@ Cook Chinese dishes. Check out art exhibitions/museums \& make digital art.
 \begin{itemize}
     \item Designed and distributed posters for 2 musicals
 
-    \item Took photos, shot videos and colleted comments from club members
+    \item Took photos, shot videos and collected comments from club members
     for WeChat subscription account posts
 
     \item Raised \~{}\$2,000 funding online for costumes and props purchase
