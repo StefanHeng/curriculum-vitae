@@ -1,11 +1,14 @@
 # Mine
-templates/
 .vscode/
 .DS_Store
 svg-inkscape/
 tex_output/
-CV log.md
 options/
+
+templates/
+
+CV log.md
+# main.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
