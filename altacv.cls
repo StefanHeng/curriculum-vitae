@@ -42,8 +42,11 @@
 \RequirePackage[a-1b]{pdfx}
 \RequirePackage{accsupp}
 \RequirePackage[margin=2cm]{geometry}
+
+% ========================== Begin of modified ==========================
 % \RequirePackage[fixed]{fontawesome5}  # Seems some icons rendered without inner holes
 \RequirePackage{fontawesome}
+% ========================== End of modified ==========================
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
@@ -100,6 +103,7 @@
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
+% ========================== Begin of added ==========================
 \colorlet{link}{accent}
 % Pretty underline, inspired by https://tex.stackexchange.com/a/518546
 \RequirePackage{ulem}
@@ -109,6 +113,7 @@
 \newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
 \colorlet{achievement}{emphasis}
 \colorlet{affiliation}{emphasis}
+% ========================== End of added ==========================
 
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
@@ -124,8 +129,10 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
+% ========================== Begin of modified ==========================
 % \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule[1.25ex]{\linewidth}{0.6pt}{0.5ex}}}
+% ========================== End of modified ==========================
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -159,7 +166,10 @@
   }{%
      \if@withhyper%
       \mbox{\textcolor{accent}{\normalfont #1}~
+      % ========================== Begin of modified ==========================
+      % \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
       \href{#3}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#2}}}}\hspace{2em}}
+      % ========================== End of modified ==========================
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
@@ -258,21 +268,27 @@
 \newcommand{\namefont}{\Huge\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
-% \newcommand{\cvsectionfont}{\LARGE\bfseries}
+% ========================== Begin of added ==========================
 % Support `ltseries`, following https://tex.stackexchange.com/q/176722
 \newcommand{\ltseries}{%
    \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
 }
+% ========================== End of added ==========================
+% ========================== Begin of modified ==========================
+% \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsectionfont}{\Large\ltseries}
-\newcommand{\cvsubsectionfont}{\large\bfseries }
+% ========================== End of modified ==========================
+\newcommand{\cvsubsectionfont}{\large\bfseries}
 
 \newcommand{\makecvheader}{%
   \begingroup
     \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     \raggedright%
+    % ========================== Begin of modified ==========================
     % {\namefont\color{name}\MakeUppercase{\@name}\par}
     {\namefont\color{name}{\@name}\par}
+    % ========================== End of modified ==========================
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip
@@ -287,8 +303,12 @@
 \newcommand{\cvsection}[2][]{%
   \nointerlineskip\bigskip%  %% bugfix in v1.6.2
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
+  % ========================== Begin of modified ==========================
+  % {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]%
+  % {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
   {\color{headingrule}\rule{\linewidth}{0.75pt}\par}\medskip
+  % ========================== End of modified ==========================
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -336,8 +356,12 @@
 }
 
 \newcommand{\cvachievement}[3]{%
+  % ========================== Begin of modified ==========================
+  % \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\centering\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+    % \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{achievement}{#2}\\
+  % ========================== End of modified ==========================
   & #3
   \end{tabularx}%
   \smallskip
@@ -346,10 +370,13 @@
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
+
+% ========================== Begin of added ==========================
 % Add SVG support
 \newcommand{\cvtagI}[2]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
 }
+% ========================== End of added ==========================
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5

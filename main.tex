@@ -44,6 +44,11 @@
 \definecolor{ThemeGradient07}{HTML}{df935a}
 \definecolor{ThemeGradient08}{HTML}{eca55f}
 
+% part of `altacv', seems not imported properly
+% \InputIfFileExists{pubs-num.cfg}{}{}
+\InputIfFileExists{pubs-authoryear.cfg}{}{}
+\addbibresource{main.bib}
+
 % \colorlet{Link}{MtlOrangeLite}
 % \colorlet{link}{Link}
 \colorlet{link}{emphasis}
@@ -108,7 +113,7 @@
 
 
 \name{Stefan/Yuzhao Heng}
-\tagline{Undergraduate Software Engineer \& Researcher}
+\tagline{Research Assistant}
 % \photoR{2.5cm}{assets/img/face-mask}
 % \photoR{2.5cm}{assets/img/face_mononoke}
 \personalinfo{%
@@ -152,9 +157,9 @@ create and curate appealing pieces with simple inputs. \par
 \cvsection{Education}
 \cvevent{\linked[0]{B.S. in Computer Science}{https://cse.engin.umich.edu}}
     {\linked[0]{University of Michigan}{https://umich.edu}}
-    {Sep. 2020 - Present}{Ann Arbor, MI}{1}
+    {Sep. 2020 - Apr. 2022}{Ann Arbor, MI}{1}
 \begin{itemize}
-    \item \linked{GPA: 3.97/4.0}{https://drive.google.com/file/d/1sm6gM-fdqZeIlQNNfuR7jRKW_0b5y1Vj/view?usp=sharing}
+    \item \linked{GPA: 3.98/4.0}{https://drive.google.com/file/d/1Ak2Pm5Hot8tCJUVKFe-UQRMboEeCEbXy/view?usp=sharing}
     \item Featured courses: Data Structures \& Algorithms; Computer Organization;
         Foundation of Computer Science; Machine Learning; Artificial Intelligence;
         Conversational AI; Natural Language Processing; Deep Learning for Computer Vision;
@@ -492,6 +497,12 @@ Last modified \mydate. \par
 
 
 \cvsection{Publication} \smallskip
+\nocite{*}
+\textcolor{emphasis}{In Submission}
+\printbibliography[heading=pubtype,title={\printinfo{\faGroup}{In Submission}},type=inproceedings]
+
+
+
 \large \printinfo{\faGroup}{Presentation} \smallskip
 \begin{itemize}
     \item “ECG Signal Visualization \& Annotation”.
@@ -669,21 +680,21 @@ Last modified \mydate. \par
 
 
 
-\cvsection{I admire}
-\begin{itemize}
-    \item \linked{GAN-generated portrait}{https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx}
-    % by \linked{Obvious}{https://obvious-art.com}
-    sold for \$400k
+% \cvsection{I admire}
+% \begin{itemize}
+%     \item \linked{GAN-generated portrait}{https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx}
+%     % by \linked{Obvious}{https://obvious-art.com}
+%     sold for \$400k
 
-    \item \linked{Playform}{https://www.playform.io} finished Beethoven's last symphony
+%     \item \linked{Playform}{https://www.playform.io} finished Beethoven's last symphony
 
-    \item \linked{GPT-3}{https://papers.nips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html} writes poems
+%     \item \linked{GPT-3}{https://papers.nips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html} writes poems
 
-    \item \linked{Automatic meme reply}{https://github.com/xingyaoww/gif-reply} to a sentence
+%     \item \linked{Automatic meme reply}{https://github.com/xingyaoww/gif-reply} to a sentence
 
-    \item Cross-time \linked{logograms}{https://www.wired.com/2016/11/arrivals-designers-crafted-mesmerizing-alien-alphabet/} in Arrival
-\end{itemize}
-\medskip
+%     \item Cross-time \linked{logograms}{https://www.wired.com/2016/11/arrivals-designers-crafted-mesmerizing-alien-alphabet/} in Arrival
+% \end{itemize}
+% \medskip
 
 
 
@@ -691,7 +702,7 @@ Last modified \mydate. \par
 
 \cvsection{Hobbies}
 \small
-Cook Chinese dishes. Check out art exhibitions/museums \& make digital art.
+Popping. Cook Chinese dishes. Check out art exhibitions/museums \& make digital art.
 \medskip
 
 
