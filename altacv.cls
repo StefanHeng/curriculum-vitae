@@ -107,6 +107,7 @@
 \colorlet{link}{accent}
 % Pretty underline, inspired by https://tex.stackexchange.com/a/518546
 \RequirePackage{ulem}
+\normalem
 \RequirePackage{contour}
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
@@ -277,8 +278,9 @@
 % ========================== Begin of modified ==========================
 % \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsectionfont}{\Large\ltseries}
+% \newcommand{\cvsubsectionfont}{\large\bfseries}
+\newcommand{\cvsubsectionfont}{\large}
 % ========================== End of modified ==========================
-\newcommand{\cvsubsectionfont}{\large\bfseries}
 
 \newcommand{\makecvheader}{%
   \begingroup
@@ -313,7 +315,8 @@
 
 \newcommand{\cvsubsection}[1]{%
   \smallskip%
-  {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
+%   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
+    {\cvsubsectionfont{#1}\par}\medskip
 }
 
 % v1.1.4: fixes inconsistent font size
