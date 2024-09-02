@@ -325,7 +325,7 @@
     \ifstrequal{#5}{}{\par}{\hfill}  % If #5 specified, align #2 to the right
   }
   \smallskip\normalsize
-  \ifstrequal{#2}{}{}{
+  \ifstrequal{#2}{}{\smallskip}{
     \ifstrequal{#5}{}{\hfill}{}{\bfseries\color{emphasis}#2}\par\smallskip
   }
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
@@ -347,11 +347,11 @@
   \medskip\normalsize
 }
 
-\newcommand{\cvaffiliation}[4]{%
-  {\textit{\normalsize\color{affiliation}#1}\par}
+\newcommand{\cvaffiliation}[5]{%
+  {{\small\color{accent}#1}\ifstrequal{#5}{}{}{\par}} % If #5 specified, shift right
   \smallskip\small
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
+  {\ifstrequal{#5}{}{}{\hfill}\textit{\color{affiliation}#2}}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker~#4}}}\par

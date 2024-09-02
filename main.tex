@@ -116,19 +116,20 @@
 % ~\par
 
 \name{Stefan/Yuzhao Heng}
-\tagline{MSCS Student at Georgia Tech; Research Assistant}
+\tagline{MSCS Student at Georgia Tech; Aspiring NLP Researcher}
 % \photoR{2.5cm}{assets/img/face-mask}
 % \photoR{2.5cm}{assets/img/face_mononoke}
 \personalinfo{%
     % {\large Curriculum Vitae | CS Ph.D | U-M ID: 11314100} \vspace{0.25em} \par
     \homepage{stefanheng.github.io}
-    \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ]
-    \github{StefanHeng}
     \linkedin{stefan-heng}
+    \github{StefanHeng}
+    \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ] \par
     \twitter{yuzhao_heng}
     \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]
-    \printinfo{\faBlackTie}{resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
-    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]
+    % \printinfo{\faBlackTie}{resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
+    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link] \par
+    \printinfo{\faHome}{United States Permanent Resident}
     \email{stefan.hg@outlook.com}
     \printinfo{\faPhone}{(301)454-9176}[tel:+13014549176]
     \location{Atlanta, GA}
@@ -146,7 +147,7 @@
     {Aug. 2023 - May. 2025}{Atlanta, GA}{1}
 \begin{itemize}
     \item \linked{GPA: 4.0/4.0}{https://drive.google.com/file/d/1d8YsHVGGYXTqwO-0FZjeuxpByIEFsraX/view?usp=sharing}
-    \item Featured courses: Machine Learning; Natural Language; Deep Learning for Text Data; Large Language Models; Game Artificial Intelligence\hspace{-0.25em}
+    \item Featured courses: Machine Learning; Natural Language; Deep Learning for Text Data; Large Language Models; Game Artificial Intelligence; Data-Centric Machine Learning
 \end{itemize}
 \divider
 
@@ -172,21 +173,11 @@
 \begin{itemize}
     \item \linked{GPA: 3.97/4.0}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
-        Discrete Mathematics; Programming Languages;
+        Discrete Mathematics; Programming Languages
+    \item Featured Courses:
         Applied Probability \& Statistics; Logic;
         2D \& 3D Design; Drawing; Digital Art \& Design;
-        Rights \& Wrongs of Killing People
-\end{itemize}
-\divider
-
-
-
-\cvevent{High School Diploma}
-    {\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
-    {Aug. 2015 - Jul. 2018}{Beijing, CN}{}
-\begin{itemize}
-    \item GPA: 3.93/4.0
-    \item Featured Courses: A-Level Further Mathematics, Computer Science, Economics, Physics
+        Morals \& Ethics
 \end{itemize}
 \divider
 
@@ -196,22 +187,31 @@
 
 \cvsection{Research Experiences}
 \cvevent{Strength-Controlled Preference Data Synthesis}
-    {\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
-    {Apr. 2024 - Present}{Atlanta, GA}{}
+    {}
+    {Apr. 2024 - Present}{\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}{}
 \begin{itemize}
-    \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
-    \item Investigating negative prompting LLMs with varied strengths to continue finetuning reward model ensembles
+    % \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
+
+    \item Exploring fine-grained negative prompting for preference datasets generation
+
+    \item Processed 50K binary preference data; Coded and optimized training and inferencing pipeline for 3 reward models of different architectures
+
+    \item Designed uncertainty metrics to select training data using reward model ensemble
 \end{itemize}
 \divider{}
 
 
 \cvevent{LLM as IE Data Generator}
-    {\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
-    {Sep. 2023 - Mar. 2024}{Atlanta, GA}{1}
+    {}
+    {Sep. 2023 - Mar. 2024}{\linked[0]{Chao Zhang}{http://chaozhang.org}'s group, \linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}{1}
 \begin{itemize}
-    \item Mentored by Ph.D. students at \linked[0]{Professor Zhang}{http://chaozhang.org}'s group
+    % \item Mentored by Ph.D. students at
 
-    \item Proposed Named-Entity Recognition Training Dataset Generation with LLMs focusing on diversity and annotation quality
+    \item Investigated Named-Entity Recognition Training Dataset Generation with LLMs focusing on diversity and annotation quality
+
+    \item Built multi-stage generation pipeline including parallel API calls, data filtering and cleaning
+
+    \item Inspected generated samples and compared multiple paradigms for annotation feedback and LLM self-correction
 \end{itemize}
 \divider{}
 \pagebreak
@@ -220,17 +220,16 @@
 
 \cvsection{Research Experiences \lowercase{cont.}}
 \cvevent{Parameter-Efficient Personalization}
-    {\linked[0]{University of Michigan}{https://umich.edu}}
-    {May. 2023 - Dec. 2023}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}, Ann Arbor, MI}{}
+    {}
+    {May. 2023 - Dec. 2023}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{}
 \begin{itemize}
-    \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
-        at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
+    % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+        % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
 
-    \item Conducted literature search, Added subjective dataset on irony
+    \item Surveyed literature \& Added subjective datasets (e.g., irony)
 
-    \item Built \linked[0]{PEFT}{https://huggingface.co/docs/peft/index}, \linked[0]{Adapter}{https://docs.adapterhub.ml}
-    and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset} training \& evaluation pipelines
-    and conducting experiments
+    \item Built \& ran \linked[0]{PEFT}{https://huggingface.co/docs/peft/index}, \linked[0]{Adapter}{https://docs.adapterhub.ml}
+    and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset} training \& evaluation pipelines for Flan-T5 generative text classification
 \end{itemize}
 \divider{}
 
@@ -238,10 +237,10 @@
 
 
 \cvevent{Personalized Text Classification Dataset}
-    {\linked[0]{University of Michigan}{https://umich.edu}}
-    {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}, Ann Arbor, MI}{}
+    {}
+    {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{}
 \begin{itemize}
-    \item Built timeseries dataset with changing set of labels for each text
+    \item Built text classification dataset with temporally changing label sets
 
     \item Processed in-production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool
 
@@ -253,17 +252,19 @@
 
 % \cvsection{Research Experiences \lowercase{cont.}}
 \cvevent{Symbolic Music Generation}
-    {\linked[0]{University of Michigan}{https://umich.edu}}
-    {Oct. 2021 - Present}{Ann Arbor, MI}{1}
+    {}
+    {Oct. 2021 - Feb. 2023}{\linked[0]{LIT}{https://lit.eecs.umich.edu} @ \linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
-        at \linked[0]{Language \& Information Technologies}{https://lit.eecs.umich.edu}
+    % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
+        % at
 
-    \item Designing a compact music representation to model long song sequences via language modeling, with
+    \item Designed and coded a music token representation that is compact to handle long song sequences and integrates
     music theory annotations
 
-    \item Designed music-specific metrics; Processed 10K+ MIDI music files;
-    Modified transformer architectures; Conducting experiments
+    \item Batched and concurrently processed 10K+ MIDI music files;
+    Modified Transformer-XL \& Reformer architectures for music sequences
+
+    \item Designed music-specific metrics for evaluation; Inspected generated music pieces
 \end{itemize}
 \divider{}
 
@@ -271,64 +272,59 @@
 
 
 \cvevent{Heterogeneous Bi-Encoder}
-    {\linked[0]{University of Michigan}{https://umich.edu}}
-    {Jul. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}, Ann Arbor, MI}{1}
+    {}
+    {Jul. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Investigated separate text and label encoders for intent classification
+    \item Investigated independent text \& label encoders for intent classification
 
-    \item Advised on architecture implementation and experiments
-
-    \item Wrote sections in and Edited paper submission
+    \item Provided feedback on architecture implementation and experiments; Wrote sections of and edited paper submission
 \end{itemize}
 \divider{}
 
 
 \cvevent{Zero-Shot Text Classification}
-    {\linked[0]{University of Michigan}{https://umich.edu}}
-    {Feb. 2022 - Jun. 2022}{Ann Arbor, MI}{1}
+    {}
+    {Feb. 2022 - Jun. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
-        at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
+    % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+        % at
 
-    \item Investigated zero-shot classification frameworks; Proposed novel training strategies; Re-implemented GPT-2 generative framework
+    \item Compared zero-shot classification frameworks and and improved classifier training conditioned on dataset domain
 
-    \item Built training \& evaluation pipelines and conducted experiments
+    \item Re-implemented a GPT-2-based 0-shot classification method from paper; Built training \& eval pipelines and conducted experiments
 
-    \item Designed illustrations and wrote sections for paper in submission
+    \item Designed illustrations and wrote sections for paper submission
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{ECG Classification}
-    {\linked[0]{University of Michigan}{https://lsa.umich.edu/urop}}
-    {Sep. 2021 - Apr. 2022}{Ann Arbor, MI}{1}
+    {}
+    {Sep. 2021 - Apr. 2022}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
-        at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
+    % \item Mentored by \linked[0]{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd} @
 
     % \item Proposed Machine-Learning-based
     % Premature Ventricular Contraction (PVC) exit site prediction to
     % aid diagnosis \& ablation surgery efficiency
 
-    \item Devised self-supervised multivariate ECG timeseries representation learning based on
-    symbolic or continuous representations
+    \item Devised self-supervised representation learning for multivariate ECG timeseries using symbolic or continuous representations
 
-    \item Compiled dataset collection of 50K+ 12-lead ECG records
-
-    \item Conducted experiments with ViT and heart signal augmentations
+    \item Compiled and processed dataset collection of 50K+ 12-lead ECG records from 8 datasets;
+    Explored training Vision Transformers as ECG backbone model with heart signal data augmentations
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{Multi-Robot Localization}
-    {\linked[0]{University of Michigan}{https://mdp.engin.umich.edu}}
-    {Sep. 2021 - Dec. 2021}{Ann Arbor, MI}{1}
+    {}
+    {Sep. 2021 - Dec. 2021}{\linked[0]{Barton Research Group}{https://brg.engin.umich.edu} @ \linked[0]{UMich}{https://mdp.engin.umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
+    % \item Mentored by \linked[0]{Tyler Toner}{https://brg.engin.umich.edu/people/} at
 
-    \item Studied relative pose estimation between two robots to reduce noise resulting from
+    \item Case-studied relative pose estimation between two robots to reduce noise resulting from
     global-positioning-based localization
 
     \item Devised algorithmic formalization for static robot collaboration,
@@ -341,34 +337,34 @@
 
 \cvsection{Research Experiences \lowercase{cont.}}
 \cvevent{ECG Visualization}
-    {\linked[0]{University of Michigan}{https://lsa.umich.edu/urop}}
-    {Sep. 2020 - Apr. 2021}{Ann Arbor, MI}{1}
+    {}
+    {Sep. 2020 - Apr. 2021}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
-        at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
+    % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
+        % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
 
-    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based web app for ECG retrospective study,
+    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for retrospective study,
     including thumbnail, channel toggle, box measurement \& annotation
     % for a public cardiovascular disease management and analytics infrastructure
 
-    \item Designed user interface guided by cardiologist needs
+    \item Designed user interface guided by and tailored for cardiologists' needs
 
-    \item Optimized visualization efficiency for signal records of GBs
+    \item Optimized algorithmic efficiency for visualizing signal records of GBs in size
 \end{itemize}
 \divider{}
 
 
 
 % \cvsection{Research Experiences \lowercase{cont.}}
-\cvevent{Predictive Maintenance Portability\hspace{-0.75em}}
-    {\linked[0]{University of Michigan}{https://mdp.engin.umich.edu}}
-    {Jan. 2021 - Apr. 2021}{Ann Arbor, MI}{1}
+\cvevent{Predictive Maintenance Portability}
+    {}
+    {Jan. 2021 - Apr. 2021}{\linked[0]{Barton Research Group}{https://brg.engin.umich.edu} @ \linked[0]{UMich}{https://mdp.engin.umich.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked[0]{Max Toothman}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
+    % \item Mentored by \linked[0]{Max Toothman}{https://brg.engin.umich.edu/people/} at \linked[0]{Barton Research Group}{https://brg.engin.umich.edu}
 
-    \item Studied generalizability of previous bearing failure prediction approach
+    \item Applied prior bearing failure prediction method and analyzed generalization to a new dataset
 
-    \item Organized initial codebase; Formalized prior method into components \& criteria and Applied to a similar system
+    \item Re-organized prior codebase; Formalized prior method into components with applying criteria
 \end{itemize}
 \divider{}
 
@@ -376,31 +372,33 @@
 
 
 \cvevent{AR Art Museum Experience}
-    {\linked[0]{University of Maryland}{https://www.fire.umd.edu}}
-    {Apr. 2019 - May. 2020}{College Park, MD}{1}
+    {}
+    {Apr. 2019 - May. 2020}{Prof. Kyungjin Yoo @ \linked[0]{UMD}{https://www.fire.umd.edu}}{1}
 \begin{itemize}
-    \item Mentored by Prof. Kyungjin Yoo
+    % \item Mentored by
 
-    \item Developed \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
-    that renders art museum paintings in various colors to educate color theory \& raise engagement
+    \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
+    that renders art museum paintings in 6 base colors to educate color theory \& raise engagement
 
-    \item Explored primary and secondary color extraction \& visualization;
-    color map file parsing; painting segmentation based on color \& semantics
+    \item Compared methods for theme-colored visualization; Implemented primary and secondary extraction,
+    color map file parsing
+
+    \item Explored painting segmentation heuristics based on color \& semantics
 \end{itemize}
 \divider{}
 
 
 
 \cvevent{Kidney Imaging Annotation}
-    {\linked[0]{University of Maryland}{https://eng.umd.edu}}
-    {May. 2019 - Jul. 2019}{College Park, MD}{1}
+    {}
+    {May. 2019 - Jul. 2019}{\linked[0]{Prof. Yu Chen}{https://bbi.umd.edu/clark/faculty/371/Yu-Chen} @ \linked[0]{UMD}{https://eng.umd.edu}}{1}
 \begin{itemize}
-    \item Mentored by \linked[0]{Prof. Yu Chen}{https://bbi.umd.edu/clark/faculty/371/Yu-Chen} and Xi Qin
+    % \item Mentored by  and Xi Qin
 
-    \item Refined kidney imaging segmentation model annotation manually
-    with a group of 6 for transplant success prediction
+    \item Manually-refined kidney imaging segmentation model annotation for transplant success prediction
+    among a group of 6 annotators
 
-    \item Proposed \& Studied texture analysis to differentiate imaging noise
+    \item Surveyed \& analyzed texture filters for imaging noise segmentation
 \end{itemize}
 \divider{}
 
@@ -413,12 +411,12 @@
     {\linked[0]{eBay Inc.}{https://www.ebay.com}}
     {May. 2021 - Jul. 2021}{San Jose, CA (remote)}{1}
 \begin{itemize}
-    \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
+    % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
 
-    \item Built front-end groundwork for video support in item listing tool
+    \item Built front-end groundwork for video features in item listing at Seller Experience team
 
     \item Presented architecture, implementation,
-    challenges with upstream services, next steps and live demo to the Selling division of 40+
+    upstream service challenges \& next steps and live demoed to internal team of 40+
 \end{itemize}
 \divider{}
 
@@ -432,26 +430,36 @@
 \begin{itemize}
     % \item Why: Localized search; Automatic attendance; Slide annotation sharing
 
-    \item Brainstormed a framework and widgets that augment real-life spaces
+    \item Brianstormed UI framework with functional widgets to augment location-specific real-life spaces
 
     \item Iterated company logo designs; Prototyped UI layouts
-    for space discovery \& management in team of 6 and Implemented Android layouts
+    for space discovery and management in a team of 6; Implemented layouts in Android
 
-    \item Explored UI animations and style changes pre- and post-joining
+    \item Explored UI animations and style changes pre- and post-joining spaces
 
-    \item Communicated UX concepts and engineering constraints between design and development teams
+    \item Communicated UX concepts and engineering constraints among design and development teams
 \end{itemize}
 \divider{}
 \pagebreak
 
 
 
+\cvsection{Education \lowercase{cont.}}
+\cvevent{High School Diploma}
+    {\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
+    {Aug. 2015 - Jul. 2018}{Beijing, CN}{}
+\begin{itemize}
+    \item GPA: 3.93/4.0
+    \item Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics
+\end{itemize}
+\divider
+
+
 
 \cvsection{Engineering Projects}
 \cvevent{Image Bubble Generator}{}{Sep. 2021}{}{}
 \begin{itemize}
-    \item Developed \linked[0]{a utility that renders clustered image bubbles}{https://github.com/StefanHeng/Image-Cloud-Generator}
-    with hues
+    \item Developed \linked[0]{a utility that randomly cluster image by semantics and overlay bubbles with respective hues}{https://github.com/StefanHeng/Image-Cloud-Generator}
 
     \item Extracted ocean wave shapes with \linked[0]{Illustrator}{https://www.adobe.com/products/illustrator.html}
 \end{itemize}
@@ -461,15 +469,11 @@
 
 
 % \cvsection{Engineering Projects \lowercase{cont.}}
-\cvevent{Conversational Course Assistant}{
-    \linked[0]{University of Michigan}{https://umich.edu}
-}{Sep. 2021 - Dec. 2021}{Ann Arbor, MI}{1}
+\cvevent{Conversational Course Assistant}{}{Sep. 2021 - Dec. 2021}{\linked[0]{UMich}{https://umich.edu}}{1}
 \begin{itemize}
-    \item Developed python-based app that locates related lecture content,
-    answers conceptual questions, and summarizes lectures
+    \item Developed python-based app for QA on course lecture videos, which supports summarization and locating relevant lecture content
 
-    \item Scrapped \linked[0]{100+ TED talk summaries}{https://tedsummaries.com}
-    to tune summarization models
+    \item Scraped \linked[0]{100+ TED talk summaries}{https://tedsummaries.com} for summarization model tuning
 \end{itemize}
 \divider{}
 % \pagebreak
@@ -477,8 +481,8 @@
 
 
 \cvevent{E-Bike Challenge}
-    {\linked[0]{University of Maryland}{https://eng.umd.edu}}
-    {Sep. 2018 - Oct. 2019}{College Park, MD}{1}
+    {}
+    {Sep. 2018 - Oct. 2019}{\linked[0]{UMD}{https://eng.umd.edu}}{1}
 \begin{itemize}
     \item Participated in an \linked[0]{e-bike challenge}{https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}
         on engineering design \& speed
@@ -493,16 +497,16 @@
 
 
 
-\cvevent{2D Game Intelligence}{
-    \linked[0]{University of Maryland}{https://www.umd.edu}
-}{Nov. 2018 - Feb. 2019}{College Park, MD}{1}
+\cvevent{2D Game Intelligence}{}{Nov. 2018 - Feb. 2019}{\linked[0]{Prof. Fawzi Emad}{https://www.cs.umd.edu/people/fpe} @ \linked[0]{UMD}{https://www.umd.edu}}{1}
 \begin{itemize}
     \item Participated in a challenge about AI soldiers fighting in a 2D battlefield
-    % by \linked[0]{Prof. Fawzi Emad}{https://www.cs.umd.edu/people/fpe}
+    % by
 
-    \item Read about \linked[0]{AI and Games}{http://gameaibook.org} and Implemented genetic search
+    \item Read an \linked[0]{AI and Games}{http://gameaibook.org} textbook; Implemented genetic search algorithms with custom-designed reward heuristics
 
-    \item Designed reward heuristics; Recorded in-game statistics; Ran games against self
+    \item Tracked soldiers' in-game behavior and computed statistics to monitor performance
+
+    \item Automated game restart to increase self-play training trials
 \end{itemize}
 \divider{}
 
@@ -532,47 +536,47 @@ Last modified \mydate. \par
 
 
 % Alternative icons: \faAreaChart
-\large \printinfo{\faBarChartO}{Presentation} \smallskip
-\begin{itemize}
-    \item “ECG Signal Visualization \& Annotation”.
-    \textit{\linked[0]{UROP Research Symposium Spring 2021}{https://courses.lsa.umich.edu/urop-symposium/}}.
+% \large \printinfo{\faBarChartO}{Presentation} \smallskip
+% \begin{itemize}
+%     \item “ECG Signal Visualization \& Annotation”.
+%     \textit{\linked[0]{UROP Research Symposium Spring 2021}{https://courses.lsa.umich.edu/urop-symposium/}}.
 
-    \item “Visualization of Color Theory”.
-    \textit{\linked[0]{FIRE Summit 2020}{https://www.fire.umd.edu/summit}}.
-\end{itemize}
-\bigskip
+%     \item “Visualization of Color Theory”.
+%     \textit{\linked[0]{FIRE Summit 2020}{https://www.fire.umd.edu/summit}}.
+% \end{itemize}
+% \bigskip
 
 
 
-\large \printinfo{\faFileTextO}{Report} \smallskip
-\begin{itemize}
-    \item \linked[0]{“Multi-Robot Relative Pose Estimation with Point Cloud Matching Case Study: KUKA and HSR Robots”}
-        {https://drive.google.com/file/d/1iJ5H4kr64rnm6v06gjXiZAUbz8xSi0rQ/view?usp=sharing}.
-        \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, 2021.
+% \large \printinfo{\faFileTextO}{Report} \smallskip
+% \begin{itemize}
+%     \item \linked[0]{“Multi-Robot Relative Pose Estimation with Point Cloud Matching Case Study: KUKA and HSR Robots”}
+%         {https://drive.google.com/file/d/1iJ5H4kr64rnm6v06gjXiZAUbz8xSi0rQ/view?usp=sharing}.
+%         \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, 2021.
 
-        \item \linked[0]{“Bearing Remaining Useful Life Prediction Model Portability Case Study: FEMTO Bearing Dataset”}
-            {https://drive.google.com/file/d/1iIVxVUF88lDgJvoEh-kfEueUPisKlxVn/view?usp=sharing}.
-            \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, 2021.
+%         \item \linked[0]{“Bearing Remaining Useful Life Prediction Model Portability Case Study: FEMTO Bearing Dataset”}
+%             {https://drive.google.com/file/d/1iIVxVUF88lDgJvoEh-kfEueUPisKlxVn/view?usp=sharing}.
+%             \textit{\linked[0]{MDP}{https://mdp.engin.umich.edu} Final Report}, 2021.
 
-    \item \linked[0]{“Localization of Ventricular Activation Origin from the 12-Lead ECG with Machine Learning”}
-        {https://drive.google.com/file/d/17a_DMnwxXoumi6AQ3jaCvCKmViPJFs4m/view?usp=sharing}.
-        \textit{\linked[0]{UROP}{https://lsa.umich.edu/urop} Research Proposal}, 2021.
+%     \item \linked[0]{“Localization of Ventricular Activation Origin from the 12-Lead ECG with Machine Learning”}
+%         {https://drive.google.com/file/d/17a_DMnwxXoumi6AQ3jaCvCKmViPJFs4m/view?usp=sharing}.
+%         \textit{\linked[0]{UROP}{https://lsa.umich.edu/urop} Research Proposal}, 2021.
 
-    \item \linked[0]{“Visualization of Color Theory”}
-        {https://drive.google.com/file/d/1EIvLS_hZi8ZdOsr07P1dImNUmR-VRysp/view?usp=sharing}.
-        \textit{\linked[0]{FIRE}{https://www.fire.umd.edu} Final Report}, 2019.
-\end{itemize}
+%     \item \linked[0]{“Visualization of Color Theory”}
+%         {https://drive.google.com/file/d/1EIvLS_hZi8ZdOsr07P1dImNUmR-VRysp/view?usp=sharing}.
+%         \textit{\linked[0]{FIRE}{https://www.fire.umd.edu} Final Report}, 2019.
+% \end{itemize}
 
 
 
 
 \cvsection{Teaching}
-\cvevent{Art Museum Research Peer Mentor}{University of Maryland}{Spring, 2020}{College Park, MD}{}
+\cvevent{Art Museum Research Peer Mentor}{}{Spring, 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
 \begin{itemize}
-    \item Mentored 36 students on VR, AR, location intelligence training \& art museum experience;
-    Reviewed Unity project submissions
+    \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
+    \item Reviewed students' Unity project submissions
 
-    \item Wrote AR development tutorial based on Google SDK in Android Studio
+    \item Wrote Android Studio \& AR development tutorial based on Google SDK
 
     \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
 \end{itemize}
@@ -583,6 +587,112 @@ Last modified \mydate. \par
 
 
 \small
+\cvsection{Skills}
+\cvtag{Large Language Model}
+\cvtag{Alignment}
+\\
+\cvtag{Text Classification}
+\cvtag{Named Entity Recognition}
+\\
+\medskip
+\divider
+
+
+\cvtag{Organized}
+\cvtag{Craftstmanship} \\
+\cvtag{Presentation}
+\cvtag{Visualization} \\
+\medskip
+\divider
+
+
+\newcommand{\skillHeader}[1]{\footnotesize\textit{#1}}
+
+\cvsection{Skills {\footnotesize \lowercase{proficiency by descending saturation}}}
+\small
+% {\footnotesize\textit{Programming Languages}} \smallskip \\
+\faCode~ \skillHeader{Programming Languages} \smallskip \\
+\mytagI[ThemeGradient08]{Python}{Python}
+\mytagI[ThemeGradient03]{Cpp}{C/C++}
+\mytagI[ThemeGradient01]{ruby}{Ruby}
+ \\
+
+\mytagI[ThemeGradient02]{Java}{Java}
+\mytagI[ThemeGradient02]{Android, modified}{Android}
+\mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
+\medskip
+\divider
+
+\faCogs~ \skillHeader{Machine Learning} \smallskip \\
+\mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch}
+\mytagI[ThemeGradient05]{Hugging Face, modified}{Hugging Face}
+\mytagI[ThemeGradient05]{openai}{OpenAI API}
+\mytagI[ThemeGradient07]{NumPy}{NumPy}
+\mytagI[ThemeGradient03]{pandas, modified}{pandas}
+\mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn} \\
+\medskip
+\divider
+
+\faAreaChart~ \skillHeader{Visualization \& Data Science} \smallskip \\
+\mytagI[ThemeGradient07]{matplotlib, modified}{matplotlib}
+\mytagI[ThemeGradient06]{Plotly, modified}{Plotly/Dash}
+\mytagI[ThemeGradient03]{d3}{D3} \\
+
+\mytagI[ThemeGradient03]{MATLAB, modified}{MATLAB}
+\cvtag{\textcolor{ThemeGradient02}{XML}}
+\mytagI[ThemeGradient03]{SQL}{SQL} \\
+\medskip
+\divider
+
+\faGlobe~ \skillHeader{Web Development \& other} \smallskip \\
+\mytagI[ThemeGradient05]{HTML}{HTML}
+\mytagI[ThemeGradient02]{LESS}{LESS}
+\mytagI[ThemeGradient05]{JavaScript}{JavaScript} \\
+
+\mytagI[ThemeGradient05]{Marko, edited}{Marko}
+\mytagI[ThemeGradient03]{nodejs}{Node.js} \\
+\medskip
+
+\mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}
+\mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
+\medskip
+\divider
+
+\faWrench~ \skillHeader{Tools} \smallskip \\
+\mytagI[ThemeGradient05]{git}{Git}
+\cvtag{\textcolor{ThemeGradient02}{ssh}}
+\mytagI[ThemeGradient03]{Bash, modified}{Shell Script}
+\mytagI[ThemeGradient03]{Linux, modified}{Linux} \\
+\medskip
+
+\mytagI[ThemeGradient06]{PyCharm}{PyCharm}
+\mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell}
+\mytagI[ThemeGradient03]{Clion}{CLion} \\
+\mytagI[ThemeGradient05]{Visual Studio Code}{VSCode}
+\mytagI[ThemeGradient02]{Jupyter, modified}{Jupyter Lab} \\
+\medskip
+\divider
+
+\faPaintBrush~ \skillHeader{Design} \smallskip \\
+\mytagI[ThemeGradient07]{Adobe Photoshop}{Photoshop}
+\mytagI[ThemeGradient04]{Adobe Illustrator}{Illustrator}
+\mytagI[ThemeGradient02]{Adobe Premiere Pro}{Premiere Pro} \\
+\mytagI[ThemeGradient03]{Figma}{Figma} \\
+% \cvtag{\textcolor{ThemeGradient03}{Figma}} \\
+\medskip
+\divider
+
+\faPencil~ \skillHeader{Writing \& Language} \smallskip \\
+\mytagI[ThemeGradient08]{markdown}{Markdown}
+\mytagI[ThemeGradient08]{LaTeX, modified}{LaTeX}
+\cvtag{\textcolor{ThemeGradient07}{Chinese (native)}} \\
+\medskip
+\divider
+
+
+
+
+
 \cvsection{Honors \& Awards}
 \cvachievement{\faBook}{Dean's List \& University Honors \&
     \linked[0]{James B. Angell Scholar}{https://honors.umich.edu/awards.php}}
@@ -593,96 +703,19 @@ Last modified \mydate. \par
     {UMD Honors Program. 2019 - 2020}
 
 
-\cvachievement{\faCogs}{\nth{4}/20 place in \linked[0]{125 Mile E-Bike Challenge}
+\cvachievement{\faBicycle}{\nth{4}/20 place in \linked[0]{125 Mile E-Bike Challenge}
     {https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}}
     {A. James Clark School of Engineering. 2018 - 2019}
 
-
-
-
-\cvsection{Skills}
-\small
-\mytagI[ThemeGradient08]{Python}{Python}
-\mytagI[ThemeGradient03]{Cpp}{C/C++}
-\mytagI[ThemeGradient01]{ruby}{Ruby}
- \\
-
-
-\mytagI[ThemeGradient05]{HTML}{HTML}
-\mytagI[ThemeGradient02]{LESS}{LESS}
-\mytagI[ThemeGradient05]{JavaScript}{JavaScript} \\
-
-\mytagI[ThemeGradient05]{Marko, edited}{Marko}
-\mytagI[ThemeGradient03]{MATLAB, modified}{MATLAB}
-\cvtag{\textcolor{ThemeGradient02}{XML}}
-\mytagI[ThemeGradient03]{SQL}{SQL} \\
-\mytagI[ThemeGradient02]{Java}{Java}
-\mytagI[ThemeGradient02]{Android, modified}{Android}
-\mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
-\medskip
-\divider
-
-\mytagI[ThemeGradient07]{NumPy}{NumPy}
-\mytagI[ThemeGradient03]{pandas, modified}{pandas}
-\mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn} \\
-\mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch}
-\mytagI[ThemeGradient05]{Hugging Face, modified}{Hugging Face}
-\mytagI[ThemeGradient05]{openai}{OpenAI API} \\
-\mytagI[ThemeGradient07]{matplotlib, modified}{matplotlib}
-\mytagI[ThemeGradient06]{Plotly, modified}{Plotly/Dash}
-\mytagI[ThemeGradient03]{d3}{D3} \\
-\mytagI[ThemeGradient03]{nodejs}{Node.js}
-\mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS} \\
-\medskip
-\divider
-
-
-\mytagI[ThemeGradient06]{PyCharm}{PyCharm}
-\mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell}
-\mytagI[ThemeGradient03]{Clion}{CLion} \\
-\mytagI[ThemeGradient05]{Visual Studio Code}{VSCode}
-\mytagI[ThemeGradient02]{Jupyter, modified}{Jupyter Lab} \\
-\medskip
-\divider
-
-\mytagI[ThemeGradient05]{git}{Git}
-\cvtag{\textcolor{ThemeGradient02}{ssh}}
-\mytagI[ThemeGradient03]{Bash, modified}{Shell Script}
-\mytagI[ThemeGradient03]{Linux, modified}{Linux} \\
-\medskip
-\divider
-
-
-\mytagI[ThemeGradient07]{Adobe Photoshop}{Photoshop}
-\mytagI[ThemeGradient04]{Adobe Illustrator}{Illustrator} \\
-\mytagI[ThemeGradient02]{Adobe Premiere Pro}{Premiere Pro}
-\cvtag{\textcolor{ThemeGradient02}{Figma}} \\
-\medskip
-\divider
-
-
-\mytagI[ThemeGradient08]{markdown}{Markdown}
-\mytagI[ThemeGradient08]{LaTeX, modified}{LaTeX} \\
-\cvtag{\textcolor{ThemeGradient07}{Chinese (native)}}
-\mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
-\medskip
-\divider
-
-\cvtag{Organized}
-\cvtag{Craftstmanship} \\
-\cvtag{Presentation}
-\cvtag{Visualization} \\
-\medskip
-\divider
-
+\pagebreak
 
 
 
 \cvsection{Affiliations}
 \cvaffiliation{
         \linked[0]{UROP Research Scholars}{https://lsa.umich.edu/urop/Prospective-Students/fall-winter-programs/research-scholars-program.html}
-    }{\linked[0]{Machine Learning for Cardiovascular \\ Medicine}{https://www.uofmhealth.org}
-    }{Sep. 2021 - Apr. 2022}{\linked[0]{LSA @ UMich}{https://lsa.umich.edu}}
+    }{\linked[0]{Machine Learning for Cardiovascular Medicine}{https://www.uofmhealth.org}
+    }{Sep. 2021 - Apr. 2022}{\linked[0]{UMich}{https://lsa.umich.edu}}{1}
 \begin{itemize}
     \item Undergraduate Research Opportunity Program, \~{}75 students enrolled
 \end{itemize}
@@ -693,22 +726,22 @@ Last modified \mydate. \par
 \cvaffiliation{
         \linked[0]{Multidisciplinary Design Program (MDP)}{https://mdp.engin.umich.edu}
     }{\linked[0]{Secure Cloud Manufacturing}{https://mdp.engin.umich.edu/research_teams/secure-cloud-manufacturing/}
-    }{Jan. 2020 - Dec. 2021}{\linked[0]{CoE @ UMich}{https://www.engin.umich.edu}}
+    }{Jan. 2020 - Dec. 2021}{\linked[0]{UMich}{https://www.engin.umich.edu}}{1}
 \begin{itemize}
     \item Undergraduate research \& industry project program, \~{}600 students enrolled
 \end{itemize}
 \divider{}
-\pagebreak
+% \pagebreak
 
 
 
 
 
-\cvsection{Affiliations \lowercase{cont.}}
+% \cvsection{Affiliations \lowercase{cont.}}
 \cvaffiliation{
         \linked[0]{UROP Changing Gears}{https://lsa.umich.edu/urop/Prospective-Students/fall-winter-programs/changing-gears-program.html}
     }{\linked[0]{ECG Signal Visualization \& Annotation}{https://www.uofmhealth.org}}
-    {Sep. 2020 - May. 2021}{\linked[0]{LSA @ UMich}{https://lsa.umich.edu}}
+    {Sep. 2020 - May. 2021}{\linked[0]{UMich}{https://lsa.umich.edu}}{1}
 \begin{itemize}
     \item Undergraduate Research Opportunity Program, \~{}1,100 students enrolled
 \end{itemize}
@@ -719,7 +752,7 @@ Last modified \mydate. \par
 \cvaffiliation{
         \linked[0]{First-Year Innovation \& Research Experience (FIRE)}{https://www.fire.umd.edu}
     }{\linked[0]{Philips Virtual Culture}{https://www.mbrc.umd.edu}
-    }{Aug. 2018 - May. 2020}{\linked[0]{UMD}{https://www.umd.edu}}
+    }{Aug. 2018 - May. 2020}{\linked[0]{UMD}{https://www.umd.edu}}{1}
 \begin{itemize}
     \item Undergraduate research program, \~{}1,200 students enrolled
 \end{itemize}
@@ -730,15 +763,15 @@ Last modified \mydate. \par
 
 
 
-\cvsection{Community Services}
-\cvevent{Christian Fellowship}{
-    \linked[0]{Haidian Christian Church}{http://www.english.hdchurch.org}\norm{, \\ \hfill}
-    \linked[0]{4Corners International Group}{https://terplink.umd.edu/organization/umd4corners}
-    }{2017 - 2020}{Beijing \& MD \& MI}{}
-\begin{itemize}
-    \item Designed \& Distributed posters in-person and on subscription account
-\end{itemize}
-\divider{}
+% \cvsection{Community Services}
+% \cvevent{Christian Fellowship}{
+%     \linked[0]{Haidian Christian Church}{http://www.english.hdchurch.org}\norm{, \\ \hfill}
+%     \linked[0]{4Corners International Group}{https://terplink.umd.edu/organization/umd4corners}
+%     }{2017 - 2020}{Beijing \& MD \& MI}{}
+% \begin{itemize}
+%     \item Designed \& Distributed posters in-person and on subscription account
+% \end{itemize}
+% \divider{}
 
 
 
@@ -746,23 +779,24 @@ Last modified \mydate. \par
 \cvsection{Art Projects}
 \cvevent{Digital Content Creator}{}{Jul. 2016 - Oct. 2021}{}{}
 \begin{itemize}
-    \item Posted on \linked[0]{instagram}{https://www.instagram.com/the.aaaak/}
-    about modern art and my works inspired by books \& films
+    \item Ran \linked[0]{instagram}{https://www.instagram.com/the.aaaak/} account
+    about modern art and my book- \& film-inspired digital pieces
 \end{itemize}
 \divider{}
 
 
 
-\cveventR{Musical Club President of Support}{
+\cveventR{President of Support @ Musical Club}{
     \linked[0]{High School Affiliated to \norm{\\ \hfill} Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}
 }{Sep. 2015 - Dec. 2017}{Beijing, CN}{}
 \begin{itemize}
     \item Designed and distributed posters for 2 musicals around school
 
-    \item Took photos \& videos and collected feedbacks from club members; Ran
-    WeChat official account
+    \item Ran WeChat official account
 
-    \item Raised \~{}\$2,000 for musical costumes and props
+    \item Took photos \& videos and collected feedbacks from club members
+
+    \item Raised \~{}\$2,000 funds for musical costumes and props
 \end{itemize}
 \divider{}
 

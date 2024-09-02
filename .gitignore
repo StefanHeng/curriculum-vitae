@@ -6,6 +6,8 @@ tex_output/
 options/
 test-lang/
 
+*ignore*
+
 templates/
 
 CV log.md
