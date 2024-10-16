@@ -65,6 +65,7 @@
 }
 \newcommand{\norm}[1]{{\normalfont\textcolor{body}{#1}}}
 
+\newcommand{\skillHeader}[1]{\footnotesize\textit{#1}}
 
 \usepackage[super]{nth}
 \usepackage[inkscapearea=nocrop]{svg}
@@ -84,7 +85,7 @@
 }%
 \fancypagestyle{nontitlepage}{%
     \fancyhead[L]{Curriculum Vitae}
-    \fancyhead[R]{\linked[0]{Stefan/Yuzhao Heng}{https://stefanheng.github.io}}
+    \fancyhead[R]{\linked[0]{Yuzhao (Stefan) Heng}{https://stefanheng.github.io}}
 }%
 \fancyhf{}
 \fancyfoot[R]{\thepage}
@@ -115,24 +116,25 @@
 % Name: Yuzhao Heng ~|~ User ID: stefan.hg@outlook.com \par
 % ~\par
 
-\name{Stefan/Yuzhao Heng}
-\tagline{MSCS Student at Georgia Tech; Aspiring NLP Researcher}
+\name{Yuzhao (Stefan) Heng}
+\tagline{MSCS Student at Georgia Tech; NLP Researcher with a focus on Large Language Models}
 % \photoR{2.5cm}{assets/img/face-mask}
 % \photoR{2.5cm}{assets/img/face_mononoke}
 \personalinfo{%
     % {\large Curriculum Vitae | CS Ph.D | U-M ID: 11314100} \vspace{0.25em} \par
+    \printinfo{\faHome}{United States Permanent Resident}
     \homepage{stefanheng.github.io}
     \linkedin{stefan-heng}
     \github{StefanHeng}
     \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ] \par
-    \twitter{yuzhao_heng}
-    \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]
-    % \printinfo{\faBlackTie}{resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
-    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link] \par
-    \printinfo{\faHome}{United States Permanent Resident}
+
     \email{stefan.hg@outlook.com}
     \printinfo{\faPhone}{(301)454-9176}[tel:+13014549176]
     \location{Atlanta, GA}
+    \twitter{yuzhao_heng}
+    \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]
+    % \printinfo{\faBlackTie}{resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]
+    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]
 }
 \makecvheader{}
 
@@ -144,6 +146,7 @@
 \cvsection{Education}
 \cvevent{\linked[0]{M.S. in Computer Science}{https://www.cc.gatech.edu/degree-programs/master-science-computer-science}}
     {\linked[0]{Georgia Tech}{https://www.gatech.edu}}
+    % {Aug. 2023 - Dec. 2025}{Atlanta, GA}{1}
     {Aug. 2023 - May. 2025}{Atlanta, GA}{1}
 \begin{itemize}
     \item \linked{GPA: 4.0/4.0}{https://drive.google.com/file/d/1d8YsHVGGYXTqwO-0FZjeuxpByIEFsraX/view?usp=sharing}
@@ -167,20 +170,6 @@
 
 
 
-\cvevent{\linked[0]{B.S. in Computer Science}{https://www.cs.umd.edu}}
-    {\linked[0]{University of Maryland}{https://www.umd.edu}}
-    {Aug. 2018 - May. 2020}{College Park, MD}{1}
-\begin{itemize}
-    \item \linked{GPA: 3.97/4.0}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
-    \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
-        Discrete Mathematics; Programming Languages
-    \item Featured Courses:
-        Applied Probability \& Statistics; Logic;
-        2D \& 3D Design; Drawing; Digital Art \& Design;
-        Morals \& Ethics
-\end{itemize}
-\divider
-
 
 
 
@@ -192,11 +181,16 @@
 \begin{itemize}
     % \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
 
-    \item Exploring fine-grained negative prompting for preference datasets generation
+    \item Innovating preference dataset synthesis with fine-grained preference strengths
 
-    \item Processed 50K binary preference data; Coded and optimized training and inferencing pipeline for 3 reward models of different architectures
+    \item Processed 100K samples and filtered low-quality samples by heuristics
 
-    \item Designed uncertainty metrics to select training data using reward model ensemble
+    \item Coded \& Optimized distributed training \& inferencing pipeline for 3 distinct reward model architectures, reducing eval time by 2X
+
+    \item Designed uncertainty metrics for training data selection leveraging reward model ensemble logits
+
+    \item Reward model accuracy trained from negative-prompting-generated data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
+    \vspace{-1.2em}  % somehow it renders a newline
 \end{itemize}
 \divider{}
 
@@ -207,12 +201,31 @@
 \begin{itemize}
     % \item Mentored by Ph.D. students at
 
-    \item Investigated Named-Entity Recognition Training Dataset Generation with LLMs focusing on diversity and annotation quality
+    \item Innovated 1st structured named-entity recognition training dataset generation with LLMs by attributed prompting for diversity
 
-    \item Built multi-stage generation pipeline including parallel API calls, data filtering and cleaning
+    \item Developed \& Optimized multi-stage generation pipeline including parallel API calls, data filtering \& cleaning, pretty logging \& summary stats
 
-    \item Inspected generated samples and compared multiple paradigms for annotation feedback and LLM self-correction
+    \item Manually Inspected generated samples; Case-studied \& Analyzed multiple paradigms for LLM annotation feedback and self-correction
+
+    \item Increased DeBEETa NER F1 score by >5\% on average using \$<1 API cost \& <10 labeled samples,
+    matching ChatGPT-3.5 teacher performance while 20X faster; Written 40-page paper with failure analysis
 \end{itemize}
+\divider{}
+
+
+
+\cvsection{Work Experiences}
+\cvevent{Front-end Software Engineer Intern}
+    {\linked[0]{eBay Inc.}{https://www.ebay.com}}
+    {May. 2021 - Jul. 2021}{San Jose, CA (remote)}{1}
+\begin{itemize}
+    % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
+
+    \item Successfully launched a new video feature in item listing tool at Seller Experience team, impacting more than 10\% of eBay sellers
+
+    \item Presented architecture, implementation, upstream service challenges \& next steps and Live-demoed to internal team of 40+
+\end{itemize}
+% \medskip
 \divider{}
 \pagebreak
 
@@ -226,10 +239,12 @@
     % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
         % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
 
-    \item Surveyed literature \& Added subjective datasets (e.g., irony)
+    \item Surveyed literature to select subjective datasets (e.g., irony)
 
-    \item Built \& ran \linked[0]{PEFT}{https://huggingface.co/docs/peft/index}, \linked[0]{Adapter}{https://docs.adapterhub.ml}
-    and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset} training \& evaluation pipelines for Flan-T5 generative text classification
+    \item Designed \& Executed \linked[0]{PEFT}{https://huggingface.co/docs/peft/index}, \linked[0]{Adapter}{https://docs.adapterhub.ml}
+    and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset} training \& evaluation user-wise pipelines for Flan-T5 generative text classification
+
+    \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, each with up to 5K users and 120K total samples
 \end{itemize}
 \divider{}
 
@@ -240,13 +255,14 @@
     {}
     {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{}
 \begin{itemize}
-    \item Built text classification dataset with temporally changing label sets
+    \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
 
-    \item Processed in-production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool
+    \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
 
-    \item Implemented and conducted experiments for personalization paper
+    % \item Implemented and conducted experiments for personalization paper
 \end{itemize}
 \divider{}
+
 
 
 
@@ -258,13 +274,12 @@
     % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
         % at
 
-    \item Designed and coded a music token representation that is compact to handle long song sequences and integrates
+    \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
     music theory annotations
 
-    \item Batched and concurrently processed 10K+ MIDI music files;
-    Modified Transformer-XL \& Reformer architectures for music sequences
+    \item Coded \& Optimized tokenization pipeline to process 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
 
-    \item Designed music-specific metrics for evaluation; Inspected generated music pieces
+    \item Tailored Transformer-XL \& Reformer architectures for long music sequence training; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
 \end{itemize}
 \divider{}
 
@@ -289,11 +304,13 @@
     % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
         % at
 
-    \item Compared zero-shot classification frameworks and and improved classifier training conditioned on dataset domain
+    \item Benchmarked 3 zero-shot classification paradigms across 18 datasets
 
-    \item Re-implemented a GPT-2-based 0-shot classification method from paper; Built training \& eval pipelines and conducted experiments
+    \item Re-Implemented a closed-sourced, prior GPT-2-based 0-shot approach
 
-    \item Designed illustrations and wrote sections for paper submission
+    \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X; Launched experiments
+
+    \item Improved classifier accuracies by 1\% on average with simple domain-conditioned training; Designed illustrations \& wrote paper sections\vspace{-1.2em}
 \end{itemize}
 \divider{}
 
@@ -309,10 +326,11 @@
     % Premature Ventricular Contraction (PVC) exit site prediction to
     % aid diagnosis \& ablation surgery efficiency
 
-    \item Devised self-supervised representation learning for multivariate ECG timeseries using symbolic or continuous representations
+    \item Devised self-supervised pretraining objectives for 12-channel ECG timeseries based on symbolic and real-valued representations
 
-    \item Compiled and processed dataset collection of 50K+ 12-lead ECG records from 8 datasets;
-    Explored training Vision Transformers as ECG backbone model with heart signal data augmentations
+    \item Reviewed literature to Compile a dataset collection of 50K+ 12-lead ECG records from 8 datasets
+
+    \item Pioneered applying the Vision Transformer architecture for ECG disease classification with heart-signal data augmentations; Visualized attention layers for explainability
 \end{itemize}
 \divider{}
 
@@ -343,16 +361,16 @@
     % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
         % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
 
-    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for retrospective study,
-    including thumbnail, channel toggle, box measurement \& annotation
+    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for
+    with features including thumbnail, channel toggle, box measurement \& annotation
     % for a public cardiovascular disease management and analytics infrastructure
 
-    \item Designed user interface guided by and tailored for cardiologists' needs
+    \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs; Gathered feedbacks from cardiologists
 
-    \item Optimized algorithmic efficiency for visualizing signal records of GBs in size
+    \item Algorithmically Optimized rendering efficiency of GBs of signal records
 \end{itemize}
 \divider{}
-% \pagebreak
+\pagebreak
 
 
 
@@ -381,13 +399,12 @@
     \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
     that renders art museum paintings in 6 base colors to educate color theory \& raise engagement
 
-    \item Compared methods for theme-colored visualization; Implemented primary and secondary extraction,
-    color map file parsing
+    \item Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction \& color map file parsing
 
-    \item Explored painting segmentation heuristics based on color \& semantics
+    \item Developed \& Tested painting segmentation heuristics based on color \& semantics
 \end{itemize}
 \divider{}
-\pagebreak
+% \pagebreak
 
 
 
@@ -407,46 +424,39 @@
 
 
 
+% \cvevent{Front-end Software Engineer Intern}
+%     {\linked[0]{eBay Inc.}{https://www.ebay.com}}
+%     {May. 2021 - Jul. 2021}{San Jose, CA (remote)}{1}
+% \begin{itemize}
+%     % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
 
-\cvsection{Work Experiences}
-\cvevent{Front-end Software Engineer Intern}
-    {\linked[0]{eBay Inc.}{https://www.ebay.com}}
-    {May. 2021 - Jul. 2021}{San Jose, CA (remote)}{1}
-\begin{itemize}
-    % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
+%     \item Built front-end groundwork for video features in item listing (a tool all eBay sellers interface with) at Seller Experience team
 
-    \item Built front-end groundwork for video features in item listing at Seller Experience team
-
-    \item Presented architecture, implementation,
-    upstream service challenges \& next steps and live demoed to internal team of 40+
-\end{itemize}
-\divider{}
+%     \item Presented architecture, implementation,
+%     upstream service challenges \& next steps and live demoed to internal team of 40+
+% \end{itemize}
+% \divider{}
 
 
-
-
-
-\cvevent{UX/UI Design Intern}
-    {\linked[0]{OpptIn}{https://www.opptin.com}{\normalfont\textcolor{body}{, a start-up company}}}
-    {Mar. 2020 - May. 2020}{Scranton, PA (remote)}{1}
-\begin{itemize}
-    % \item Why: Localized search; Automatic attendance; Slide annotation sharing
-
-    \item Brianstormed UI framework with functional widgets to augment location-specific real-life spaces
-
-    \item Iterated company logo designs; Prototyped UI layouts
-    for space discovery and management in a team of 6; Implemented layouts in Android
-
-    \item Explored UI animations and style changes pre- and post-joining spaces
-
-    \item Communicated UX concepts and engineering constraints among design and development teams
-\end{itemize}
-\divider{}
-% \pagebreak
 
 
 
 \cvsection{Education \lowercase{cont.}}
+\cvevent{\linked[0]{B.S. in Computer Science}{https://www.cs.umd.edu}}
+    {\linked[0]{University of Maryland}{https://www.umd.edu}}
+    {Aug. 2018 - May. 2020}{College Park, MD}{1}
+\begin{itemize}
+    \item \linked{GPA: 3.97/4.0}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
+    \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
+        Discrete Mathematics; Programming Languages
+    \item Featured Courses:
+        Applied Probability \& Statistics; Logic;
+        2D \& 3D Design; Drawing; Digital Art \& Design;
+        Morals \& Ethics
+\end{itemize}
+\divider
+
+
 \cvevent{High School Diploma}
     {\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
     {Aug. 2015 - Jul. 2018}{Beijing, CN}{}
@@ -458,7 +468,7 @@
 
 
 
-\cvsection{Engineering Projects}
+% \cvsection{Engineering Projects}
 % \cvevent{Image Bubble Generator}{}{Sep. 2021}{}{}
 % \begin{itemize}
 %     \item Developed \linked[0]{a utility that randomly cluster image by semantics and overlay bubbles with respective hues}{https://github.com/StefanHeng/Image-Cloud-Generator}
@@ -499,18 +509,18 @@
 
 
 
-\cvevent{2D Game Intelligence}{}{Nov. 2018 - Feb. 2019}{\linked[0]{Prof. Fawzi Emad}{https://www.cs.umd.edu/people/fpe} @ \linked[0]{UMD}{https://www.umd.edu}}{1}
-\begin{itemize}
-    \item Participated in a challenge about AI soldiers fighting in a 2D battlefield
-    % by
+% \cvevent{2D Game Intelligence}{}{Nov. 2018 - Feb. 2019}{\linked[0]{Prof. Fawzi Emad}{https://www.cs.umd.edu/people/fpe} @ \linked[0]{UMD}{https://www.umd.edu}}{1}
+% \begin{itemize}
+%     \item Participated in a challenge about AI soldiers fighting in a 2D battlefield
+%     % by
 
-    \item Read an \linked[0]{AI and Games}{http://gameaibook.org} textbook; Implemented genetic search algorithms with custom-designed reward heuristics
+%     \item Read an \linked[0]{AI and Games}{http://gameaibook.org} textbook; Implemented genetic search algorithms with custom-designed reward heuristics
 
-    \item Tracked soldiers' in-game behavior and computed statistics to monitor performance
+%     \item Tracked soldiers' in-game behavior and computed statistics to monitor performance
 
-    \item Automated game restart to increase self-play training trials
-\end{itemize}
-\divider{}
+%     \item Automated game restart to increase self-play training trials
+% \end{itemize}
+% \divider{}
 
 
 
@@ -572,43 +582,18 @@ Last modified \mydate. \par
 
 
 
-\cvsection{Teaching}
-\cvevent{Art Museum Research Peer Mentor}{}{Spring, 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
-\begin{itemize}
-    \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
-    \item Reviewed students' Unity project submissions
+% \cvsection{Teaching}
+% \cvevent{Art Museum Research Peer Mentor}{}{Spring, 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
+% \begin{itemize}
+%     \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
+%     \item Reviewed students' Unity project submissions
 
-    \item Wrote Android Studio \& AR development tutorial based on Google SDK
+%     \item Wrote Android Studio \& AR development tutorial based on Google SDK
 
-    \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
-\end{itemize}
-\medskip
-\pagebreak
+%     \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
+% \end{itemize}
+% \medskip
 
-
-
-
-\small
-\cvsection{Skills}
-\cvtag{Large Language Model}
-\cvtag{Alignment}
-\\
-\cvtag{Text Classification}
-\cvtag{Named Entity Recognition}
-\\
-\medskip
-\divider
-
-
-\cvtag{Organized}
-\cvtag{Craftstmanship} \\
-\cvtag{Presentation}
-\cvtag{Visualization} \\
-\medskip
-\divider
-
-
-\newcommand{\skillHeader}[1]{\footnotesize\textit{#1}}
 
 \cvsection{Skills {\footnotesize \lowercase{proficiency by descending saturation}}}
 \small
@@ -616,8 +601,7 @@ Last modified \mydate. \par
 \faCode~ \skillHeader{Programming Languages} \smallskip \\
 \mytagI[ThemeGradient08]{Python}{Python}
 \mytagI[ThemeGradient03]{Cpp}{C/C++}
-\mytagI[ThemeGradient01]{ruby}{Ruby}
- \\
+\mytagI[ThemeGradient01]{ruby}{Ruby} \\
 
 \mytagI[ThemeGradient02]{Java}{Java}
 \mytagI[ThemeGradient02]{Android, modified}{Android}
@@ -627,11 +611,13 @@ Last modified \mydate. \par
 
 \faCogs~ \skillHeader{Machine Learning} \smallskip \\
 \mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch}
-\mytagI[ThemeGradient05]{Hugging Face, modified}{Hugging Face}
+\mytagI[ThemeGradient06]{Hugging Face, modified}{Hugging Face}
+\mytagI[ThemeGradient04]{DeepSpeed, modified}{DeepSpeed} \\
 \mytagI[ThemeGradient05]{openai}{OpenAI API}
+\mytagI[ThemeGradient02]{nvidia}{NeMo}
+\mytagI[ThemeGradient04]{scikit_learn, modified}{scikit-learn} \\
 \mytagI[ThemeGradient07]{NumPy}{NumPy}
-\mytagI[ThemeGradient03]{pandas, modified}{pandas}
-\mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn} \\
+\mytagI[ThemeGradient03]{pandas, modified}{pandas} \\
 \medskip
 \divider
 
@@ -642,11 +628,114 @@ Last modified \mydate. \par
 
 \mytagI[ThemeGradient03]{MATLAB, modified}{MATLAB}
 \cvtag{\textcolor{ThemeGradient02}{XML}}
+\mytagI[ThemeGradient03]{R}{R}
 \mytagI[ThemeGradient03]{SQL}{SQL} \\
 \medskip
 \divider
 
-\faGlobe~ \skillHeader{Web Development \& other} \smallskip \\
+
+\cvsection{Keywords}
+% \cvtag{Large Language Model}
+% \cvtag{Alignment}
+% \\
+% \cvtag{Text Classification}
+% \cvtag{Named Entity Recognition}
+% \\
+% \medskip
+% \divider
+
+\cvtag{Data-Centric AI}
+\cvtag{Dataset Synthesis} \\
+\cvtag{Large-Scale Data Processing Pipeline} \\
+\medskip
+\divider
+
+\cvtag{NLP} \cvtag{Large Language Model} \cvtag{Alignment} \\
+\cvtag{Text Classification}
+\cvtag{Named Entity Recognition} \\
+\medskip
+\divider
+
+
+\pagebreak
+
+
+
+
+\small
+\cvsection{Keywords {\lowercase{cont.}}}
+% \cvtag{Large Language Model}
+% \cvtag{Alignment}
+% \\
+% \cvtag{Text Classification}
+% \cvtag{Named Entity Recognition}
+% \\
+% \medskip
+% \divider
+
+
+\cvtag{Organized}
+\cvtag{Craftsmanship} \\
+\cvtag{Presentation}
+\cvtag{Visualization} \\
+\medskip
+\divider
+
+
+% \cvsection{Skills {\footnotesize \lowercase{proficiency by descending saturation}}}
+% \small
+% % {\footnotesize\textit{Programming Languages}} \smallskip \\
+% \faCode~ \skillHeader{Programming Languages} \smallskip \\
+% \mytagI[ThemeGradient08]{Python}{Python}
+% \mytagI[ThemeGradient03]{Cpp}{C/C++}
+% \mytagI[ThemeGradient01]{ruby}{Ruby}
+%  \\
+
+% \mytagI[ThemeGradient02]{Java}{Java}
+% \mytagI[ThemeGradient02]{Android, modified}{Android}
+% \mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
+% \medskip
+% \divider
+
+% \faCogs~ \skillHeader{Machine Learning} \smallskip \\
+% \mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch}
+% \mytagI[ThemeGradient05]{Hugging Face, modified}{Hugging Face}
+% \mytagI[ThemeGradient05]{openai}{OpenAI API}
+% \mytagI[ThemeGradient07]{NumPy}{NumPy}
+% \mytagI[ThemeGradient03]{pandas, modified}{pandas}
+% \mytagI[ThemeGradient03]{scikit_learn, modified}{scikit-learn} \\
+% \medskip
+% \divider
+
+% \faAreaChart~ \skillHeader{Visualization \& Data Science} \smallskip \\
+% \mytagI[ThemeGradient07]{matplotlib, modified}{matplotlib}
+% \mytagI[ThemeGradient06]{Plotly, modified}{Plotly/Dash}
+% \mytagI[ThemeGradient03]{d3}{D3} \\
+
+% \mytagI[ThemeGradient03]{MATLAB, modified}{MATLAB}
+% \cvtag{\textcolor{ThemeGradient02}{XML}}
+% \mytagI[ThemeGradient03]{SQL}{SQL} \\
+% \medskip
+% \divider
+
+% \faGlobe~ \skillHeader{Web Development \& other} \smallskip \\
+% \mytagI[ThemeGradient05]{HTML}{HTML}
+% \mytagI[ThemeGradient02]{LESS}{LESS}
+% \mytagI[ThemeGradient05]{JavaScript}{JavaScript} \\
+
+% \mytagI[ThemeGradient05]{Marko, edited}{Marko}
+% \mytagI[ThemeGradient03]{nodejs}{Node.js} \\
+% \medskip
+
+% \mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}
+% \mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
+% \medskip
+% \divider
+
+
+\cvsection{Skills {\lowercase{cont.}} {\footnotesize \lowercase{proficiency by saturation}}}
+% \faGlobe~ \skillHeader{Web Development \& other} \smallskip \\
+\faGlobe~ \skillHeader{Web Development} \smallskip \\
 \mytagI[ThemeGradient05]{HTML}{HTML}
 \mytagI[ThemeGradient02]{LESS}{LESS}
 \mytagI[ThemeGradient05]{JavaScript}{JavaScript} \\
@@ -654,22 +743,27 @@ Last modified \mydate. \par
 \mytagI[ThemeGradient05]{Marko, edited}{Marko}
 \mytagI[ThemeGradient03]{nodejs}{Node.js} \\
 \medskip
+\divider
 
+
+\faCubes~ \skillHeader{MISC} \smallskip \\
 \mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}
-\mytagI[ThemeGradient02]{Postman, modified}{Postman} \\
+\mytagI[ThemeGradient02]{Postman, modified}{Postman}
+\mytagI[ThemeGradient02]{unity}{Unity} \\
 \medskip
 \divider
 
-\faWrench~ \skillHeader{Tools} \smallskip \\
-\mytagI[ThemeGradient05]{git}{Git}
-\cvtag{\textcolor{ThemeGradient02}{ssh}}
+\faWrench~ \skillHeader{Tools \& IDEs} \smallskip \\
+\cvtag{\textcolor{ThemeGradient02}{SSH}}
 \mytagI[ThemeGradient03]{Bash, modified}{Shell Script}
-\mytagI[ThemeGradient03]{Linux, modified}{Linux} \\
+\mytagI[ThemeGradient03]{Linux, modified}{Linux}
+\mytagI[ThemeGradient03]{docker}{docker} \\
 \medskip
 
+\mytagI[ThemeGradient05]{git}{Git}
 \mytagI[ThemeGradient06]{PyCharm}{PyCharm}
-\mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell}
-\mytagI[ThemeGradient03]{Clion}{CLion} \\
+\mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell} \\
+\mytagI[ThemeGradient03]{Clion}{CLion}
 \mytagI[ThemeGradient05]{Visual Studio Code}{VSCode}
 \mytagI[ThemeGradient02]{Jupyter, modified}{Jupyter Lab} \\
 \medskip
@@ -695,19 +789,54 @@ Last modified \mydate. \par
 
 
 
-\cvsection{Honors \& Awards}
-\cvachievement{\faBook}{Dean's List \& University Honors \&
-    \linked[0]{James B. Angell Scholar}{https://honors.umich.edu/awards.php}}
-    {UMD \& UMich academic excellence. 2018 - 2022}
+% \cvsection{Honors \& Awards}
+% \cvachievement{\faBook}{Dean's List \& University Honors \&
+%     \linked[0]{James B. Angell Scholar}{https://honors.umich.edu/awards.php}}
+%     {UMD \& UMich academic excellence. 2018 - 2022}
 
 
-\cvachievement{\faCertificate}{University Honors}
-    {UMD Honors Program. 2019 - 2020}
+% \cvachievement{\faCertificate}{University Honors}
+%     {UMD Honors Program. 2019 - 2020}
 
 
-\cvachievement{\faBicycle}{\nth{4}/20 place in \linked[0]{125 Mile E-Bike Challenge}
-    {https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}}
-    {A. James Clark School of Engineering. 2018 - 2019}
+% \cvachievement{\faBicycle}{\nth{4}/20 place in \linked[0]{125 Mile E-Bike Challenge}
+%     {https://ece.umd.edu/events/student-events/125-mile-e-bike-challenge}}
+%     {A. James Clark School of Engineering. 2018 - 2019}
+
+
+\cvsection{Work Experiences \lowercase{cont.}}
+\cvevent{UX/UI Design Intern}
+    {\linked[0]{OpptIn}{https://www.opptin.com}{\normalfont\textcolor{body}{, a start-up company}}}
+    {Mar. - May. 2020}{Scranton, PA (remote)}{}
+\begin{itemize}
+    % \item Why: Localized search; Automatic attendance; Slide annotation sharing
+
+    \item Brainstormed UI framework with functional widgets to augment location-specific real-life spaces
+
+    \item Iterated company logo designs 3 times with \textasciitilde30 illustrations; Prototyped >20 UI layouts
+    for space discovery and management in a team of 6; Implemented layouts in Android
+
+    \item Prototyped UI animations and dynamic style changes for pre- and post-joining spaces
+
+    \item Served as the key communicator on UX concepts and engineering constraints among design and development teams
+\end{itemize}
+\divider{}
+% \pagebreak
+
+
+
+\cvsection{Teaching}
+\cvevent{Art Museum Research Peer Mentor}{}{Jan. - Apr. 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
+\begin{itemize}
+    \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
+
+    \item Reviewed students' Unity project submissions
+
+    \item Wrote Android Studio \& AR development tutorial based on Google SDK
+
+    \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
+\end{itemize}
+\medskip
 
 \pagebreak
 

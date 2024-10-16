@@ -44,7 +44,7 @@
 \RequirePackage[margin=2cm]{geometry}
 
 % ========================== Begin of modified ==========================
-% \RequirePackage[fixed]{fontawesome5}  # Seems some icons rendered without inner holes
+% \RequirePackage[fixed]{fontawesome5}  % Seems some icons rendered without inner holes
 \RequirePackage{fontawesome}
 % ========================== End of modified ==========================
 \RequirePackage{ifxetex,ifluatex}
