@@ -11,6 +11,9 @@
 
 % ====================================== Begin of Added ======================================
 \usepackage[activate={true,nocompatibility},final,tracking,protrusion,expansion,factor=1100,stretch=10,shrink=10]{microtype}
+
+\newtoggle{compact}
+\toggletrue{compact}  % Toggle on for compact resume, comment out for full CV
 % ====================================== End of Added ======================================
 
 % ====================================== Begin of Modified ======================================
@@ -117,6 +120,7 @@
 
 % set header/footer
 \usepackage{fancyhdr}
+\usepackage{lastpage}
 \setlength\headheight{16pt}
 \renewcommand{\headrulewidth}{0.0025pt}
 \setlength{\headsep}{16pt}
@@ -129,9 +133,14 @@
 \fancypagestyle{nontitlepage}{%
     \fancyhead[L]{\small Curriculum Vitae}
     \fancyhead[R]{\linked[0]{\small Yuzhao (Stefan) Heng}{https://stefanheng.github.io}}
+    \fancyfoot[L]{%
+        \ifnum\value{page}=\getpagerefnumber{LastPage}%
+            \footnotesize Last modified \mydate.%
+        \fi%
+    }
 }%
 \fancyhf{}
-\fancyfoot[R]{\thepage}
+\fancyfoot[R]{\footnotesize \thepage/\pageref{LastPage}}
 
 \newcommand{\bodyfontsize}{\footnotesize}
 
@@ -288,24 +297,31 @@
     \item GPA: 3.97/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
     \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
         Discrete Mathematics; Programming Languages
-    \item Featured Courses:
-        % Applied Probability \& Statistics; Logic;
-        Applied Statistics; Logic;
-        2D \& 3D Design; Drawing; Digital Art \& Design;
-        Morals \& Ethics
+
+    \iftoggle{compact}{
+        \item Featured Courses: 2D \& 3D Design; Drawing; Digital Art \& Design
+    }{
+        \item Featured Courses:
+            % Applied Probability \& Statistics; Logic;
+            Applied Statistics; Logic;
+            2D \& 3D Design; Drawing; Digital Art \& Design;
+            Morals \& Ethics
+    }
 \end{itemize}
 \dividerSmall
 
 
 
-\cveventSameLine{\linked[0]{High School Affiliated to Renmin Univ. of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
-    {High School Diploma}
-    {Aug. 2015 - Jul. 2018}{Beijing, CN}
-\begin{itemize}
-    \item GPA: 3.93/4.0
-    \item Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics
-\end{itemize}
-\dividerSmall
+\iftoggle{compact}{}{
+    \cveventSameLine{\linked[0]{High School Affiliated to Renmin Univ. of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
+        {High School Diploma}
+        {Aug. 2015 - Jul. 2018}{Beijing, CN}
+    \begin{itemize}
+        \item GPA: 3.93/4.0
+        \item Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics
+    \end{itemize}
+    \dividerSmall
+}
 
 
 
@@ -516,62 +532,62 @@
 \dividerSmall
 
 
+\iftoggle{compact}{}{
+    \cveventSameLine{}
+        {ECG Classification}
+        {Sep. 2021 - Apr. 2022}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
+    \begin{itemize}
+        % \item Mentored by \linked[0]{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd} @
 
-\cveventSameLine{}
-    {ECG Classification}
-    {Sep. 2021 - Apr. 2022}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
-\begin{itemize}
-    % \item Mentored by \linked[0]{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd} @
+        % \item Proposed Machine-Learning-based
+        % Premature Ventricular Contraction (PVC) exit site prediction to
+        % aid diagnosis \& ablation surgery efficiency
 
-    % \item Proposed Machine-Learning-based
-    % Premature Ventricular Contraction (PVC) exit site prediction to
-    % aid diagnosis \& ablation surgery efficiency
+        \item Devised self-supervised pretraining objectives for 12-channel ECG timeseries based on symbolic and real-valued representations
 
-    \item Devised self-supervised pretraining objectives for 12-channel ECG timeseries based on symbolic and real-valued representations
+        \item Reviewed literature to Compile a dataset collection of 50K+ 12-lead ECG records from 8 datasets
 
-    \item Reviewed literature to Compile a dataset collection of 50K+ 12-lead ECG records from 8 datasets
-
-    \item Pioneered applying the Vision Transformer architecture for ECG disease classification with heart-signal data augmentations; Visualized attention layers for explainability
-\end{itemize}
-\dividerSmall
-
-
-
-
-\cveventSameLine{}
-    {ECG Visualization}
-    {Sep. 2020 - Apr. 2021}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
-\begin{itemize}
-    % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
-        % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
-
-    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for
-    with features including thumbnail, channel toggle, box measurement \& annotation
-    % for a public cardiovascular disease management and analytics infrastructure
-
-    \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs; Gathered feedbacks from cardiologists
-
-    \item Algorithmically Optimized rendering efficiency of GBs of signal records
-\end{itemize}
-\dividerSmall
+        \item Pioneered applying the Vision Transformer architecture for ECG disease classification with heart-signal data augmentations; Visualized attention layers for explainability
+    \end{itemize}
+    \dividerSmall
 
 
 
-\cveventSameLine{}
-    {AR Art Museum Experience}
-    {Apr. 2019 - May. 2020}{Prof. Kyungjin Yoo @ \linked[0]{UMD}{https://www.fire.umd.edu}}
-\begin{itemize}
-    % \item Mentored by
 
-    \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
-    that renders art museum paintings in 6 base colors to educate color theory \& raise engagement
+    \cveventSameLine{}
+        {ECG Visualization}
+        {Sep. 2020 - Apr. 2021}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
+    \begin{itemize}
+        % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
+            % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
 
-    \item Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction \& color map file parsing
+        \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for
+        with features including thumbnail, channel toggle, box measurement \& annotation
+        % for a public cardiovascular disease management and analytics infrastructure
 
-    \item Developed \& Tested painting segmentation heuristics based on color \& semantics
-\end{itemize}
-\dividerSmall
+        \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs; Gathered feedbacks from cardiologists
 
+        \item Algorithmically Optimized rendering efficiency of GBs of signal records
+    \end{itemize}
+    \dividerSmall
+
+
+
+    \cveventSameLine{}
+        {AR Art Museum Experience}
+        {Apr. 2019 - May. 2020}{Prof. Kyungjin Yoo @ \linked[0]{UMD}{https://www.fire.umd.edu}}
+    \begin{itemize}
+        % \item Mentored by
+
+        \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
+        that renders art museum paintings in 6 base colors to educate color theory \& raise engagement
+
+        \item Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction \& color map file parsing
+
+        \item Developed \& Tested painting segmentation heuristics based on color \& semantics
+    \end{itemize}
+    \dividerSmall
+}
 
 
 
@@ -582,10 +598,12 @@
 % \smallskip \\
 \mytagI[ThemeGradient08]{Python}{Python}
 \mytagI[ThemeGradient03]{Cpp}{C/C++}
-\mytagI[ThemeGradient01]{ruby}{Ruby}
 \mytagI[ThemeGradient02]{Java}{Java}
-\mytagI[ThemeGradient02]{Android, modified}{Android}
-\mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
+\iftoggle{compact}{\\}{
+    \mytagI[ThemeGradient01]{ruby}{Ruby}
+    \mytagI[ThemeGradient02]{Android, modified}{Android}
+    \mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
+}
 % \medskip
 % \divider
 \smallskip
@@ -635,17 +653,19 @@
 \smallskip
 \dividerSmall
 
-
-\faCubes~ \skillHeader{MISC}: ~
-% \smallskip \\
-\mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}
-\mytagI[ThemeGradient02]{Postman, modified}{Postman}
-\mytagI[ThemeGradient02]{unity}{Unity} \\
-% \medskip
-% \divider
-\smallskip
-\dividerSmall
-
+\iftoggle{compact}{%
+    % ignore if for resume
+}{%
+    \faCubes~ \skillHeader{MISC}: ~%
+    % \smallskip \\
+    \mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}%
+    \mytagI[ThemeGradient02]{Postman, modified}{Postman}%
+    \mytagI[ThemeGradient02]{unity}{Unity} \\%
+    % \medskip
+    % \divider
+    \smallskip
+    \dividerSmall%
+}%
 
 \faWrench~ \skillHeader{Tools \& IDEs}: ~
 % \smallskip \\
@@ -692,24 +712,25 @@
 \smallskip
 \dividerSmall
 
-\pagebreak
+\iftoggle{compact}{}{
+    \pagebreak
 
 
 
 
-\cvsection{Teaching}
-\cveventSameLine{}{Art Museum Research Peer Mentor}{Jan. - Apr. 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
-\begin{itemize}
-    \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
+    \cvsection{Teaching}
+    \cveventSameLine{}{Art Museum Research Peer Mentor}{Jan. - Apr. 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
+    \begin{itemize}
+        \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
 
-    \item Reviewed students' Unity project submissions
+        \item Reviewed students' Unity project submissions
 
-    \item Wrote Android Studio \& AR development tutorial based on Google SDK
+        \item Wrote Android Studio \& AR development tutorial based on Google SDK
 
-    \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
-\end{itemize}
-\dividerSmall
-
+        \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
+    \end{itemize}
+    \dividerSmall
+}
 
 % ====================================== Begin of Modified ======================================
 % \end{paracol}
@@ -718,8 +739,8 @@
 
 \vfill
 
-\small
-Last modified \mydate. \par
+% \small
+% Last modified \mydate. \par
 
 
 \end{document}
