@@ -70,7 +70,7 @@
     \ifluatex\tutextrue\else\tutexfalse\fi
   \fi
 }{}
-\iftutex 
+\iftutex
   \RequirePackage{fontspec}
 \else
   %% v1.3.2 attempts to make ligatures
@@ -117,6 +117,20 @@
 \newcommand{\locationname}{Location}
 \newcommand{\datename}{Date}
 
+% ====================================== Begin of Added ======================================
+\colorlet{link}{accent}
+\colorlet{achievement}{emphasis}
+\colorlet{affiliation}{emphasis}
+
+% Pretty underline, inspired by https://tex.stackexchange.com/a/518546
+\RequirePackage{ulem}
+\normalem
+\RequirePackage{contour}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+% ====================================== End of Added ======================================
+
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
 \RequirePackage[skins]{tcolorbox}
@@ -131,6 +145,19 @@
 
 \setlength{\parindent}{0pt}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+% ====================================== End of Added ======================================
+% \newcommand{\dividerSmall}{
+%     \vspace{-0.5ex}
+%     \noindent\smash{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\smallskip}
+% }
+\newcommand{\dividerSmall}{%
+  \vspace{-0.75ex}%
+  \noindent\raisebox{0.5ex}{%
+    \textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}%
+  }
+%   \vspace{-0.75ex}%
+}
+% ====================================== End of Added ======================================
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -157,7 +184,7 @@
 %% v1.6: Use accsupp so that when copying/pasting the icon from PDF to a text
 %%       file, the icon name is pasted
 %% v1.7: Some tweaks/corrections so that accsupp is for icons only
-%% v1.7.1: Bugfix to support some symbol commands e.g. academicons commands 
+%% v1.7.1: Bugfix to support some symbol commands e.g. academicons commands
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
@@ -168,7 +195,10 @@
      \if@withhyper%
       \mbox{\textcolor{accent}%
       {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
-      ~\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
+      % ====================================== Begin of Modified ======================================
+    %   ~\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
+      ~\href{#3}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#2}}}}\hspace{2em}}% use `emphasis`' color & underline
+      % ====================================== End of Modified ======================================
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}
@@ -290,11 +320,18 @@
   \begingroup
     \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
-    \raggedright%
-    {\namefont\color{name}\MakeUppercase{\@name}\par}
+    % ====================================== Begin of Modified ======================================
+    % \raggedright%
+    \centering% center name & tagline instead, note no support for photos
+    % {\namefont\color{name}\MakeUppercase{\@name}\par}
+    {\namefont\color{name}{\@name}\par}% drop upper casing
+    % ====================================== End of Added ======================================
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip
+    % ====================================== Begin of Added ======================================
+    \raggedright
+    % ====================================== End of Added ======================================
     {\personalinfofont\@personalinfo\par}
     \end{minipage}\hfill%
     \altacv@right@photos\par%
@@ -306,8 +343,11 @@
 \newcommand{\cvsection}[2][]{%
   \nointerlineskip\bigskip%  %% bugfix in v1.6.2
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
-  {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+  % ====================================== Begin of Modified ======================================
+%   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
+  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]% make smaller gap
+%   {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{headingrule}\rule{\linewidth}{0.75pt}\par}\medskip% make smaller gap
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -336,6 +376,64 @@
   \medskip\normalsize
 }
 
+% ====================================== Begin of Added ======================================
+\newcommand{\cveventSameLine}[4]{% all content on the same line, date & time on the right
+  \ifstrequal{#1}{}{}{
+    {\large\color{emphasis}#1}
+  }
+%   \smallskip
+  \normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}
+%   \smallskip
+  }
+  \hfill
+%   \ifstrequal{#3}{}{}{%
+%   {\small\makebox[0.25\linewidth][r]%
+%     {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+%     ~#3}%
+%   }}%
+% \ifstrequal{#4}{}{}{%
+%   {\small\makebox[0.25\linewidth][r]%
+%     {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+%       ~#4}%
+%   }}\par
+  \ifstrequal{#3}{}{}{%
+    % {\small\makebox[0.1\linewidth][l]%
+        % \small
+      \footnotesize
+      ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      ~#3}%
+    % }
+    }%
+  \ifstrequal{#4}{}{}{%
+    % {\small\makebox[0.1\linewidth][l]%
+    %   \small
+      \footnotesize
+      ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+      ~#4}%
+    }
+    % }
+    % \par
+%   \medskip\normalsize
+  \smallskip
+  \normalsize
+}
+% ====================================== End of Added ======================================
+
+% \newcommand{\cvevent}[5]{%
+%   {\large\color{accent}#1
+%     \ifstrequal{#5}{}{\par}{\hfill}  % If #5 specified, align #2 to the right
+%   }
+%   \smallskip\normalsize
+%   \ifstrequal{#2}{}{\smallskip}{
+%     \ifstrequal{#5}{}{\hfill}{}{\bfseries\color{emphasis}#2}\par\smallskip
+%   }
+%   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
+%   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
+%   \medskip\normalsize
+% }
+
 % v1.7: adds accsupp for the icon as well
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
@@ -348,6 +446,13 @@
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
+
+% ====================================== Begin of Added ======================================
+% Add SVG support
+\newcommand{\cvtagI}[2]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+}
+% ====================================== End of Added ======================================
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
@@ -471,7 +576,7 @@
     }%
     \iftoggle{boldname}{\textbf{##1}}{##1}%
   }%
-% 
+%
   \renewcommand*{\mkbibnamegiven}[1]{%
     \global\togglefalse{boldname}%
     \foreach \my@fname / \my@gname in \my@namelist{%

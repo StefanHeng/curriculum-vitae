@@ -1,28 +1,22 @@
-%%%%%%%%%%%%%%%%%
-% This is an sample CV template created using altacv.cls
-% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-%
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2003/12/01 or later.
-%%%%%%%%%%%%%%%%
-
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
-
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 %% AltaCV uses the fontawesome5 and simpleicons packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
-% Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+% ====================================== Begin of Modified ======================================
+% \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1cm,right=1cm,top=2cm,bottom=1cm,columnsep=1.2cm}
+% ====================================== End of Modified ======================================b
 
+% ====================================== Begin of Added ======================================
+\usepackage[activate={true,nocompatibility},final,tracking,protrusion,expansion,factor=1100,stretch=10,shrink=10]{microtype}
+% ====================================== End of Added ======================================
+
+% ====================================== Begin of Modified ======================================
 % The paracol package lets you typeset columns of text in parallel
-\usepackage{paracol}
+% \usepackage{paracol}
+% ====================================== End of Modified ======================================
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -41,258 +35,691 @@
   \renewcommand{\familydefault}{\sfdefault}
 \fi
 
-% Change the colours if you want to
+
+% ====================================== Begin of Modified ======================================
+\definecolor{DarkOrangeShade}{HTML}{331D06}
+\definecolor{DarkPinkShade}{HTML}{663145}
+
+\definecolor{GreyOrange}{HTML}{806E66}
+\definecolor{GreyOrangePastel}{HTML}{ED9B49}
+
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{450808}
-\definecolor{PastelRed}{HTML}{8F0D0D}
-\definecolor{GoldenEarth}{HTML}{E7D192}
-\colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
+\definecolor{GreyMid}{HTML}{5A5A5A}% a mix of the 2 colors above
+
+% \definecolor{DarkPastelRed}{HTML}{450808}
+% \definecolor{PastelRed}{HTML}{8F0D0D}
+% \definecolor{GoldenEarth}{HTML}{E7D192}
+
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+% \colorlet{heading}{DarkPastelRed}
+% \colorlet{headingrule}{GoldenEarth}
+% \colorlet{subheading}{PastelRed}
+% \colorlet{accent}{PastelRed}
+\colorlet{name}{DarkOrangeShade}
+\colorlet{tagline}{DarkPinkShade}
+\colorlet{heading}{GreyOrange}
+\colorlet{headingrule}{GreyOrangePastel}
+\colorlet{subheading}{GreyOrange}
+\colorlet{accent}{GreyOrangePastel}
+
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
-% Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
+\colorlet{achievement}{GreyMid}
+\colorlet{affiliation}{GreyMid}
 
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\cvItemMarker}{{\small\textbullet}}
-\renewcommand{\cvRatingMarker}{\faCircle}
-% ...and the markers for the date/location for \cvevent
-% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
-% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+% Change the markers for the date/location for \cvevent
+\renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+\renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+% override marker for `itemize`
+\renewcommand{\cvItemMarker}{{\raisebox{0.15ex}{\scriptsize\textbullet}}}
+\let\itemmarker\cvItemMarker
+
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\namefont}{\Huge\bfseries}% use the same default font
+% \renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\personalinfofont}{\footnotesize\bfseries}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsectionfont}{\large\ltseries}% light as supported by opensans
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+\renewcommand{\cvsubsectionfont}{\normalsize}
+% ====================================== End of Modified ======================================
 
 
-% If your CV/résumé is in a language other than English,
-% then you probably want to change these so that when you
-% copy-paste from the PDF or run pdftotext, the location
-% and date marker icons for \cvevent will paste as correct
-% translations. For example Spanish:
-% \renewcommand{\locationname}{Ubicación}
-% \renewcommand{\datename}{Fecha}
+% ====================================== Begin of Added ======================================
+\setlength{\parskip}{0pt}%drop new paragraph spacing
+
+\colorlet{link}{emphasis}
+\newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
+
+\usepackage{calc}
+% use `enumitem` to add indentation & reduce top & bottom spacing; note * for appending configs for some defined in altacv
+\setlist*{before=\vspace{0pt},after=\vspace{0pt},topsep=0pt,partopsep=0pt,leftmargin=0.5cm}
+
+% for light fonts, taken from https://tex.stackexchange.com/q/176722
+\newcommand{\ltseries}{%
+   \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
+}
 
 
-%% Use (and optionally edit if necessary) this .tex if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
+% \usepackage[default, type1]{sourcesanspro}
+\usepackage[default]{opensans}
+\setmainfont{opensans}
+
+% for machine readability/ATS parsing
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+
+% set header/footer
+\usepackage{fancyhdr}
+\setlength\headheight{16pt}
+\renewcommand{\headrulewidth}{0.0025pt}
+\setlength{\headsep}{16pt}
+\setlength{\footskip}{16pt}
+\fancypagestyle{titlepage}{%
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[L]{}
+    \fancyhead[R]{}
+}%
+\fancypagestyle{nontitlepage}{%
+    \fancyhead[L]{\small Curriculum Vitae}
+    \fancyhead[R]{\linked[0]{\small Yuzhao (Stefan) Heng}{https://stefanheng.github.io}}
+}%
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
+\newcommand{\bodyfontsize}{\footnotesize}
+
+% for CV modified date
+\usepackage[super]{nth}
+\usepackage[short]{datetime}
+\newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
+
+
+% for the skills section
+\newcommand{\skillHeader}[1]{\footnotesize\textit{#1}}
+
+% Based on GreyOrangePastel & LightGrey
+\definecolor{ThemeGradient01}{HTML}{666666}
+\definecolor{ThemeGradient02}{HTML}{7b6462}
+\definecolor{ThemeGradient03}{HTML}{93645d}
+\definecolor{ThemeGradient04}{HTML}{ac6856}
+\definecolor{ThemeGradient05}{HTML}{bf7355}
+\definecolor{ThemeGradient06}{HTML}{d08256}
+\definecolor{ThemeGradient07}{HTML}{df935a}
+\definecolor{ThemeGradient08}{HTML}{eca55f}
+
+\usepackage[inkscapearea=nocrop]{svg}
+\usepackage{ifthen}
+\def \logoPath {assets/svg/}
+\newcommand{\mytagI}[3][]{%
+   \ifthenelse{ \equal{#1}{} }
+      {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
+      {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {\textcolor{#1}{#3}}}
+}
+% ====================================== End of Added ======================================
+
+% ====================================== Begin of Modified ======================================
 % \input{pubs-authoryear.cfg}
+% \input{pubs-num.cfg}
+\InputIfFileExists{pubs-authoryear.cfg}{}{}
+\addbibresource{main.bib}
+\AtBeginBibliography{\bodyfontsize}
 
-%% Use (and optionally edit if necessary) this .tex if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
-\input{pubs-num.cfg}
+% try to align the indentation w/ the rest of bullet lists,
+%   as generated by ChatGPT o3-mini-high: https://chatgpt.com/c/67a963d1-03a8-800f-8407-3363c7b1b107
+\defbibenvironment{bibliography}
+  {
+    \vspace*{0.75em}% add space above the bib list for the custom header
+    \list
+     {
+       % the label
+       \printtext[labelnumberwidth]{%
+         \printfield{labelprefix}%
+         \printfield{labelnumber}%
+       }
+     }
+     {
+       \setlength{\labelwidth}{\labelnumberwidth}% width of the label
+       \setlength{\leftmargin}{\dimexpr\labelnumberwidth+\bibhang\relax+0.25em}%
+       \setlength{\itemindent}{-\bibhang}%
+       \setlength{\itemsep}{\bibitemsep}%
+       \setlength{\parsep}{\bibparsep}%
+       \setlength{\bibhang}{1em}
+       \setlength{\topsep}{0pt}% space above and below the list
+       \setlength{\partopsep}{0pt}% extra space when the list starts a new paragraph
+     }
+  }
+  {\endlist}
+  {\item}
+% ====================================== End of Modified ======================================
 
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
+
 
 \begin{document}
-\name{Your Name Here}
-\tagline{Your Position or Tagline Here}
+% ====================================== Begin of Added ======================================
+\vspace*{-3em}
+\thispagestyle{titlepage}
+\pagestyle{nontitlepage}
+\bodyfontsize
+\AtBeginEnvironment{itemize}{\bodyfontsize}
+% ====================================== End of Added ======================================
+
+\name{Yuzhao (Stefan) Heng}
+
+\tagline{MSCS Student at Georgia Tech; NLP Researcher with a focus on Large Language Models}
 %% You can add multiple photos on the left or right
-\photoR{2.8cm}{Globe_High}
+% \photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
 \personalinfo{%
-  % Not all of these are required!
-  \email{your_name@email.com}
-  \phone{000-00-0000}
-  \mailaddress{Åddrésş, Street, 00000 Cóuntry}
-  \location{Location, COUNTRY}
-  \homepage{www.homepage.com}
-  % \twitter{@twitterhandle}
-  \xtwitter{@x-handle}
-  \linkedin{your_id}
-  \github{your_id}
-  \orcid{0000-0000-0000-0000}
-  %% You can add your own arbitrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+    \printinfo{\faHome}{United States Permanent Resident}
+    \homepage{stefanheng.github.io}
+    \linkedin{stefan-heng}
+    \github{StefanHeng}
+    \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ] \par
 
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-  %%
-  %% For services and platforms like Mastodon where there isn't a
-  %% straightforward relation between the user ID/nickname and the hyperlink,
-  %% you can use \printinfo directly e.g.
-  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-  %% But if you absolutely want to create new dedicated info fields for
-  %% such platforms, then use \NewInfoField* with a star:
-  % \NewInfoField*{mastodon}{\faMastodon}
-  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
-  %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
+    \email{stefan.hg@outlook.com}
+    \phone{(301)454-9176}
+    \location{Atlanta, GA}
+    \xtwitter{yuzhao_heng}
+    % \printinfo{\faBlackTie}{resume}[https://drive.google.com/file/d/1E9WPX8KMI6EQltD2sCN9kxW5_rKSlIzX/view?usp=sharing]  % TODO: add link
+    \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]
+    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]
 }
 
 \makecvheader
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 % \AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+% ====================================== Begin of Modified ======================================
+% \columnratio{0.6}
+% \begin{paracol}{2}
+% ====================================== End of Modified ======================================
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
-\cvsection{Experience}
 
-\cvevent{Job Title 1}{Company 1}{Month 20XX -- Ongoing}{Location}
-\begin{itemize}
-\item Job description 1
-\item Job description 2
-\end{itemize}
 
-\divider
 
-\cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
-\begin{itemize}
-\item Job description 1
-\item Job description 2
-\end{itemize}
-
-\cvsection{Projects}
-
-\cvevent{Project 1}{Funding agency/institution}{}{}
-\begin{itemize}
-\item Details
-\end{itemize}
-
-\divider
-
-\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
-A short abstract would also work.
-
-\medskip
-
-\cvsection{A Day of My Life}
-
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-\wheelchart{1.5cm}{0.5cm}{%
-  6/8em/accent!30/{Sleep,\\beautiful sleep},
-  3/8em/accent!40/Hopeful novelist by night,
-  8/8em/accent!60/Daytime job,
-  2/10em/accent/Sports and relaxation,
-  5/6em/accent!20/Spending time with family
-}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-\newpage
-
-\cvsection{Publications}
-
-%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
-%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
-%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
-\mynames{Lim/Lian\bibnamedelima Tze,
-  Wong/Lian\bibnamedelima Tze,
-  Lim/Tracy,
-  Lim/L.\bibnamedelimi T.}
-%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
-
-\nocite{*}
-
-\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
-\cvsection{My Life Philosophy}
-
-\begin{quote}
-``Something smart or heartfelt, preferably in one sentence.''
-\end{quote}
-
-\cvsection{Most Proud of}
-
-\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
-
-\cvsection{Strengths}
-
-% Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
-
-\cvtag{Hard-working}
-\cvtag{Eye for detail}\\
-\cvtag{Motivator \& Leader}
-
-\divider\smallskip
-
-\cvtag{C++}
-\cvtag{Embedded Systems}\\
-\cvtag{Statistical Analysis}
-
-\cvsection{Languages}
-
-\cvskill{English}{5}
-\divider
-
-\cvskill{Spanish}{4}
-\divider
-
-\cvskill{German}{3.5} %% Supports X.5 values.
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
-\medskip
 
 \cvsection{Education}
 
-\cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
-Thesis title: Wonderful Research
-
-\divider
-
-\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
-
-\divider
-
-\cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
-
+\cveventSameLine{\linked[0]{Georgia Tech}{https://www.gatech.edu}}
+    {\linked[0]{M.S. in Computer Science}{https://www.cc.gatech.edu/degree-programs/master-science-computer-science}}
+    {Aug. 2023 - Dec. 2025}{Atlanta, GA}
+\begin{itemize}
+    \item GPA: 4.0/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1d8YsHVGGYXTqwO-0FZjeuxpByIEFsraX/view?usp=sharing}
+    % \item Featured courses: Machine Learning; Natural Language; Deep Learning for Text Data; Large Language Models; Game Artificial Intelligence; Data-Centric Machine Learning
+    \item Featured courses: Machine Learning; Natural Language Processing; Deep Learning for Text Data; Large Language Models; Game AI; Data-Centric ML
+\end{itemize}
 % \divider
-
-\cvsection{Referees}
-
-% \cvref{name}{email}{mailing address}
-\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-{Address Line 1\\Address line 2}
-
-\divider
-
-\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-{Address Line 1\\Address line 2}
+\dividerSmall
 
 
-\end{paracol}
+
+\cveventSameLine{\linked[0]{University of Michigan}{https://umich.edu}}
+    {\linked[0]{B.S. in Computer Science}{https://cse.engin.umich.edu}}
+    {Sep. 2020 - Apr. 2022}{Ann Arbor, MI}
+\begin{itemize}
+    \item GPA: 3.98/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1cXDQv8PgRQ2GGUN9pupWWdQcZ0xIVtvi/view?usp=sharing}
+    % \item Featured courses: Data Structures \& Algorithms; Computer Organization;
+    %     Foundation of Computer Science; Machine Learning; Artificial Intelligence;
+    %     Conversational AI; Natural Language Processing; Deep Learning for Computer Vision;
+    %     Linear Algebra; Statistics \& Data Analysis\hspace{-0.25em}
+    \item Featured courses: Data Structures \& Algorithms; Computer Organization;
+    CS Theory; ML; Artificial Intelligence;
+    Conversational AI; NLP
+    % DL for CV
+    % Linear Algebra; Statistics \& Data Analysis\hspace{-0.25em}
+\end{itemize}
+% \divider
+\dividerSmall
+
+
+
+\cveventSameLine{\linked[0]{University of Maryland}{https://www.umd.edu}}
+    {\linked[0]{B.S. in Computer Science}{https://www.cs.umd.edu}}
+    {Aug. 2018 - May. 2020}{College Park, MD}
+\begin{itemize}
+    \item GPA: 3.97/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
+    \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
+        Discrete Mathematics; Programming Languages
+    \item Featured Courses:
+        % Applied Probability \& Statistics; Logic;
+        Applied Statistics; Logic;
+        2D \& 3D Design; Drawing; Digital Art \& Design;
+        Morals \& Ethics
+\end{itemize}
+\dividerSmall
+
+
+
+\cveventSameLine{\linked[0]{High School Affiliated to Renmin Univ. of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}
+    {High School Diploma}
+    {Aug. 2015 - Jul. 2018}{Beijing, CN}
+\begin{itemize}
+    \item GPA: 3.93/4.0
+    \item Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics
+\end{itemize}
+\dividerSmall
+
+
+
+
+
+\cvsection{Work Experience}
+\cveventSameLine{\linked[0]{22 Minds LLC.}{https://www.ebay.com}}
+    {NLP Research Engineer Intern}
+    {Jan. 2025 - Present}{Atlanta, GA}
+\begin{itemize}
+    \item Innovating new dialog data synthesis and sub-billion-paremeter LM training pipeline for domain-specific chatbots
+    \item Presenting data generation plan and ideas weekly within team of 6; Iteratively developing for a shopping mall case-study
+\end{itemize}
+\dividerSmall
+
+
+\cveventSameLine{\linked[0]{eBay Inc.}{https://www.ebay.com}}
+    {Software Engineer Intern}
+    {May. 2021 - Jul. 2021}{San Jose, CA}
+\begin{itemize}
+    % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
+
+    \item Successfully launched new video feature in item listing tool at Seller Experience team, impacting >10\% eBay sellers
+
+    \item Presented architecture, implementation, upstream service challenges \& next steps; Live-demoed to internal team of 40+
+\end{itemize}
+\dividerSmall
+
+
+\cveventSameLine{\linked[0]{OpptIn}{https://www.opptin.com}}
+    {UX/UI Design Intern}
+    {Mar. - May. 2020}{Scranton, PA}{}
+\begin{itemize}
+    % \item Why: Localized search; Automatic attendance; Slide annotation sharing
+
+    \item Brainstormed UI framework with functional widgets to augment location-specific real-life spaces
+
+    \item Iterated company logo designs 3 times with \textasciitilde30 illustrations; Prototyped >20 UI layouts
+    for space discovery and management in a team of 6; Implemented layouts in Android
+
+    \item Prototyped UI animations and dynamic style changes for pre- and post-joining spaces
+
+    \item Served as the key communicator on UX concepts and engineering constraints among design and development teams
+\end{itemize}
+\dividerSmall
+
+
+
+
+
+\cvsection{Publications}
+\nocite{*}
+\vspace{-0.75em}
+\printbibliography[heading=pubtype,keyword={accepted},title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+\dividerSmall
+
+\vspace{-0.5em}
+\printbibliography[heading=pubtype,keyword={preprint},title={\printinfo{\faFile*}{Preprints}},type=misc]
+\dividerSmall
+
+
+
+
+
+
+\cvsection{Keywords}
+\bodyfontsize
+\cvtag{Data-Centric AI}
+\cvtag{Dataset Synthesis}
+\cvtag{Large-Scale Data Processing Pipeline} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\cvtag{NLP} \cvtag{Large Language Model} \cvtag{Alignment}
+\cvtag{Text Classification}
+\cvtag{Named Entity Recognition} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\cvtag{Organized}
+\cvtag{Craftsmanship}
+\cvtag{Presentation}
+\cvtag{Visualization} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+\pagebreak
+
+
+
+
+
+\cvsection{Research Experiences}
+\cveventSameLine{}
+    {Strength-Controlled Preference Data Synthesis}
+    {Apr. 2024 - Jan. 2025}{\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
+\begin{itemize}
+    % \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
+
+    \item Innovating preference dataset synthesis with fine-grained preference strengths
+
+    \item Processed 100K samples and filtered low-quality samples by heuristics
+
+    \item Coded \& Optimized distributed training \& inferencing pipeline for 3 distinct reward model architectures, reducing eval time by 2X
+
+    \item Designed uncertainty metrics for training data selection leveraging reward model ensemble logits
+
+    % \item Reward model accuracy trained from negative-prompting-generated data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
+    \item Reward model accuracy trained from negative-prompted data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
+\end{itemize}
+\dividerSmall
+% \pagebreak
+
+
+\cveventSameLine{}
+    {LLM as IE Data Generator}
+    {Sep. 2023 - Mar. 2024}{\linked[0]{Chao Zhang}{http://chaozhang.org}'s group @ \linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
+\begin{itemize}
+    % \item Mentored by Ph.D. students at
+
+    \item Innovated 1st structured named-entity recognition training dataset generation with LLMs by attributed prompting for diversity
+
+    \item Developed \& Optimized multi-stage generation pipeline including parallel API calls, data filtering \& cleaning, pretty logging \& summary stats
+
+    \item Manually Inspected generated samples; Case-studied \& Analyzed multiple paradigms for LLM annotation feedback and self-correction
+
+    \item Increased DeBEETa NER F1 score by >5\% on average using \$<1 API cost \& <10 labeled samples,
+    matching ChatGPT-3.5 teacher performance while 20X faster; Written 40-page paper with failure analysis
+\end{itemize}
+\dividerSmall
+
+
+\cveventSameLine{}
+    {Parameter-Efficient Personalization}
+    {May. 2023 - Dec. 2023}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{}
+\begin{itemize}
+    % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+        % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
+
+    \item Surveyed literature to select subjective datasets (e.g., irony)
+
+    \item Designed \& Executed \linked[0]{PEFT}{https://huggingface.co/docs/peft/index}, \linked[0]{Adapter}{https://docs.adapterhub.ml}
+    and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset} training \& evaluation user-wise pipelines for Flan-T5 generative text classification
+
+    \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, each with up to 5K users and 120K total samples
+\end{itemize}
+\dividerSmall
+
+
+
+
+\cveventSameLine{}
+    {Symbolic Music Generation}
+    {Oct. 2021 - Feb. 2023}{\linked[0]{LIT}{https://lit.eecs.umich.edu} @ \linked[0]{UMich}{https://umich.edu}}
+\begin{itemize}
+    % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
+        % at
+
+    \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
+    music theory annotations
+
+    \item Coded \& Optimized tokenization pipeline to process 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
+
+    \item Tailored Transformer-XL \& Reformer architectures for long music sequence training; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
+\end{itemize}
+\dividerSmall
+
+
+
+
+\cveventSameLine{}
+    {Personalized Text Classification Dataset}
+    {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}
+\begin{itemize}
+    \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
+
+    \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
+
+    % \item Implemented and conducted experiments for personalization paper
+\end{itemize}
+\dividerSmall
+
+
+
+\cveventSameLine{}
+    {Zero-Shot Text Classification}
+    {Feb. 2022 - Jun. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}
+\begin{itemize}
+    % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+        % at
+
+    \item Benchmarked 3 zero-shot classification paradigms across 18 datasets
+
+    \item Re-Implemented a closed-sourced, prior GPT-2-based 0-shot approach
+
+    \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X; Launched experiments
+
+    \item Improved classifier accuracies by 1\% on average with simple domain-conditioned training; Designed illustrations \& wrote paper sections
+\end{itemize}
+\dividerSmall
+
+
+
+\cveventSameLine{}
+    {ECG Classification}
+    {Sep. 2021 - Apr. 2022}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
+\begin{itemize}
+    % \item Mentored by \linked[0]{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd} @
+
+    % \item Proposed Machine-Learning-based
+    % Premature Ventricular Contraction (PVC) exit site prediction to
+    % aid diagnosis \& ablation surgery efficiency
+
+    \item Devised self-supervised pretraining objectives for 12-channel ECG timeseries based on symbolic and real-valued representations
+
+    \item Reviewed literature to Compile a dataset collection of 50K+ 12-lead ECG records from 8 datasets
+
+    \item Pioneered applying the Vision Transformer architecture for ECG disease classification with heart-signal data augmentations; Visualized attention layers for explainability
+\end{itemize}
+\dividerSmall
+
+
+
+
+\cveventSameLine{}
+    {ECG Visualization}
+    {Sep. 2020 - Apr. 2021}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}
+\begin{itemize}
+    % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
+        % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
+
+    \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for
+    with features including thumbnail, channel toggle, box measurement \& annotation
+    % for a public cardiovascular disease management and analytics infrastructure
+
+    \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs; Gathered feedbacks from cardiologists
+
+    \item Algorithmically Optimized rendering efficiency of GBs of signal records
+\end{itemize}
+\dividerSmall
+
+
+
+\cveventSameLine{}
+    {AR Art Museum Experience}
+    {Apr. 2019 - May. 2020}{Prof. Kyungjin Yoo @ \linked[0]{UMD}{https://www.fire.umd.edu}}
+\begin{itemize}
+    % \item Mentored by
+
+    \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
+    that renders art museum paintings in 6 base colors to educate color theory \& raise engagement
+
+    \item Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction \& color map file parsing
+
+    \item Developed \& Tested painting segmentation heuristics based on color \& semantics
+\end{itemize}
+\dividerSmall
+
+
+
+
+
+\cvsection{Skills {\footnotesize \lowercase{proficiency by descending saturation}}}
+\small
+\faCode~ \skillHeader{Programming Languages}: ~
+% \smallskip \\
+\mytagI[ThemeGradient08]{Python}{Python}
+\mytagI[ThemeGradient03]{Cpp}{C/C++}
+\mytagI[ThemeGradient01]{ruby}{Ruby}
+\mytagI[ThemeGradient02]{Java}{Java}
+\mytagI[ThemeGradient02]{Android, modified}{Android}
+\mytagI[ThemeGradient02]{OCaml, modified}{OCaml} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faCogs~ \skillHeader{Machine Learning}: ~
+% \smallskip \\
+\mytagI[ThemeGradient04]{PyTorch, modified}{PyTorch}
+\mytagI[ThemeGradient06]{Hugging Face, modified}{Hugging Face}
+\mytagI[ThemeGradient04]{DeepSpeed, modified}{DeepSpeed}
+\mytagI[ThemeGradient05]{openai}{OpenAI API}
+\mytagI[ThemeGradient02]{nvidia}{NeMo}
+\mytagI[ThemeGradient04]{scikit_learn, modified}{scikit-learn} \\
+% \mytagI[ThemeGradient07]{NumPy}{NumPy}
+% \mytagI[ThemeGradient03]{pandas, modified}{pandas}
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faChartArea~ \skillHeader{Visualization \& Data Science}: ~
+%  \smallskip \\
+\mytagI[ThemeGradient07]{matplotlib, modified}{matplotlib}
+\mytagI[ThemeGradient06]{Plotly, modified}{Plotly/Dash}
+\mytagI[ThemeGradient03]{d3}{D3}
+\mytagI[ThemeGradient03]{MATLAB, modified}{MATLAB}
+\cvtag{\textcolor{ThemeGradient02}{XML}}
+\mytagI[ThemeGradient03]{R}{R}
+\mytagI[ThemeGradient03]{SQL}{SQL} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faGlobe~ \skillHeader{Web Development}: ~
+% \smallskip \\
+\mytagI[ThemeGradient05]{HTML}{HTML}
+\mytagI[ThemeGradient02]{LESS}{LESS}
+\mytagI[ThemeGradient05]{JavaScript}{JavaScript}
+\mytagI[ThemeGradient05]{Marko, edited}{Marko}
+\mytagI[ThemeGradient03]{nodejs}{Node.js} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faCubes~ \skillHeader{MISC}: ~
+% \smallskip \\
+\mytagI[ThemeGradient01]{ROS V2, modified.svg}{ROS}
+\mytagI[ThemeGradient02]{Postman, modified}{Postman}
+\mytagI[ThemeGradient02]{unity}{Unity} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faWrench~ \skillHeader{Tools \& IDEs}: ~
+% \smallskip \\
+\cvtag{\textcolor{ThemeGradient02}{SSH}}
+\mytagI[ThemeGradient03]{Bash, modified}{Shell Script}
+\mytagI[ThemeGradient03]{Linux, modified}{Linux}
+\mytagI[ThemeGradient03]{docker}{docker}
+% \medskip
+% \divider
+% \smallskip
+% \dividerSmall
+\mytagI[ThemeGradient05]{git}{Git}
+\mytagI[ThemeGradient06]{PyCharm}{PyCharm}
+% \mytagI[ThemeGradient03]{DataSpell, modified}{DataSpell}
+\mytagI[ThemeGradient03]{Clion}{CLion}
+\mytagI[ThemeGradient05]{Visual Studio Code}{VSCode} \\
+% \mytagI[ThemeGradient02]{Jupyter, modified}{Jupyter Lab} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faPaintBrush~ \skillHeader{Design}: ~
+% \smallskip \\
+\mytagI[ThemeGradient07]{Adobe Photoshop}{Photoshop}
+\mytagI[ThemeGradient04]{Adobe Illustrator}{Illustrator}
+\mytagI[ThemeGradient02]{Adobe Premiere Pro}{Premiere Pro}
+\mytagI[ThemeGradient03]{Figma}{Figma} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+
+\faPencil*~ \skillHeader{Writing \& Language}: ~
+% \smallskip \\
+\mytagI[ThemeGradient08]{markdown}{Markdown}
+\mytagI[ThemeGradient08]{LaTeX, modified}{LaTeX}
+\cvtag{\textcolor{ThemeGradient07}{English (fluent)}}
+\cvtag{\textcolor{ThemeGradient07}{Chinese (native)}} \\
+% \medskip
+% \divider
+\smallskip
+\dividerSmall
+
+\pagebreak
+
+
+
+
+\cvsection{Teaching}
+\cveventSameLine{}{Art Museum Research Peer Mentor}{Jan. - Apr. 2020}{\linked[0]{UMD}{https://eng.umd.edu}}{}
+\begin{itemize}
+    \item Mentored 30 students on VR, AR, location intelligence training \& art museum experience
+
+    \item Reviewed students' Unity project submissions
+
+    \item Wrote Android Studio \& AR development tutorial based on Google SDK
+
+    \item Led lab discussions \& provided feedbacks on research proposals 3 times weekly
+\end{itemize}
+\dividerSmall
+
+
+% ====================================== Begin of Modified ======================================
+% \end{paracol}
+% ====================================== End of Modified ======================================
+
+
+\vfill
+
+\small
+Last modified \mydate. \par
 
 
 \end{document}
