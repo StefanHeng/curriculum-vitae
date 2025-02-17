@@ -398,15 +398,7 @@
 %     {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
 %       ~#4}%
 %   }}\par
-  \ifstrequal{#3}{}{}{%
-    % {\small\makebox[0.1\linewidth][l]%
-        % \small
-      \footnotesize
-      ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
-      ~#3}%
-    % }
-    }%
-  \ifstrequal{#4}{}{}{%
+  \ifstrequal{#4}{}{}{%  # note right-most part becomes the date (previously location) for better visual alignment
     % {\small\makebox[0.1\linewidth][l]%
     %   \small
       \footnotesize
@@ -416,6 +408,14 @@
     % }
     % \par
 %   \medskip\normalsize
+  \ifstrequal{#3}{}{}{%
+%   {\small\makebox[0.25\linewidth][l]%
+      % \small
+    \footnotesize
+    ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+    ~#3}%
+%   }
+  }%
   \smallskip
   \normalsize
 }
