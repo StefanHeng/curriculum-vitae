@@ -5,16 +5,18 @@
 \begin{itemize}
     % \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
 
-    \item Innovating multi-turn preference dataset synthesis with fine-grained preference strengths
+    % \item Innovating multi-turn preference dataset synthesis with fine-grained preference strengths
+    \item Innovated multi-turn preference dataset synthesis pipeline, processing 100K samples with filtering heuristics
 
-    \item Processed 100K samples and filtered low-quality samples by heuristics
+    % \item Processed 100K samples and filtered low-quality samples by heuristics
 
     \item Coded \& Optimized distributed training \& inferencing pipeline for 3 distinct reward model architectures, reducing eval time by 2X
 
-    \item Designed uncertainty metrics for training data selection leveraging reward model ensemble logits
+    \item Designed uncertainty scoring leveraging reward model ensemble logits for training data selection
 
     % \item Reward model accuracy trained from negative-prompting-generated data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
-    \item Reward model accuracy trained from negative-prompted data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
+    % \item Reward model accuracy trained from negative-prompted data using LLAMA-2-7B matches that of GPT-4 ranking while 30X cheaper
+    \item Achieved ranking performance equivalent to GPT-4 at 30X lower cost by using LLAMA-2-7B
 \end{itemize}
 \dividerSmall
 % \pagebreak
@@ -26,14 +28,16 @@
 \begin{itemize}
     % \item Mentored by Ph.D. students at
 
-    \item Innovated 1st structured named-entity recognition training dataset generation with LLMs by attributed prompting for diversity
+    % \item Pioneered 1st structured named-entity recognition training dataset generation with LLMs by attributed prompting for diversity
+    \item Pioneered structured named-entity recognition dataset generation with LLMs using attributed prompting for enhanced diversity
 
-    \item Developed \& Optimized multi-stage generation pipeline including parallel API calls, data filtering \& cleaning, pretty logging \& summary stats
+    % \item Developed \& Optimized multi-stage generation pipeline including parallel API calls, data filtering \& cleaning, pretty logging \& summary stats
+    \item Developed \& Optimized multi-stage generation pipeline including parallel API calls, rigorous data filtering, logging \& analytics
 
-    \item Manually Inspected generated samples; Case-studied \& Analyzed multiple paradigms for LLM annotation feedback and self-correction
+    \item Case-studied \& Analyzed multiple paradigms for LLM annotation feedback and self-correction; Manually inspected generated sample quality
 
-    \item Increased DeBEETa NER F1 score by >5\% on average using \$<1 API cost \& <10 labeled samples,
-    matching ChatGPT-3.5 teacher performance while 20X faster; Written 40-page paper with failure analysis; Released package for scalable data generation
+    \item Enhanced DeBEETa NER performance, improving average F1 score by >5\%, matching ChatGPT-3.5 teacher performance
+    using \$<1 API cost \& <10 labeled samples while 20X faster; Written 40-page paper with detailed failure analysis; Released package for scalable data generation
 \end{itemize}
 \dividerSmall
 
@@ -45,13 +49,13 @@
     % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
         % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
 
-    \item Surveyed literature to select subjective datasets (e.g., irony)
+    \item Surveyed literature to select subjective datasets (e.g., irony detection) for personalization experiments
 
     \item Designed \& Executed \linked[0]{PEFT}{https://huggingface.co/docs/peft/index} and \linked[0]{Adapter}{https://docs.adapterhub.ml}
     % and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset}
     training \& evaluation user-wise pipelines for Flan-T5 generative text classification
 
-    \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, each with up to 5K users and 120K total samples
+    \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, containing 120K samples total, from up to 5K users each
 \end{itemize}
 \dividerSmall
 
@@ -65,12 +69,17 @@
     % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
         % at
 
-    \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
-    music theory annotations
+    % \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
+    % music theory annotations
 
-    \item Coded \& Optimized tokenization pipeline to process 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
+    \item Designed compact token representation first integrating music theory annotations for long music sequences;
+    Independently implemented tokenization
 
-    \item Tailored Transformer-XL \& Reformer architectures for foundational long music sequence modelling; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
+    % \item Coded \& Optimized pre-training corpus pipeline, processing 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
+    \item Built \& Optimized a robust data pipeline, processing 10K+ MIDI files with batched concurrency, channel reduction \& >50 edge-case handling
+
+    % \item Tailored Transformer-XL \& Reformer architectures for foundational long music sequence modelling; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
+    \item Adapted Transformer-XL \& Reformer for music generation; Designed domain-specific evaluation metrics; Inspected >100 generated music pieces
 \end{itemize}
 \dividerSmall
 
@@ -81,9 +90,11 @@
     {Personalized Text Classification Dataset}
     {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}
 \begin{itemize}
-    \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
+    % \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
+    \item Structured a novel hierarchical dataset schema tailored for nested and temporally-changing label sets
 
-    \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
+    % \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
+    \item Aggregated and analyzed 15K real-world user interaction data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
 
     % \item Implemented and conducted experiments for personalization paper
 \end{itemize}
@@ -98,13 +109,13 @@
     % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
         % at
 
-    \item Benchmarked 3 zero-shot classification paradigms across 18 datasets
+    \item Benchmarked 3 zero-shot classification paradigms across 18 diverse datasets
 
-    \item Re-Implemented a closed-sourced, prior GPT-2-based 0-shot approach
+    \item Reproduced closed-source 0-shot classification approach based on GPT-2 from prior literature
 
-    \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X; Launched experiments
+    \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X
 
-    \item Improved classifier accuracies by 1\% on average with simple domain-conditioned training; Designed illustrations \& wrote paper sections
+    \item Improved classifier accuracy by 1\% through domain-conditioned training techniques; Designed illustrations \& wrote paper sections
 \end{itemize}
 \dividerSmall
 
@@ -122,11 +133,11 @@
         % Premature Ventricular Contraction (PVC) exit site prediction to
         % aid diagnosis \& ablation surgery efficiency
         %
-        \item Devised self-supervised pretraining objectives for 12-channel ECG timeseries based on symbolic and real-valued representations%
+        \item Devised self-supervised pretraining objectives tailored for 12-channel ECG timeseries based on symbolic and continuous representations via codebooks%
         %
-        \item Reviewed literature to Compile a dataset collection of 50K+ 12-lead ECG records from 8 datasets%
+        \item Compile and evaluated a diverse dataset collection of 50K+ 12-lead ECG records from 8 sources after extensive literature review%
         %
-        \item Pioneered applying the Vision Transformer architecture for ECG disease classification with heart-signal data augmentations; Visualized attention layers for explainability%
+        \item Pioneered applying Vision Transformer for disease classification with heart-signal augmentation and explainability via visualized attention layers%
     \end{itemize}%
     \dividerSmall
 
@@ -137,13 +148,13 @@
         % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
             % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
         %
-        \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based ECG signal web app for
+        \item Developed \linked[0]{Dash}{https://plotly.com/dash/}-based web app for ECG signal visualization
         with features including thumbnail, channel toggle, box measurement \& annotation%
         % for a public cardiovascular disease management and analytics infrastructure
         %
-        \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs; Gathered feedbacks from cardiologists%
+        \item Designed UI wireframes tailored for physicians' retrospective study and annotation needs, periodically gathering feedbacks from cardiologists%
         %
-        \item Algorithmically Optimized rendering efficiency of GBs of signal records%
+        % \item Algorithmically Optimized rendering efficiency of GBs of signal records%
     \end{itemize}%
     \dividerSmall
 
@@ -153,12 +164,12 @@
     \begin{itemize}%
         % \item Mentored by
         %
-        \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar}-based Android app
-        that renders art museum paintings in 6 base colors to educate color theory \& raise engagement%
+        \item Developed an \linked[0]{ARCore}{https://developers.google.com/ar} Android app
+        for art museum exhibits, improving user engagements via interactive color theory rendering on paintings%
         %
-        \item Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction \& color map file parsing%
+        \item Surveyed \& Compared prior approaches for theme-colored visualization; Implemented primary \& secondary color extraction and color map file parsing%
         %
-        \item Developed \& Tested painting segmentation heuristics based on color \& semantics%
+        \item Developed \& Tested painting segmentation heuristics based on color \& visual semantics%
     \end{itemize}%
     \dividerSmall
 }%

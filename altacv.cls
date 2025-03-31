@@ -122,13 +122,44 @@
 \colorlet{achievement}{emphasis}
 \colorlet{affiliation}{emphasis}
 
+\RequirePackage{etoolbox}
+\newtoggle{inAccSupp}
+\togglefalse{inAccSupp}
+
+\newcommand{\myBeginAccSupp}[1]{%
+  \iftoggle{inAccSupp}{}{%
+    \toggletrue{inAccSupp}%
+  }%
+  \BeginAccSupp{#1}%
+}
+\newcommand{\myEndAccSupp}{%
+  \EndAccSupp{}%
+  \iftoggle{inAccSupp}{\togglefalse{inAccSupp}}{}%
+}
+
 % Pretty underline, inspired by https://tex.stackexchange.com/a/518546
 \RequirePackage{ulem}
 \normalem
 \RequirePackage{contour}
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
-\newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+% \newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+% \newcommand{\ul}[1]{%
+%   \BeginAccSupp{method=escape,ActualText={#1}}%
+%     \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+%   \EndAccSupp{}%
+% }
+\newcommand{\ul}[1]{%
+  \iftoggle{inAccSupp}{%
+    % Already in an outer AccSupp—don’t add another one.
+    \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+  }{%
+    % Not inside an AccSupp: wrap with one.
+    \BeginAccSupp{method=escape,ActualText={#1}}%
+      \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+    \EndAccSupp{}%
+  }%
+}
 % ====================================== End of Added ======================================
 
 \RequirePackage{tikz}
@@ -188,17 +219,30 @@
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
-    \mbox{\textcolor{accent}%
-    {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
-    ~\utffriendlydetokenize{#2}\hspace{2em}}%
+    % ====================================== Begin of Modified ======================================
+    % \mbox{\textcolor{accent}%
+    % {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
+    % ~\utffriendlydetokenize{#2}\hspace{2em}}%
+    \mbox{%  include both within AccSupp to add a newline
+        \myBeginAccSupp{method=escape,ActualText={\detokenize{- #1: #2^^J}}}%
+            \textcolor{accent}{\normalfont #1}
+            ~\utffriendlydetokenize{#2}\hspace{2em}%
+        \myEndAccSupp{}%
+    }%
+    % ====================================== End of Modified ======================================
   }{%
      \if@withhyper%
-      \mbox{\textcolor{accent}%
-      {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
-      % ====================================== Begin of Modified ======================================
+        % ====================================== Begin of Modified ======================================
+    %   \mbox{\textcolor{accent}%
+    %   {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
     %   ~\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
-      ~\href{#3}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#2}}}}\hspace{2em}}% use `emphasis`' color & underline
-      % ====================================== End of Modified ======================================
+        \myBeginAccSupp{method=escape,ActualText={\detokenize{- #1: #2 (#3)^^J}}}% include both parts as a single ActualText; add newline to separate
+            \mbox{%
+                \textcolor{accent}{\normalfont #1}%
+                ~\href{#3}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#2}}}}\hspace{2em}% use `emphasis`' color & underline instead
+            }%
+        \myEndAccSupp{}%
+        % ====================================== End of Modified ======================================
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}
@@ -379,12 +423,22 @@
 % ====================================== Begin of Added ======================================
 \newcommand{\cveventSameLine}[4]{% all content on the same line, date & time on the right
   \ifstrequal{#1}{}{}{
-    {\large\color{emphasis}#1}
+    % {\large\color{emphasis}#1}
+    % \BeginAccSupp{method=pdfstringdef,ActualText={Organization: #1 ^^J}}% enclose to add a AccSup newline; TODO: doesn't seem to work when #1 is itself a link with AccSupp
+    %     {\large\color{emphasis}#1}
+    % \EndAccSupp{}%
+    \pdfstringdef\temporg{#1}%
+    \myBeginAccSupp{method=pdfstringdef,ActualText={Organization: \temporg ^^J}}%
+        {\large\color{emphasis}#1}
+    \myEndAccSupp{}%
   }
 %   \smallskip
   \normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}
+    % \textbf{\color{accent}#2}
+    \myBeginAccSupp{method=pdfstringdef,ActualText={^^JTitle: #2}}% enclose to add a AccSup newline; TODO: similar to above, doesn't work
+        \textbf{\color{accent}#2}
+    \myEndAccSupp{}%
 %   \smallskip
   }
   \hfill
@@ -402,8 +456,14 @@
     % {\small\makebox[0.1\linewidth][l]%
     %   \small
       \footnotesize
-      ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
-      ~#4}%
+    %   ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+    %   ~#4}%
+        % include both to add a newline
+        ~~~{
+            \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\locationname: #4}}
+                \cvLocationMarker~#4
+            \EndAccSupp{}%
+        }%
     }
     % }
     % \par
@@ -411,9 +471,15 @@
   \ifstrequal{#3}{}{}{%
 %   {\small\makebox[0.25\linewidth][l]%
       % \small
-    \footnotesize
-    ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
-    ~#3}%
+    % \footnotesize
+    % ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+    % ~#3}%
+    % include both to add a newline
+    ~~~{
+        \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\datename: #3}}
+            \cvDateMarker~#3
+        \EndAccSupp{}%
+        }%
 %   }
   }%
   \smallskip
@@ -443,15 +509,29 @@
   \smallskip
 }
 
+% ====================================== Begin of Modified ======================================
+% \newcommand{\cvtag}[1]{%
+%   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+% }
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \myBeginAccSupp{method=escape,ActualText={#1^^J}}%
+    \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep=0.75ex,text height=1.5ex,text depth=.25ex]{#1};%
+  \myEndAccSupp{}%
 }
+% ====================================== End of Modified ======================================
 
 % ====================================== Begin of Added ======================================
 % Add SVG support
 \newcommand{\cvtagI}[2]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+    \myBeginAccSupp{method=escape,ActualText={#2^^J}}%
+    \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+    \myEndAccSupp{}%
 }
+% \newcommand{\cvtagI}[2]{%
+%     \BeginAccSupp{method=escape,ActualText={#1^^J}}%
+%         \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+%     \EndAccSupp{}%
+% }
 % ====================================== End of Added ======================================
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
