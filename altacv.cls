@@ -140,6 +140,11 @@
   \iftoggle{inAccSupp}{\togglefalse{inAccSupp}}{}%
 }
 
+\NewDocumentCommand{\IconTxt}{ m m }{% Icon ActualText override (per use)
+  \myBeginAccSupp{method=escape,ActualText={#2}}#1\myEndAccSupp{}%
+}
+
+
 % Pretty underline, inspired by https://tex.stackexchange.com/a/518546
 \RequirePackage{ulem}
 \normalem
@@ -265,6 +270,26 @@
      \fi%
   }%
 }%
+
+% ====================================== Begin of Added ======================================
+\NewDocumentCommand{\printinfoLabeled}{m m m o}{%
+  \IfNoValueTF{#4}{%
+    \mbox{%
+      \myBeginAccSupp{method=escape,ActualText={- #1: ~#3^^J}}%
+        \textcolor{accent}{\normalfont #2}~\utffriendlydetokenize{#3}\hspace{2em}%
+      \myEndAccSupp{}%
+    }%
+  }{%
+    \myBeginAccSupp{method=escape,ActualText={- #1: ~#3 (#4)^^J}}%
+      \mbox{%
+        \textcolor{accent}{\normalfont #2}~%
+        \href{#4}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#3}}}}\hspace{2em}%
+      }%
+    \myEndAccSupp{}%
+  }%
+}
+% ====================================== End of Added ======================================
+
 
 
 %% v1.3: Exploring convenient creation of fields
@@ -471,6 +496,16 @@
   % ====================================== End of Modified ======================================
 }
 
+
+% ====================================== Begin of Added ======================================
+\iftutex
+  \newcommand\AccSuppMethod{plain}
+\else
+  \newcommand\AccSuppMethod{pdfstringdef}
+\fi
+% ====================================== End of Added ======================================
+
+
 \newcommand{\cvsubsection}[1]{%
   \smallskip%
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
@@ -486,41 +521,54 @@
   \smallskip}
   \ifstrequal{#3}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
+      % ====================================== Begin of Modified ======================================
       {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      % {\BeginAccSupp{method=\AccSuppMethod,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
       ~#3}%
+      % ====================================== End of Modified ======================================
     }}%
   \ifstrequal{#4}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
+      % ====================================== Begin of Modified ======================================
       {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+      % {\BeginAccSupp{method=\AccSuppMethod,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
         ~#4}%
+      % ====================================== End of Modified ======================================
     }}\par
   \medskip\normalsize
 }
 
 % ====================================== Begin of Added ======================================
 \newcommand{\cveventSameLine}[5]{% all content on the same line, date & time on the right
-  \ifstrequal{#1}{}{}{
-    % {\large\color{emphasis}#1}
-    % \BeginAccSupp{method=pdfstringdef,ActualText={Organization: #1 ^^J}}% enclose to add a AccSup newline; TODO: doesn't seem to work when #1 is itself a link with AccSupp
-    %     {\large\color{emphasis}#1}
-    % \EndAccSupp{}%
-    \pdfstringdef\temporg{#1}%
-    \myBeginAccSupp{method=pdfstringdef,ActualText={Organization: \temporg ^^J}}%
-        % {\large\color{emphasis}#1}
-        % {\textbf{\normalsize\color{emphasis}#1}}
-        {\textbf{\small\color{emphasis}#1}}
-    \myEndAccSupp{}%
-  }
+    \ifstrequal{#1}{}{}{
+      % {\large\color{emphasis}#1}
+      % \BeginAccSupp{method=pdfstringdef,ActualText={Organization: #1 ^^J}}% enclose to add a AccSup newline; TODO: doesn't seem to work when #1 is itself a link with AccSupp
+      %     {\large\color{emphasis}#1}
+      % \EndAccSupp{}%
+      % \pdfstringdef\temporg{#1}%
+      % \edef\temporg{#1}%
+      % \myBeginAccSupp{method=pdfstringdef,ActualText={Organization: \temporg ^^J}}%
+      % \myBeginAccSupp{method=\AccSuppMethod,ActualText={Organization: \temporg ^^J}}%  otherwise it gives weird chinese characters
+      % \edef\accTxtA{Organization: \unexpanded{#1} ^^J}%
+      % \myBeginAccSupp{method=\AccSuppMethod,ActualText=\accTxtA}%
+          % {\large\color{emphasis}#1}
+          % {\textbf{\normalsize\color{emphasis}#1}}
+          {\textbf{\small\color{emphasis}#1}}
+      % \myEndAccSupp{}%
+    }
+  % }%
 %   \smallskip
   % \normalsize
-  \ifstrequal{#2}{}{}{
-    % \textbf{\color{accent}#2}
-    \myBeginAccSupp{method=pdfstringdef,ActualText={^^JTitle: #2}}% enclose to add a AccSup newline; TODO: similar to above, doesn't work
-        % \textbf{\color{accent}#2}
-        {\small\color{accent}#2}
-    \myEndAccSupp{}%
-%   \smallskip
-  }
+    \ifstrequal{#2}{}{}{
+      % \textbf{\color{accent}#2}
+      % \myBeginAccSupp{method=pdfstringdef,ActualText={^^JTitle: #2}}% enclose to add a AccSup newline; TODO: similar to above, doesn't work
+      % \edef\accTxtB{^^JTitle: \unexpanded{#2}}%
+      % \myBeginAccSupp{method=\AccSuppMethod,ActualText=\accTxtB}%
+          % \textbf{\color{accent}#2}
+          {\small\color{accent}#2}
+      % \myEndAccSupp{}%
+    % \smallskip
+    }%
   \ifstrequal{#5}{}{}{
     \footnotesize~~~#5
   }
@@ -535,38 +583,62 @@
 %     {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
 %       ~#4}%
 %   }}\par
-  \ifstrequal{#4}{}{}{%  # note right-most part becomes the date (previously location) for better visual alignment
-    % {\small\makebox[0.1\linewidth][l]%
-    %   \small
-      \footnotesize
-    %   ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
-    %   ~#4}%
-        % include both to add a newline
-        ~~~{
-            \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\locationname: #4}}
-                \cvLocationMarker~#4
-            \EndAccSupp{}%
-        }%
-    }
-    % }
-    % \par
+    \ifstrequal{#4}{}{}{%  # note right-most part becomes the date (previously location) for better visual alignment
+      % {\small\makebox[0.1\linewidth][l]%
+      %   \small
+        \footnotesize
+      %   ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+      %   ~#4}%
+          % include both to add a newline
+          ~~~{
+              % \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\locationname: #4}}
+                  % \cvLocationMarker~#4
+              % \EndAccSupp{}%
+              \myBeginAccSupp{method=pdfstringdef,ActualText={Location:}}%
+                \cvLocationMarker%
+              \myEndAccSupp{}%
+              ~#4%
+          }%
+          % ~~~{%
+          %   \begingroup
+          %     \edef\accTxtC{^^J\locationname: \unexpanded{#4}}%
+          %     \myBeginAccSupp{method=\AccSuppMethod,ActualText=\accTxtC}%
+          %       \cvLocationMarker~#4%
+          %     \myEndAccSupp
+          %   \endgroup
+          % }%
+      }
+      % }
+      % \par
+  % }%
 %   \medskip\normalsize
-  \ifstrequal{#3}{}{}{%
-%   {\small\makebox[0.25\linewidth][l]%
-      % \small
-    % \footnotesize
-    % ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
-    % ~#3}%
-    % include both to add a newline
-    ~~~{
-        \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\datename: #3}}
-            \cvDateMarker~#3
-        \EndAccSupp{}%
-        }%
-%   }
-  }%
+    \ifstrequal{#3}{}{}{%
+  %   {\small\makebox[0.25\linewidth][l]%
+        % \small
+      % \footnotesize
+      % ~~~{\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      % ~#3}%
+      % include both to add a newline
+      ~~~{
+          % \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\datename: #3}}
+              % \cvDateMarker~#3
+          % \EndAccSupp{}%
+          \myBeginAccSupp{method=pdfstringdef,ActualText={Date:}}%
+            \cvDateMarker%
+          \myEndAccSupp{}%
+          ~#3%
+          }%
+      % ~~~{%
+      %   \begingroup
+      %     \edef\accTxtD{^^J\datename: \unexpanded{#3}}%
+      %     \myBeginAccSupp{method=\AccSuppMethod,ActualText=\accTxtD}%
+      %       \cvDateMarker~#3%
+      %     \myEndAccSupp
+      %   \endgroup
+      % }%
+    }%
   % \smallskip
-  \vspace{0.25ex}
+  \vspace{0.25ex}  
   \normalsize
 }
 % ====================================== End of Added ======================================
@@ -598,18 +670,35 @@
 %   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 % }
 \newcommand{\cvtag}[1]{%
-  \myBeginAccSupp{method=escape,ActualText={#1^^J}}%
-    \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep=0.75ex,text height=1.5ex,text depth=.25ex]{#1};%
-  \myEndAccSupp{}%
+  % \myBeginAccSupp{method=escape,ActualText={#1^^J}}%
+  %   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep=0.75ex,text height=1.5ex,text depth=.25ex]{#1};%
+  % \myEndAccSupp{}%
+  \tikz[baseline]\node[
+      anchor=base,
+      draw=body!30,rounded corners,
+      inner xsep=1ex, inner ysep=0.75ex,
+      text height=1.5ex, text depth=.25ex
+    ]{%
+      \myBeginAccSupp{method=pdfstringdef,ActualText={#1^^J}}#1\myEndAccSupp{}%
+    };%
 }
 % ====================================== End of Modified ======================================
 
 % ====================================== Begin of Added ======================================
 % Add SVG support
 \newcommand{\cvtagI}[2]{%
-    \myBeginAccSupp{method=escape,ActualText={#2^^J}}%
-    \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
-    \myEndAccSupp{}%
+    % \myBeginAccSupp{method=escape,ActualText={#2^^J}}%
+    % \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\raisebox{-0.375 ex}{#1} #2};
+    % \myEndAccSupp{}%
+    \tikz[baseline]\node[
+      anchor=base,
+      draw=body!30,rounded corners,
+      inner xsep=1ex, inner ysep=0.75ex,
+      text height=1.5ex, text depth=.25ex
+    ]{%
+      \raisebox{-0.375ex}{#1}\,%
+      \myBeginAccSupp{method=pdfstringdef,ActualText={#2^^J}}#2\myEndAccSupp{}%
+    };%
 }
 % \newcommand{\cvtagI}[2]{%
 %     \BeginAccSupp{method=escape,ActualText={#1^^J}}%

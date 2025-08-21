@@ -41,8 +41,11 @@
 % xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
 \iftutex
   % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
+  % \setmainfont{Roboto Slab}
+  \setsansfont{Lato}  % narrowest font which can fit more characters
+  % % \usepackage[default, type1]{sourcesanspro}
+  % \usepackage[default]{opensans}
+  % \setmainfont{opensans}
   \renewcommand{\familydefault}{\sfdefault}
 \else
   % If using pdflatex:
@@ -112,37 +115,54 @@
 
 \colorlet{link}{emphasis}
 % \newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
-\newcommand{\linked}[3][]{%
-  \ifthenelse{\equal{#1}{}}{%
-    \BeginAccSupp{method=escape,ActualText={\detokenize{#2 (#3)}}}%
-      \textcolor{link}{\href{#3}{\ul{#2}}}%
-    \EndAccSupp{}%
-  }{%
-    \BeginAccSupp{method=escape,ActualText={\detokenize{#2 (#3)}}}%
-      \href{#3}{#2}%
-    \EndAccSupp{}%
-  }%
-}
-
+% \newcommand{\linked}[3][]{%
+%   \ifthenelse{\equal{#1}{}}{%
+%     \BeginAccSupp{method=escape,ActualText={\detokenize{#2 (#3)}}}%
+%       \textcolor{link}{\href{#3}{\ul{#2}}}%
+%     \EndAccSupp{}%
+%   }{%
+%     \BeginAccSupp{method=escape,ActualText={\detokenize{#2 (#3)}}}%
+%       \href{#3}{#2}%
+%     \EndAccSupp{}%
+%   }%
+% }
+% \newcommand{\linkedul}[2]{%
+%   \BeginAccSupp{method=escape,ActualText={\detokenize{#1 (#2)}}}%
+%     \textcolor{link}{\href{#2}{\ul{#1}}}%
+%   \EndAccSupp{}%
+% }
+% \newcommand{\linked}[2]{%
+%   \BeginAccSupp{method=escape,ActualText={\detokenize{#1 (#2)}}}%
+%     \href{#2}{#1}%
+%   \EndAccSupp{}%
+% }
+\newcommand{\linked}[2]{\href{#2}{#1}} % 无下划线
+\newcommand{\linkedUl}[2]{\textcolor{link}{\href{#2}{\ul{#1}}}} % 有下划线
 
 
 \usepackage{calc}
 % use `enumitem` to add indentation & reduce top & bottom spacing; note * for appending configs for some defined in altacv
 \setlist*{before=\vspace{0pt},after=\vspace{0pt},topsep=0pt,partopsep=0pt,leftmargin=0.5cm}
 
-% for light fonts, taken from https://tex.stackexchange.com/q/176722
-\newcommand{\ltseries}{%
-   \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
-}
+% \newcommand{\ltseries}{%
+  %  \addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}%
+% }
+\iftutex
+  % for light fonts, taken from https://tex.stackexchange.com/q/176722
+  \newcommand{\ltseries}{\addfontfeatures{UprightFont={* Light},ItalicFont={* Light Italic}}}
+\else
+  \newcommand{\ltseries}{\fontseries{l}\selectfont}
+\fi
 
 
-% \usepackage[default, type1]{sourcesanspro}
-\usepackage[default]{opensans}
-\setmainfont{opensans}
 
-% for machine readability/ATS parsing
-\input{glyphtounicode}
-\pdfgentounicode=1
+% \input{glyphtounicode}
+% \pdfgentounicode=1
+\iftutex\else
+  % for machine readability/ATS parsing
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 
 % set header/footer
@@ -190,6 +210,11 @@
 \usepackage[super]{nth}
 \usepackage[short]{datetime}
 \newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
+
+
+\newcommand{\dropFaiconText}[1]{%
+  \BeginAccSupp{ActualText={}}#1\EndAccSupp{}%
+}
 
 
 \newcommand{\smallHeader}[1]{{\color{black}{\textbf{#1}}}}
@@ -255,6 +280,9 @@
   }
   {\endlist}
   {\item}
+
+
+\renewcommand*{\bibnamedelimb}{\space}
 % ====================================== End of Modified ======================================
 
 
