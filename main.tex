@@ -14,9 +14,20 @@
 \usepackage[activate={true,nocompatibility},final,tracking,protrusion,expansion,factor=1100,stretch=10,shrink=10]{microtype}
 
 \newtoggle{compact}
-\toggletrue{compact}  % TODO: Comment out for full CV; Toggle on for compact resume
+% \toggletrue{compact}  % TODO: Comment out for full CV; Toggle on for compact resume
 
 \newcommand{\cvLink}{https://drive.google.com/file/d/1FlqrJOALCwk4BJMzKuHB7m8pwSVeDU97/view?usp=sharing}
+\newcommand{\websiteLink}{https://stefanheng.github.io}
+\newcommand{\transcriptGtLink}{https://drive.google.com/file/d/1lHIONlpROPwKrREmIEbamlbYdgryXc76/view?usp=sharing}
+\newcommand{\transcriptUmlink}{https://drive.google.com/file/d/1cXDQv8PgRQ2GGUN9pupWWdQcZ0xIVtvi/view?usp=sharing}
+\newcommand{\transcriptUmdlink}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
+
+\begin{filecontents*}{\jobname.xmpdata}
+  \Title{Yuzhao (Stefan) Heng — Resume}
+  \Author{Yuzhao (Stefan) Heng}
+  \Language{en-US}
+  \Keywords{NLP; LLM; Machine Learning; Georgia Tech}
+\end{filecontents*}  
 % ====================================== End of Added ======================================
 
 % ====================================== Begin of Modified ======================================
@@ -154,12 +165,24 @@
     % \fancyhead[R]{}
     \fancyfoot[L]{%
         \ifnum\value{page}=\getpagerefnumber{LastPage}%
-            \footnotesize Last modified \mydate.%
+            % \footnotesize
+            \scriptsize
+            Last modified \mydate.%
         \fi%
     }
 }%
 \fancyhf{}
-\fancyfoot[R]{\footnotesize \thepage/\pageref{LastPage}}
+% \fancyfoot[R]{
+%   % \footnotesize
+%   \scriptsize
+%   \thepage/\pageref{LastPage}
+% }
+\fancyfoot[R]{%
+  \scriptsize
+  \ifnum\getpagerefnumber{LastPage}>1\relax
+    \thepage/\pageref*{LastPage}%
+  \fi
+}
 
 \newcommand{\bodyfontsize}{\footnotesize}
 
@@ -168,6 +191,8 @@
 \usepackage[short]{datetime}
 \newcommand{\mydate}{\shortdayofweekname{\day}{\month}{\year}. \shortmonthname. \nth{\day}, \the\year{}}
 
+
+\newcommand{\smallHeader}[1]{{\color{black}{\textbf{#1}}}}
 
 % for the skills section
 \newcommand{\skillHeader}[1]{\footnotesize\textit{#1}}
@@ -185,10 +210,15 @@
 \usepackage[inkscapearea=nocrop]{svg}
 \usepackage{ifthen}
 \def \logoPath {assets/svg/}
+% \newcommand{\mytagI}[3][]{%
+%    \ifthenelse{ \equal{#1}{} }
+%       {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
+%       \textcolor{#1}{{\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}}
+% }
 \newcommand{\mytagI}[3][]{%
-   \ifthenelse{ \equal{#1}{} }
-      {\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}
-      \textcolor{#1}{{\cvtagI{\includesvg[height=2ex]{\logoPath #2}} {#3}}}
+  \ifthenelse{\equal{#1}{}}%
+    {\cvtagI{\includesvg[height=2ex]{\logoPath#2}}{#3}}%
+    {\textcolor{#1}{\cvtagI{\includesvg[height=2ex]{\logoPath#2}}{#3}}}%
 }
 % ====================================== End of Added ======================================
 
@@ -205,23 +235,23 @@
   {
     \vspace*{0.75em}% add space above the bib list for the custom header
     \list
-     {
-       % the label
-       \printtext[labelnumberwidth]{%
-         \printfield{labelprefix}%
-         \printfield{labelnumber}%
-       }
-     }
-     {
-       \setlength{\labelwidth}{\labelnumberwidth}% width of the label
-       \setlength{\leftmargin}{\dimexpr\labelnumberwidth+\bibhang\relax+0.25em}%
-       \setlength{\itemindent}{-\bibhang}%
-       \setlength{\itemsep}{\bibitemsep}%
-       \setlength{\parsep}{\bibparsep}%
-       \setlength{\bibhang}{1em}
-       \setlength{\topsep}{0pt}% space above and below the list
-       \setlength{\partopsep}{0pt}% extra space when the list starts a new paragraph
-     }
+      {
+        % the label
+        \printtext[labelnumberwidth]{%
+          \printfield{labelprefix}%
+          \printfield{labelnumber}%
+        }
+      }
+      {
+        \setlength{\labelwidth}{\labelnumberwidth}% width of the label
+        \setlength{\leftmargin}{\dimexpr\labelnumberwidth+\bibhang\relax+0.25em}%
+        \setlength{\itemindent}{-\bibhang}%
+        \setlength{\itemsep}{\bibitemsep}%
+        \setlength{\parsep}{\bibparsep}%
+        \setlength{\bibhang}{1em}
+        \setlength{\topsep}{0pt}% space above and below the list
+        \setlength{\partopsep}{0pt}% extra space when the list starts a new paragraph
+      }
   }
   {\endlist}
   {\item}
@@ -249,7 +279,12 @@
 % ====================================== End of Modified ======================================
 
 
-\vspace*{-0.75em}
+% \vspace*{-0.75em}
+\iftoggle{compact}{%
+  \vspace{-0.75em}
+}{
+  \vspace{-0.5em}
+}
 
 
 \input{sections/education.tex}
@@ -258,14 +293,14 @@
 
 
 
-\iftoggle{compact}{%
-    %
-}{
-    \vspace{-1em}  % drop weird extra space
-}
+% \iftoggle{compact}{%
+%     %
+% }{
+%     \vspace{-1em}  % drop weird extra space
+% }
 
 
-\vspace*{-0.25em}
+% \vspace*{-0.25em}
 
 
 
@@ -274,76 +309,99 @@
 
 
 
-\vspace*{-0.25em}
+% \vspace*{-0.25em}
 
+
+
+\iftoggle{compact}{
+  \input{sections/research-experience.tex}
+  % \vspace*{-0.25em}
+}{
+  %
+}
 
 
 \input{sections/publications.tex}%
 
 
 
-\vspace*{-0.25em}
+% \vspace*{-0.25em}
 
 
 
-\iftoggle{compact}{%
-    \input{sections/skills.tex}% move the skills section up front for there's more space
+\input{sections/skills.tex}
+% \iftoggle{compact}{%
+%     \input{sections/skills.tex}% move the skills section up front for there's more space
+% }{
+%     \input{sections/keywords.tex}%
+% }
+% \vspace*{-0.25em}
+
+
+\iftoggle{compact}{
+  %
 }{
-    \input{sections/keywords.tex}%
-}
-
-
-
-
-\pagebreak
-
-
-
-
-
-\iftoggle{compact}{%
-    \input{sections/keywords.tex}
-}{
-    %
+  \pagebreak
 }
 
 
 
 
 
+\input{sections/keywords.tex}
+% \iftoggle{compact}{%
+%     \input{sections/keywords.tex}
+% }{
+%     %
+% }
+% \vspace*{-0.25em}
 
-\input{sections/research-experience.tex}
 
 
 
 
-
-\iftoggle{compact}{%
-    %
+% \input{sections/research-experience.tex}
+\iftoggle{compact}{
+  %
 }{
-    \vspace{-1em}  % drop weird extra space
+  \input{sections/research-experience.tex}
 }
 
 
 
 
+% \iftoggle{compact}{%
+%     %
+% }{
+%     \vspace{-1em}  % drop weird extra space
+% }
 
-\iftoggle{compact}{%
-    %
-}{
-    \input{sections/skills.tex}
-}
+
+
+
+
+% \iftoggle{compact}{%
+%     %
+% }{
+%     \input{sections/skills.tex}
+% }
 
 
 
 
 
 \iftoggle{compact}{}{
-    \pagebreak
-
+    % \pagebreak
 
     \input{sections/teaching.tex}%
 }
+
+
+
+
+\input{sections/other-interests.tex}
+
+
 
 
 % ====================================== Begin of Modified ======================================
@@ -354,10 +412,13 @@
 \iftoggle{compact}{
     \vfill
 
-    \bodyfontsize
-    % \small
+    % \bodyfontsize
+    \scriptsize
     % Last modified \mydate. \par
-    Feel free to see my \linked{CV}{\cvLink} for more detailed information. \par
+    % Feel free to see my \linked{CV}{\cvLink} for more detailed information. \par
+    % Earlier roles and a fuller skills breakdown are available in my \linked{CV}{\cvLink}.
+    % Feel free to see my full CV which provides the complete record. 
+    See my full \linked{CV}{\cvLink} for the complete record.
 }{
     %
 }

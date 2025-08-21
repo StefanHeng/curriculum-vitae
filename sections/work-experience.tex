@@ -1,24 +1,62 @@
 \cvsection{Work Experience}
-\cveventSameLine{\linked[0]{22 Minds LLC.}{http://22minds.ai}}
-    {NLP Research Engineer Intern}
-    {Jan. 2025 - Present}{Atlanta, GA}
+\cveventSameLine{LLM Software Engineer Intern}
+    {\linked[0]{Honeywell Aerospace}{https://aerospace.honeywell.com}}
+    {May 2025 -- Aug 2025}{Phoenix, AZ}{}
 \begin{itemize}
-    \item Building sub-billion-parameter domain-specific LMs for chatbot assistants running on edge/web, focused on the shopping domain
+    \item Pioneered a LLM-powered chatbot agent prototype with RAG \& tool calling
+    % powered by Google Gemma 3,
+    for Jira tickets in Flight Management System (FMS) software development
+    % collaborating with another intern for backend Jira ticket access
+    \item Presented with live demos to Principal Engineer and Electronic Solutions (ES) directors 
+    and received highest paise among 10+ projects
+    % centralized
+    \item Designed an automated system generating bug-fix tracking table with LLM chains and issue grouping across 3 unstructured Jira projects \& 20K+ issues
+    \item Optimized LLM serving token throughput by 2X by exploring packages, parallelization \& quantization on legacy GPUs
+    \item Integrated LLM applications as backend API services and containerized services with docker compose
+    
+    % \item Designed bug fix structured extraction across messy NL Jira projects with manual review 
+    % \item Deployed using docker with docker compose 
+    % 7K-word documentation on the development 
+\end{itemize}
+\dividerSmall
+
+
+% \cvsection{Work Experience}
+\cveventSameLine{NLP Research Engineer Intern}
+    {\linked[0]{22 Minds LLC.}{http://22minds.ai}}
+    {Jan 2025 -- May 2025}{Atlanta, GA}{}
+\begin{itemize}
+    \item Built a robust 100M-parameter domain-specific LM for chatbot assistants running on edge/web, 
+    focused on the shopping domain
 
     % \item Innovating new dialog data synthesis pipeline with RAG \& sub-billion-paremeter LM training pipeline for domain-specific chatbots running on edge/web
-    \item Proposed and engineered an innovative and high-quality data synthesis pipeline,
-    leveraging Diverse query sampling, Syntactic \& semantic deduplication,
-    Generative query transformations,
-    RAG, Prompt-tuning and Structured outputs for reasoning elicitation
+    % \item Proposed and engineered an innovative and high-quality data synthesis pipeline,
+    \item Proposed and engineered an innovative data synthesis pipeline,
+    % leveraging Diverse query sampling, Syntactic \& semantic deduplication,
+    % Generative query transformations,
+    % RAG, Prompt-tuning and Structured outputs for reasoning elicitation
+    including deduplication, query transformation, RAG and reasoning elicitation
     % Prompt-tuning for structured reasoning
     %  and improved instruction following
 
     % \item Presenting recent LLM advancements, data generation plan and ideas weekly within team of 6; Iteratively developing for a shopping mall case-study
 
-    \item Pioneered vLLM inference integration with distributed torchrun training,
+    \item Delivered a near-deployable model substantially
+    % outperform versions prior to joining,
+    % outperforming previous versions
+    outperforming prior prototype
+    % on query understanding and response quality,
+    % reaching a stage
+    % involving product manager
+    % for potential deployment,
+    % approaching deployment readiness
+    % with 40\% less data, 40\% fewer parameters and 10X less training compute
+    while cutting data \& parameters by 40\% and training compute by 10X
+
+    \item Pioneered vLLM inference integration with distributed torchrun training
     % overcoming lack of existing solutions and high technical risk
-    overcoming significant technical challenges
-    through extensive self-driven codebase exploration,
+    % overcoming significant technical challenges
+    through vLLM codebase exploration,
     % overcoming significant technical barriers with lack of existing solutions,
     % achieving 2X training speedup
     achieving 2X faster training
@@ -31,28 +69,25 @@
     \item Designed robust template-based hallucination benchmark targeting domain-specific data attributes,
     reducing LM hallucination rate by 4X
 
-    \item Conducted extensive experiments (200+ training runs), evaluating advanced training techniques including
-    Dynamic user query augmentations via randomized programmatic editing,
-    Custom token embeddings, LoRA, Reasoning chain distillation
-
-    \item Delivered a model significantly
-    % outperform versions prior to joining,
-    outperforming previous versions,
-    on query understanding and response quality,
-    % reaching a stage
-    % involving product manager
-    % for potential deployment,
-    approaching deployment readiness
-    with 40\% less data, 40\% fewer parameters and 10X less training compute
+    % \item Conducted extensive experiments (200+ training runs), evaluating advanced training techniques including
+    % Dynamic user query augmentations via randomized programmatic editing,
+    % Custom token embeddings, LoRA, Reasoning chain distillation
+    % \item Explored \& evaluated advanced training techniques including
+    % % Dynamic user query augmentations via randomized programmatic editing,
+    % random sample transformations, special token design and reasoning distillation
+    % % Custom token embeddings, LoRA, Reasoning chain distillation
 
     % \item Augmenting user queries via generative and programmatic editing for diverse query understanding
+
+    % Data debugging: debugging model issue by tracing back into retrieval results 
+    % 10K-word documentation
 \end{itemize}
 \dividerSmall
 
 
-\cveventSameLine{\linked[0]{eBay Inc.}{https://www.ebay.com}}
-    {Software Engineer Intern}
-    {May. 2021 - Jul. 2021}{San Jose, CA}
+\cveventSameLine{Front-End Software Engineer Intern}
+    {\linked[0]{eBay Inc.}{https://www.ebay.com}}
+    {May 2021 -- Jul 2021}{San Jose, CA}{}
 \begin{itemize}
     % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
 
@@ -65,23 +100,26 @@
 \dividerSmall
 
 
-\cveventSameLine{\linked[0]{OpptIn}{https://www.opptin.com}}
-    {UX/UI Design Intern}
-    {Mar. 2020 - May. 2020}{Scranton, PA}{}
-\begin{itemize}
-    % \item Why: Localized search; Automatic attendance; Slide annotation sharing
+\iftoggle{compact}{%
+    %
+}{%
+    \cveventSameLine{UX/UI Design Intern}
+        {\linked[0]{OpptIn}{https://www.opptin.com}}
+        {Mar 2020 -- May 2020}{Scranton, PA}{}
+    \begin{itemize}
+        % \item Why: Localized search; Automatic attendance; Slide annotation sharing
 
-    \item Brainstormed UI framework with functional widgets to augment location-specific real-life spaces
+        \item Brainstormed UI framework with functional widgets to augment location-specific real-life spaces
 
-    % \item Iterated company logo designs 3 times with \textasciitilde30 illustrations; Prototyped >20 UI layouts
-    % for space discovery and management in a team of 6; Implemented layouts in Android
+        % \item Iterated company logo designs 3 times with \textasciitilde30 illustrations; Prototyped >20 UI layouts
+        % for space discovery and management in a team of 6; Implemented layouts in Android
 
-    \item Designed, prototyped and implemented 20+ UI layouts and animations for Android app; Collaborated on iterative logo designs (30+ drafts)
+        \item Designed, prototyped and implemented 20+ UI layouts and animations for Android app; Collaborated on iterative logo designs (30+ drafts)
 
-    % \item Prototyped UI animations and dynamic style changes for pre- and post-joining spaces
+        % \item Prototyped UI animations and dynamic style changes for pre- and post-joining spaces
 
-    % \item Acted as the key communicator on UX concepts and engineering constraints among design and development teams
-    \item Facilitated communication between design and development teams regarding UX concepts and technical feasibility
-\end{itemize}
-\dividerSmall
-
+        % \item Acted as the key communicator on UX concepts and engineering constraints among design and development teams
+        \item Facilitated communication between design and development teams regarding UX concepts and technical feasibility
+    \end{itemize}
+    \dividerSmall
+}%

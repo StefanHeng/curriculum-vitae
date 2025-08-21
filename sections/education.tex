@@ -1,14 +1,23 @@
-
 \cvsection{Education}
+\iftoggle{compact}{%
+    \vspace{-0.5em}  % drop weird extra space
+}{
+    %
+}
 
 \cveventSameLine{\linked[0]{Georgia Institute of Technology}{https://www.gatech.edu}}
     {\linked[0]{M.S. in Computer Science}{https://www.cc.gatech.edu/degree-programs/master-science-computer-science}}
-    {Aug. 2023 - Dec. 2025}{Atlanta, GA}
-\begin{itemize}
-    \item GPA: 4.0/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1lHIONlpROPwKrREmIEbamlbYdgryXc76/view?usp=sharing}
-    % \item Featured courses: Machine Learning; Natural Language; Deep Learning for Text Data; Large Language Models; Game Artificial Intelligence; Data-Centric Machine Learning
-    \item Featured courses: Machine Learning; Natural Language Processing; Deep Learning for Text Data; Large Language Models; Game AI; Data-Centric ML
-\end{itemize}
+    {Aug 2023 -- Dec 2025}{Atlanta, GA}
+    {\iftoggle{compact}{GPA: 4.0/4.0 - \linked{Transcript}{\transcriptGtLink}}{}}
+\iftoggle{compact}{
+    \vspace{-0.25ex}
+}{%
+    \begin{itemize}
+        \item GPA: 4.0/4.0 - \linked{Transcript}{\transcriptGtLink}
+        % \item Featured courses: Machine Learning; Natural Language; Deep Learning for Text Data; Large Language Models; Game Artificial Intelligence; Data-Centric Machine Learning
+        \item Featured courses: Machine Learning; Natural Language Processing; Deep Learning for Text Data; Large Language Models; Game AI; Data-Centric ML
+    \end{itemize}
+}%
 % \divider
 \dividerSmall
 
@@ -16,19 +25,25 @@
 
 \cveventSameLine{\linked[0]{University of Michigan}{https://umich.edu}}
     {\linked[0]{B.S. in Computer Science}{https://cse.engin.umich.edu}}
-    {Sep. 2020 - Apr. 2022}{Ann Arbor, MI}
-\begin{itemize}
-    \item GPA: 3.98/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1cXDQv8PgRQ2GGUN9pupWWdQcZ0xIVtvi/view?usp=sharing}
+    {Sep 2020 -- Apr 2022}{Ann Arbor, MI}
+    {\iftoggle{compact}{GPA: 3.98/4.0 - \linked{Transcript}{\transcriptUmlink}}{}}
+    {}
+\iftoggle{compact}{
+    \vspace{-0.25ex}
+}{%
+    \begin{itemize}
     % \item Featured courses: Data Structures \& Algorithms; Computer Organization;
     %     Foundation of Computer Science; Machine Learning; Artificial Intelligence;
     %     Conversational AI; Natural Language Processing; Deep Learning for Computer Vision;
     %     Linear Algebra; Statistics \& Data Analysis\hspace{-0.25em}
-    \item Featured courses: Data Structures \& Algorithms; Computer Organization;
-    CS Theory; ML; Artificial Intelligence;
-    Conversational AI; NLP
-    % DL for CV
-    % Linear Algebra; Statistics \& Data Analysis\hspace{-0.25em}
-\end{itemize}
+        \item GPA: 3.98/4.0 - \linked{Transcript}{\transcriptUmlink}
+        \item Featured courses: Data Structures \& Algorithms; Computer Organization;
+        CS Theory; ML; Artificial Intelligence;
+        Conversational AI; NLP
+        % DL for CV
+        % Linear Algebra; Statistics \& Data Analysis\hspace{-0.25em}
+    \end{itemize}
+}%
 % \divider
 \dividerSmall
 
@@ -36,22 +51,23 @@
 
 \cveventSameLine{\linked[0]{University of Maryland}{https://www.umd.edu}}
     {\linked[0]{B.S. in Computer Science}{https://www.cs.umd.edu}}
-    {Aug. 2018 - May. 2020}{College Park, MD}
-\begin{itemize}
-    \item GPA: 3.97/4.0 - \linked{Transcript}{https://drive.google.com/file/d/1L75BLD-GpzKqhYnGOUk0VjGjNUoivliI/view?usp=sharing}
-    \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
-        Discrete Mathematics; Programming Languages
-
-    \iftoggle{compact}{
-        \item Featured Courses: 2D \& 3D Design; Drawing; Digital Art \& Design
-    }{
+    {Aug 2018 -- May 2020}{College Park, MD}
+    {\iftoggle{compact}{GPA: 3.97/4.0 - \linked{Transcript}{\transcriptUmdlink}}{}}
+\iftoggle{compact}{
+    \vspace{-0.25ex}
+}{%
+    \begin{itemize}
+        \item GPA: 3.97/4.0 - \linked{Transcript}{\transcriptUmdlink}
+        \item Featured Courses: Data Structures \& Algorithms; Computer Systems;
+            Discrete Mathematics; Programming Languages
+        % \item Featured Courses: 2D \& 3D Design; Drawing; Digital Art \& Design
         \item Featured Courses:
             % Applied Probability \& Statistics; Logic;
             Applied Statistics; Logic;
             2D \& 3D Design; Drawing; Digital Art \& Design;
             Morals \& Ethics
-    }
-\end{itemize}
+    \end{itemize}
+}%
 \dividerSmall
 
 
@@ -59,12 +75,27 @@
 \iftoggle{compact}{%
     %
 }{%
-    \cveventSameLine{\linked[0]{High School Affiliated to Renmin Univ. of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}%
+    \cveventSameLine{\linked[0]{High School Affiliated to Renmin University of China}{https://www.linkedin.com/company/high-school-affiliated-to-renmin-university-of-china-rdfz-icc/}}%
         {High School Diploma}%
-        {Aug. 2015 - Jul. 2018}{Beijing, CN}%
+        {Aug 2015 -- Jul 2018}{Beijing, CN}{}
     \begin{itemize}%
-        \item GPA: 3.93/4.0%
-        \item Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics%
+        \item GPA: 3.93/4.0; Featured A-Level Courses: Further Mathematics, Computer Science, Economics, Physics%
     \end{itemize}%
     \dividerSmall
+}%
+
+\iftoggle{compact}{%
+    \vspace{0.25ex}
+    \footnotesize
+    % {\color{black}{\textbf{Featured Courses}}}: 
+    \smallHeader{Featured Courses}: 
+    Data Structures \& Algorithms; Programming Languages; Computer Organization;
+    CS Theory; Machine Learning; Artificial Intelligence;
+    Conversational AI; Natural Language Processing;
+    Deep Learning for Text Data;
+    DL for Computer Vision; Large Language Models; Game AI; Data-Centric ML
+    \vspace{0.25ex}
+    \dividerSmall
+}{%
+    %
 }%

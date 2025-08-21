@@ -1,67 +1,100 @@
 \newcommand{\keywordIndent}{\hspace{0.75em}}
 
-\cvsection{Keywords}
-\bodyfontsize
-% \keywordIndent
-\faBullseye~ \skillHeader{Focus}: ~
-\cvtag{Transformers} \cvtag{Large Language Models (LLMs)}
-\cvtag{Data-Centric AI}
-\cvtag{Data Generation}
-\cvtag{Large-Scale Data Processing Pipeline} \\
-% \medskip
-% \divider
-\smallskip
-\dividerSmall
+% Async programming
+
+\iftoggle{compact}{%
+    \cvsection{Keywords}
+    \vspace{-0.25ex}
+    \bodyfontsize
+
+    \smallHeader{Focus}:
+    Transformers, Large Language Models (LLMs),
+    Data-Centric AI, Data Generation, Large-Scale Data Processing Pipeline
+    \dividerSmall
+
+    \smallHeader{Model Development}:
+    Prompt Tuning, Retrieval-Augmented Generation (RAG), LLM Fine-Tuning, LoRA, Distributed Training
+    \dividerSmall
+
+    \smallHeader{MISC}:
+    Innovation, Problem Solving, Craftsmanship, Technical Translation, Documentation, Presentation, Visualization
+    \dividerSmall
+}{%
+    
+    \cvsection{Keywords}
+    \bodyfontsize
+    % \keywordIndent
+    \faBullseye~ \skillHeader{Focus}: ~
+    \cvtag{Transformers} \cvtag{Large Language Models (LLMs)}
+    \cvtag{Data-Centric AI}
+    \cvtag{Data Generation}
+    \cvtag{Large-Scale Data Processing Pipeline} \\
+    % \medskip
+    % \divider
+    % \smallskip
+    \dividerSmall
 
 
+    % \iftoggle{compact}{%
+    %     \faTools~ \skillHeader{Model Development}: ~
+    %     \cvtag{Prompt Tuning}
+    %     \cvtag{Retrieval-Augmented Generation (RAG)}
+    %     \cvtag{LLM Fine-Tuning}
+    %     \cvtag{LoRA}
+    %     \cvtag{Distributed Training} \\
+    % }{%
+    % \keywordIndent
+    \begin{minipage}{0.17\textwidth}
+        % \vspace{0pt}%
+        \faTools~ \skillHeader{Model Development}: ~
+    \end{minipage}%
+    \begin{minipage}{0.75\textwidth}
+        % \vspace{0pt}%
+        \cvtag{Prompt Tuning}
+        \cvtag{Retrieval-Augmented Generation (RAG)} \\
+        \cvtag{LLM Fine-Tuning}
+        \cvtag{Parameter Efficient Fine-Tuning (PEFT)}
+        \cvtag{LoRA}
+        \cvtag{Distributed Training} \\
+    \end{minipage}
+    % }%
+    % \smallskip
+    % \vspace{0.5\baselineskip}
+    \dividerSmall
 
-% \keywordIndent
-\begin{minipage}{0.17\textwidth}
-    \faTools~ \skillHeader{Model Development}: ~
-\end{minipage}%
-\begin{minipage}{0.75\textwidth}
-\cvtag{Prompt Tuning}
-\cvtag{Retrieval-Augmented Generation (RAG)} \\
-% \keywordIndent
-\cvtag{LLM Fine-Tuning}
-\cvtag{Parameter Efficient Fine-Tuning (PEFT)}
-\cvtag{LoRA}
-\cvtag{Distributed Training} \\
-\end{minipage}
-% \smallskip
-
-\vspace{0.5\baselineskip}
-\dividerSmall
+    % \iftoggle{compact}{%
+        
+    % }{%
+    % \keywordIndent
+    \faProjectDiagram~ \skillHeader{Tasks}: ~
+    % \cvtag{Alignment}
+    \cvtag{LLM Post-Training}
+    \cvtag{Named Entity Recognition (NER)} \cvtag{Text Classification}
+    \cvtag{Natural Language Processing (NLP)} \\
+    % \cvtag{Time Series} \cvtag{Vision Transformers} \\
+    % \medskip
+    % \divider
+    % \smallskip
+    \dividerSmall
+    % }%
 
 
-% \keywordIndent
-\faProjectDiagram~ \skillHeader{Tasks}: ~
-% \cvtag{Alignment}
-\cvtag{LLM Post-Training}
-\cvtag{Named Entity Recognition (NER)} \cvtag{Text Classification}
-\cvtag{Natural Language Processing (NLP)} \\
-% \cvtag{Time Series} \cvtag{Vision Transformers} \\
-% \medskip
-% \divider
-\smallskip
-\dividerSmall
+    % \keywordIndent
+    % \faPuzzlePiece~
+    \faBrain~
+    \skillHeader{MISC}: ~
+    \cvtag{Innovation}
+    \cvtag{Problem Solving}
+    \cvtag{Craftsmanship}
+    \cvtag{Technical Translation}
+    % \cvtag{Cross-Functional Communication}
+    % \cvtag{Organized}
+    \cvtag{Documentation}
+    \cvtag{Presentation}
+    \cvtag{Visualization} \\
 
-
-
-% \keywordIndent
-% \faPuzzlePiece~
-\faBrain~
-\skillHeader{MISC}: ~
-\cvtag{Innovation}
-\cvtag{Problem Solving}
-\cvtag{Craftsmanship}
-\cvtag{Technical Translation}
-% \cvtag{Cross-Functional Communication}
-\cvtag{Organized}
-\cvtag{Presentation}
-\cvtag{Visualization} \\
-% \medskip
-% \divider
-\smallskip
-\dividerSmall
-
+    % \medskip
+    % \divider
+    % \smallskip
+    \dividerSmall
+}%

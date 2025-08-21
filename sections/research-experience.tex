@@ -1,7 +1,7 @@
 \cvsection{Research Experience}
-\cveventSameLine{}
-    {Strength-Controlled Preference Data Synthesis}
-    {Apr. 2024 - Jan. 2025}{\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
+\cveventSameLine{Strength-Controlled Preference Data Synthesis}
+    {{\bodyfontsize \color{body} mentored by} \linked[0]{Prof. Chao Zhang}{http://chaozhang.org}}
+    {Apr 2024 -- Jan 2025}{\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}{}
 \begin{itemize}
     % \item Collaborating with PhD student \linked[0]{Rongzhi Zhang}{https://rongzhizhang.org}
 
@@ -22,9 +22,9 @@
 % \pagebreak
 
 
-\cveventSameLine{}
-    {LLM as IE Data Generator}
-    {Sep. 2023 - Mar. 2024}{\linked[0]{Chao Zhang}{http://chaozhang.org}'s group @ \linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}
+\cveventSameLine{LLM as IE Data Generator}
+    {{\bodyfontsize \color{body} mentored by} \linked[0]{Prof. Chao Zhang}{http://chaozhang.org}}
+    {Sep 2023 -- Mar 2024}{\linked[0]{Georgia Tech}{https://www.cc.gatech.edu}}{}
 \begin{itemize}
     % \item Mentored by Ph.D. students at
 
@@ -42,90 +42,95 @@
 \dividerSmall
 
 
-\cveventSameLine{}
-    {Parameter-Efficient Personalization}
-    {May. 2023 - Dec. 2023}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}{}
-\begin{itemize}
-    % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
-        % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
-
-    \item Surveyed literature to select subjective datasets (e.g., irony detection) for personalization experiments
-
-    \item Designed \& Executed \linked[0]{PEFT}{https://huggingface.co/docs/peft/index} and \linked[0]{Adapter}{https://docs.adapterhub.ml}
-    % and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset}
-    training \& evaluation user-wise pipelines for Flan-T5 generative text classification
-
-    \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, containing 120K samples total, from up to 5K users each
-\end{itemize}
-\dividerSmall
-
-
-
-
-\cveventSameLine{}
-    {Symbolic Music Generation}
-    {Oct. 2021 - Feb. 2023}{\linked[0]{LIT}{https://lit.eecs.umich.edu} @ \linked[0]{UMich}{https://umich.edu}}
-\begin{itemize}
-    % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
-        % at
-
-    % \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
-    % music theory annotations
-
-    \item Designed compact token representation first integrating music theory annotations for long music sequences;
-    Independently implemented tokenization
-
-    % \item Coded \& Optimized pre-training corpus pipeline, processing 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
-    \item Built \& Optimized a robust data pipeline, processing 10K+ MIDI files with batched concurrency, channel reduction \& >50 edge-case handling
-
-    % \item Tailored Transformer-XL \& Reformer architectures for foundational long music sequence modelling; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
-    \item Adapted Transformer-XL \& Reformer for music generation; Designed domain-specific evaluation metrics; Inspected >100 generated music pieces
-\end{itemize}
-\dividerSmall
-
-
-
-
-\cveventSameLine{}
-    {Personalized Text Classification Dataset}
-    {Jul. 2022 - Oct. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}
-\begin{itemize}
-    % \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
-    \item Structured a novel hierarchical dataset schema tailored for nested and temporally-changing label sets
-
-    % \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
-    \item Aggregated and analyzed 15K real-world user interaction data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
-
-    % \item Implemented and conducted experiments for personalization paper
-\end{itemize}
-\dividerSmall
-
-
-
-\cveventSameLine{}
-    {Zero-Shot Text Classification}
-    {Feb. 2022 - Jun. 2022}{\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ \linked[0]{UMich}{https://umich.edu}}
-\begin{itemize}
-    % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
-        % at
-
-    \item Benchmarked 3 zero-shot classification paradigms across 18 diverse datasets
-
-    \item Reproduced closed-source 0-shot classification approach based on GPT-2 from prior literature
-
-    \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X
-
-    \item Improved classifier accuracy by 1\% through domain-conditioned training techniques; Designed illustrations \& wrote paper sections
-\end{itemize}
-\dividerSmall
-
-
 \iftoggle{compact}{%
     %
 }{%
-    \cveventSameLine{}%
-        {ECG Classification}%
-        {Sep. 2021 - Apr. 2022}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}%
+    \cveventSameLine{Parameter-Efficient Personalization}
+        {{\bodyfontsize \color{body} mentored by} Prof. Jason Mars}
+        {May 2023 -- Dec 2023}
+        {\linked[0]{UMich}{https://umich.edu}}{}
+    \begin{itemize}
+        % \item In collaboration with \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+            % at \linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}
+
+        \item Surveyed literature to select subjective datasets (e.g., irony detection) for personalization experiments
+
+        \item Designed \& Executed \linked[0]{PEFT}{https://huggingface.co/docs/peft/index} and \linked[0]{Adapter}{https://docs.adapterhub.ml}
+        % and \linked[0]{Personalized Head}{https://stefanheng.github.io/projects\#PiDset}
+        training \& evaluation user-wise pipelines for Flan-T5 generative text classification
+
+        \item Benchmarked 7 prompting and PEFT methods across 11 subjective tasks, containing 120K samples total, from up to 5K users each
+    \end{itemize}
+    \dividerSmall
+
+
+
+
+    \cveventSameLine{Symbolic Music Generation}
+        {{\bodyfontsize \color{body} mentored by} \linked[0]{Prof. Rada Mihalcea}{https://lit.eecs.umich.edu}}
+        {Oct 2021 -- Feb 2023}
+        {\linked[0]{UMich}{https://umich.edu}}{}
+    \begin{itemize}
+        % \item Mentored by \linked[0]{Artem Abzaliev}{http://artem.site44.com}
+            % at
+
+        % \item Designed \& Implemented a compact music token representation for long song sequences that first integrated
+        % music theory annotations
+
+        \item Designed compact token representation first integrating music theory annotations for long music sequences;
+        Independently implemented tokenization
+
+        % \item Coded \& Optimized pre-training corpus pipeline, processing 10K+ raw MIDI files including batching and concurrency optimization, channel reduction and efficient edge-case (>50) handling
+        \item Built \& Optimized a robust data pipeline, processing 10K+ MIDI files with batched concurrency, channel reduction \& >50 edge-case handling
+
+        % \item Tailored Transformer-XL \& Reformer architectures for foundational long music sequence modelling; Designed music-specific evaluation metrics; Inspected >100 generated music pieces
+        \item Adapted Transformer-XL \& Reformer for music generation; Designed domain-specific evaluation metrics; Inspected >100 generated music pieces
+    \end{itemize}
+    \dividerSmall
+
+
+
+
+    \cveventSameLine{Personalized Text Classification Dataset}
+        {{\bodyfontsize \color{body} mentored by} \linked[0]{Prof. Jason Mars}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/}}
+        {Jul 2022 -- Oct 2022}
+        {\linked[0]{UMich}{https://umich.edu}}{}
+    \begin{itemize}
+        % \item Designed a tree-structured text classification dataset schema for nested and temporally-changing label sets
+        \item Structured a novel hierarchical dataset schema tailored for nested and temporally-changing label sets
+
+        % \item Processed 15K production user data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
+        \item Aggregated and analyzed 15K real-world user interaction data from \linked[0]{Myca}{https://www.myca.ai} productivity tool spanning 2 years
+
+        % \item Implemented and conducted experiments for personalization paper
+    \end{itemize}
+    \dividerSmall
+
+
+    %\linked[0]{CLARITY lab}{https://www.jasonmars.org/2014/03/20/clarity-lab-at-university-of-michigan/} @ 
+    \cveventSameLine{Zero-Shot Text Classification}
+        {{\bodyfontsize \color{body} mentored by} Prof. Jason Mars}
+        {Feb 2022 -- Jun 2022}
+        {\linked[0]{UMich}{https://umich.edu}}{}
+    \begin{itemize}
+        % \item Mentored by \linked[0]{Christopher Clarke}{https://scholar.google.com/citations?user=IaFEAbsAAAAJ&hl=en}
+            % at
+
+        \item Benchmarked 3 zero-shot classification paradigms across 18 diverse datasets
+
+        \item Reproduced closed-source 0-shot classification approach based on GPT-2 from prior literature
+
+        \item Developed \& Optimized training \& eval pipelines, reducing GPT-2 inference time by 2X
+
+        \item Improved classifier accuracy by 1\% through domain-conditioned training techniques; Designed illustrations \& wrote paper sections
+    \end{itemize}
+    \dividerSmall
+
+
+    \cveventSameLine{ECG Classification}%
+        {{\bodyfontsize \color{body} mentored by} Dr. Mohammed Saeed}%
+        {Sep 2021 -- Apr 2022}
+        {\linked[0]{UMich}{https://umich.edu}}{}%
     \begin{itemize}%
         % \item Mentored by \linked[0]{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd} @
         %
@@ -140,10 +145,11 @@
         \item Pioneered applying Vision Transformer for disease classification with heart-signal augmentation and explainability via visualized attention layers%
     \end{itemize}%
     \dividerSmall
-
-    \cveventSameLine{}%
-        {ECG Visualization}%
-        {Sep. 2020 - Apr. 2021}{\linked[0]{Michigan Medicine}{https://www.uofmhealth.org} @ \linked[0]{UMich}{https://umich.edu}}%
+    % \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
+    \cveventSameLine{ECG Visualization}%
+        {{\bodyfontsize \color{body} mentored by} Dr. Mohammed Saeed}%
+        {Sep 2020 -- Apr 2021}
+        {\linked[0]{UMich}{https://umich.edu}}{}%
     \begin{itemize}%
         % \item Mentored by \linked{Dr. Mohammed Saeed}{https://mcircc.umich.edu/members/mohammed-saeed-md-phd}
             % at \linked[0]{Michigan Medicine}{https://www.uofmhealth.org}
@@ -158,9 +164,10 @@
     \end{itemize}%
     \dividerSmall
 
-    \cveventSameLine{}%
-        {AR Art Museum Experience}%
-        {Apr. 2019 - May. 2020}{Prof. Kyungjin Yoo @ \linked[0]{UMD}{https://www.fire.umd.edu}}%
+    \cveventSameLine{AR Art Museum Experience}%
+        {{\bodyfontsize \color{body} mentored by} Prof. Kyungjin Yoo}%
+        {Apr 2019 -- May 2020}
+        {\linked[0]{UMD}{https://www.fire.umd.edu}}{}%
     \begin{itemize}%
         % \item Mentored by
         %
@@ -173,5 +180,4 @@
     \end{itemize}%
     \dividerSmall
 }%
-%
 %

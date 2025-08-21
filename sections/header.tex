@@ -1,34 +1,64 @@
 \name{Yuzhao (Stefan) Heng}
 
-\tagline{MSCS Student at Georgia Tech; NLP Engineer/Researcher with a focus on Large Language Models}
+% \tagline{MSCS Student at Georgia Tech; NLP Engineer focusing on Large Language Models}
+\tagline{NLP Engineer focusing on Large Language Models}
 %% You can add multiple photos on the left or right
 % \photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
+\iftoggle{compact}{% add CV link if for resume
+    \headerboxL{2cm}{%
+        \qrcode[height=1.75cm]{\cvLink}\\[-0.1ex]
+        {\tiny\textcolor{body}{Scan to view\\[-1.5ex]my CV}}
+    }%
+}{%
+    %
+}%
+
+\headerboxR{2cm}{%
+    \qrcode[height=1.75cm]{\websiteLink}\\[-0.1ex]
+    {\tiny\textcolor{body}{Scan to view\\[-1.5ex]my website}}
+}%
+
+
 \personalinfo{%
-    \printinfo{\faHome}{United States Permanent Resident}%
+    \iftoggle{compact}{% add CV link if for resume
+        %
+    }{%
+        \printinfo{\faHome}{United States Permanent Resident}%
+    }%
+    % \homepage{stefanheng.github.io}%
+    \printinfo{\faGlobe}{stefanheng.github.io}[\websiteLink]% this makes better machine parsing
+    % \linkedin{stefan-heng}%
+    \printinfo{\faLinkedin}{stefan-heng}[https://linkedin.com/in/stefan-heng]%
+    % \github{StefanHeng}%
+    \printinfo{\faGithub}{StefanHeng}[https://github.com/StefanHeng]%
+    \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ]%
     \iftoggle{compact}{% add CV link if for resume
         \printinfo{\faUserTie}{CV}[\cvLink]%
     }{%
         %
-    }
-    % \homepage{stefanheng.github.io}%
-    \printinfo{\faGlobe}{stefanheng.github.io}[https://stefanheng.github.io]% this makes better machine parsing
-    % \linkedin{stefan-heng}%
-    \printinfo{\faLinkedin}{stefan-heng}[https://linkedin.com/in/stefan-heng]
-    % \github{StefanHeng}%
-    \printinfo{\faGithub}{StefanHeng}[https://github.com/StefanHeng]
-    \printinfo{\faGraduationCap}{Yuzhao Heng}[https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=2&gmla=AHoSzlXaibxS1V0kOkP6sN_02514W-pQtMjt5gU4r5OtshQhfRla_Vw1Cpc6uYzbd_H3kqH0V7xy75_XNhxSbA&user=t5HO9R8AAAAJ] \par
-
+    }%
+    \\
+    \iftoggle{compact}{% add CV link if for resume
+        \printinfo{\faHome}{United States Permanent Resident}%
+    }{%
+        %
+    }%
+    %
     % \email{stefan.hg@outlook.com}%
-    \printinfo{\faAt}{stefan.hg@outlook.com}[mailto:stefan.hg@outlook.com]
+    \printinfo{\faAt}{stefan.hg@outlook.com}[mailto:stefan.hg@outlook.com]%
     % \phone{(301)454-9176}%
-    \printinfo{\faPhone}{(301)454-9176}[tel:3014549176]
+    \printinfo{\faPhone}{(301)454-9176}[tel:3014549176]%
     \location{Atlanta, GA}%
     % \xtwitter{yuzhao_heng}
-    \printinfo{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}\,}{yuzhao_heng}[https://x.com/yuzhao_heng]
-    \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]%
-    \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]%
+    \iftoggle{compact}{% add CV link if for resume
+        % \printinfo{\faUserTie}{CV}[\cvLink]%
+    }{%
+        \printinfo{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}\,}{yuzhao_heng}[https://x.com/yuzhao_heng]%
+        \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]%
+        \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]%
+    }%
 }
 
 \makecvheader

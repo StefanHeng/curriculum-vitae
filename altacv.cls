@@ -42,7 +42,10 @@
 \RequirePackage{xcolor}
 %% v1.3.2 Hopefully this helps make the PDF
 %% file more 'friendly' with copy-paste etc
-\RequirePackage[a-1b]{pdfx}
+% ====================================== Begin of Modified ======================================
+% \RequirePackage[a-1b]{pdfx}
+\RequirePackage[a-2u]{pdfx}
+% ====================================== End of Modified ======================================
 \RequirePackage{accsupp}
 %% v1.7.3 Avoid 'Token not allowed' when \\ used with accsupp
 \pdfstringdefDisableCommands{
@@ -182,11 +185,22 @@
 %     \noindent\smash{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\smallskip}
 % }
 \newcommand{\dividerSmall}{%
-  \vspace{-0.75ex}%
-  \noindent\raisebox{0.5ex}{%
+%   % \vspace{-0.75ex}%
+%   \bodyfontsize
+%   \vspace{-1ex}%
+%   \noindent\raisebox{0.5ex}{%
+%     \textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}%
+%   }%
+% %   \vspace{-0.75ex}%
+%   \vspace{-0.5ex}%
+  \par
+  \begingroup\skip0=\lastskip \vspace*{-\skip0}\endgroup
+  \nointerlineskip
+  % \textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}%
+  \noindent\raisebox{-0.5ex}{%
     \textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}%
-  }
-%   \vspace{-0.75ex}%
+  }%
+  \par\vspace{0.25ex}%
 }
 % ====================================== End of Added ======================================
 
@@ -317,6 +331,10 @@
 \newlength{\altacv@photos@width}
 \newlength{\altacv@photo@diam@left}
 \newlength{\altacv@photo@diam@right}
+% ====================================== Begin of Added ======================================
+\newlength{\altacv@header@offset}
+% ====================================== End of Added ======================================
+
 \def\altacv@left@photos{}
 \def\altacv@right@photos{}
 
@@ -354,25 +372,78 @@
 }
 \let\photo\photoR
 
+
+% ====================================== Begin of Added ======================================
+% 生成 QR 的包（pdfLaTeX / XeLaTeX 都可）
+% ---- QR codes (optional)
+\RequirePackage{qrcode} % 如果你想让 LaTeX 自动生成二维码。若用现成图片，可删掉这一行。
+
+
+% --- 可在 header 左/右插入自定义盒子（不会被裁圆）
+\newcommand{\headerboxR}[2]{%
+  \setlength{\altacv@photo@diam@right}{#1}%
+  \appto{\altacv@right@photos}{%
+    \begin{minipage}{#1}\centering #2\end{minipage}\hspace{1ex}%
+  }%
+  \addtolength{\altacv@photos@width}{\altacv@photo@diam@right}%
+  \addtolength{\altacv@photos@width}{1ex}%
+}
+\newcommand{\headerboxL}[2]{%
+  \setlength{\altacv@photo@diam@left}{#1}%
+  \appto{\altacv@left@photos}{%
+    \begin{minipage}{#1}\centering #2\end{minipage}\hspace{1ex}%
+  }%
+  \addtolength{\altacv@photos@width}{\altacv@photo@diam@left}%
+  \addtolength{\altacv@photos@width}{1ex}%
+}
+
+
+% ====================================== End of Added ======================================
+
+
 \newcommand{\namefont}{\Huge\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
-\newcommand{\cvsectionfont}{\LARGE\bfseries}
+% ====================================== Begin of Modified ======================================
+% \newcommand{\cvsectionfont}{\LARGE\bfseries}
+% \newcommand{\cvsectionfont}{\large\bfseries}
+\newcommand{\cvsectionfont}{\normalsize\bfseries}
+% ====================================== End of Modified ======================================
 \newcommand{\cvsubsectionfont}{\large\bfseries}
 
 \newcommand{\makecvheader}{%
   \begingroup
+  % ====================================== Begin of Added ======================================
+    % compute shift s.t. the name & tagline is centered (right - left)/2
+    \setlength{\altacv@header@offset}
+      {\dimexpr (\altacv@photo@diam@right - \altacv@photo@diam@left)/2\relax}%
+    % ====================================== End of Added ======================================
+
     \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     % ====================================== Begin of Modified ======================================
     % \raggedright%
-    \centering% center name & tagline instead, note no support for photos
+    % \centering% center name & tagline instead, note no support for photos
     % {\namefont\color{name}\MakeUppercase{\@name}\par}
-    {\namefont\color{name}{\@name}\par}% drop upper casing
+    % {\namefont\color{name}{\@name}\par}% drop upper casing
+    {\namefont\color{name}%
+        \noindent\makebox[0pt][l]{%
+          \hspace*{\altacv@header@offset}%
+          \makebox[\linewidth][c]{\@name}%
+        }\par
+    }
     % ====================================== End of Added ======================================
     \medskip
-    {\taglinefont\color{tagline}\@tagline\par}
+    % ====================================== Begin of Modified ======================================
+    % {\taglinefont\color{tagline}\@tagline\par}
+    {\taglinefont\color{tagline}%
+        \noindent\makebox[0pt][l]{%
+          \hspace*{\altacv@header@offset}%
+          \makebox[\linewidth][c]{\@tagline}%
+        }\par
+    }
     \medskip
+    % ====================================== End of Modified ======================================
     % ====================================== Begin of Added ======================================
     \raggedright
     % ====================================== End of Added ======================================
@@ -385,13 +456,19 @@
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
-  \nointerlineskip\bigskip%  %% bugfix in v1.6.2
-  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
   % ====================================== Begin of Modified ======================================
+  % \nointerlineskip\bigskip%  %% bugfix in v1.6.2
+  % \nointerlineskip\medskip%
+  \vspace{1.25ex}
+  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
 %   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]% make smaller gap
 %   {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
-  {\color{headingrule}\rule{\linewidth}{0.75pt}\par}\medskip% make smaller gap
+  {\color{headingrule}\rule{\linewidth}{0.75pt}\par}
+  % \medskip% make smaller gap
+  % \smallskip
+  \vspace{0.25ex}
+  % ====================================== End of Modified ======================================
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -421,7 +498,7 @@
 }
 
 % ====================================== Begin of Added ======================================
-\newcommand{\cveventSameLine}[4]{% all content on the same line, date & time on the right
+\newcommand{\cveventSameLine}[5]{% all content on the same line, date & time on the right
   \ifstrequal{#1}{}{}{
     % {\large\color{emphasis}#1}
     % \BeginAccSupp{method=pdfstringdef,ActualText={Organization: #1 ^^J}}% enclose to add a AccSup newline; TODO: doesn't seem to work when #1 is itself a link with AccSupp
@@ -429,17 +506,23 @@
     % \EndAccSupp{}%
     \pdfstringdef\temporg{#1}%
     \myBeginAccSupp{method=pdfstringdef,ActualText={Organization: \temporg ^^J}}%
-        {\large\color{emphasis}#1}
+        % {\large\color{emphasis}#1}
+        % {\textbf{\normalsize\color{emphasis}#1}}
+        {\textbf{\small\color{emphasis}#1}}
     \myEndAccSupp{}%
   }
 %   \smallskip
-  \normalsize
+  % \normalsize
   \ifstrequal{#2}{}{}{
     % \textbf{\color{accent}#2}
     \myBeginAccSupp{method=pdfstringdef,ActualText={^^JTitle: #2}}% enclose to add a AccSup newline; TODO: similar to above, doesn't work
-        \textbf{\color{accent}#2}
+        % \textbf{\color{accent}#2}
+        {\small\color{accent}#2}
     \myEndAccSupp{}%
 %   \smallskip
+  }
+  \ifstrequal{#5}{}{}{
+    \footnotesize~~~#5
   }
   \hfill
 %   \ifstrequal{#3}{}{}{%
@@ -482,7 +565,8 @@
         }%
 %   }
   }%
-  \smallskip
+  % \smallskip
+  \vspace{0.25ex}
   \normalsize
 }
 % ====================================== End of Added ======================================
