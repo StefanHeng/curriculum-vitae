@@ -6,18 +6,45 @@
 % \photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
+
+\newif\ificonasimage% toggle for converting fontawesome5 icons to images
+% \iconasimagefalse
+\iconasimagetrue
+
+
+\ificonasimage
+    \renewcommand{\faGlobe}{\faImgPdf{fa-globe_accent}}
+    \renewcommand{\faLinkedin}{\faImgPdf{fa-linkedin_accent}}
+    \renewcommand{\faGithub}{\faImgPdf{fa-github_accent}}
+    \renewcommand{\faGraduationCap}{\faImgPdf[0.85em]{fa-graduation-cap_accent}}
+    \renewcommand{\faUserTie}{\faImgPdf{fa-user-tie_accent}}
+    \renewcommand{\faHome}{\faImgPdf[0.9em][-0.05em]{fa-home_accent}}
+    \renewcommand{\faAt}{\faImgPdf[0.9em][-0.2em]{fa-at_accent}}
+    \renewcommand{\faPhone}{\faImgPdf{fa-phone_accent}}
+    % \renewcommand{\faMapMarker}{\faImgPdf{fa-map-marker*_accent}}
+    % \renewcommand{\cvLocationMarker}{\faMapMarker}
+    \renewcommand{\cvLocationMarker}{\faImgPdf{fa-map-marker*_accent}}
+
+    \renewcommand{\faInstagram}{\faImgPdf{fa-instagram_accent}}
+    \renewcommand{\faPaintBrush}{\faImgPdf{fa-paint-brush_accent}}
+    \newcommand{\iconXTwitter}{\faImgPdf[1em]{icon-x-twitter_accent}}
+\else
+    \newcommand{\iconXTwitter}{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}}
+\fi
+
+
 \iftoggle{compact}{% add CV link if for resume
     \headerboxL{2cm}{%
-        \qrcode[height=1.75cm]{\cvLink}\\[-0.1ex]
-        {\tiny\textcolor{body}{Scan to view\\[-1.5ex]my CV}}
+    \hideFromExtract{\qrcode[height=1.75cm]{\cvLink}}\\[-0.1ex]
+        {\tiny\textcolor{body}{\dropFaiconText{Scan to view\\[-1.5ex]my \linked{CV}{\cvLink}}}}
     }%
 }{%
     %
 }%
 
 \headerboxR{2cm}{%
-    \qrcode[height=1.75cm]{\websiteLink}\\[-0.1ex]
-    {\tiny\textcolor{body}{Scan to view\\[-1.5ex]my website}}
+    \hideFromExtract{\qrcode[height=1.75cm]{\websiteLink}}\\[-0.1ex]
+    {\tiny\textcolor{body}{\dropFaiconText{Scan to view\\[-1.5ex]my \linked{website}{https://stefanheng.github.io}}}}
 }%
 
 
@@ -26,7 +53,7 @@
         %
     }{%
         % \printinfo{\faHome}{United States Permanent Resident}%
-        \printinfoLabeled{Citizenship Status}{\faHome}{United States Permanent Resident}%
+        \printinfoLabeled{Work Authorization}{\faHome}{United States Permanent Resident}%
     }%
     % \homepage{stefanheng.github.io}%
     % \printinfo{\faGlobe}{stefanheng.github.io}[\websiteLink]% this makes better machine parsing
@@ -48,7 +75,7 @@
     \\
     \iftoggle{compact}{% add CV link if for resume
         % \printinfo{\faHome}{United States Permanent Resident}%
-        \printinfoLabeled{Citizenship Status}{\faHome}{United States Permanent Resident}%
+        \printinfoLabeled{Work Authorization}{\faHome}{United States Permanent Resident}%
     }{%
         %
     }%
@@ -66,7 +93,7 @@
         % \printinfo{\faUserTie}{CV}[\cvLink]%
     }{%
         % \printinfo{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}\,}{yuzhao_heng}[https://x.com/yuzhao_heng]%
-        \printinfoLabeled{X}{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}\,}{yuzhao_heng}[https://x.com/yuzhao_heng]%
+        \printinfoLabeled{X/Twitter}{\iconXTwitter}{yuzhao_heng}[https://x.com/yuzhao_heng]%
         % \printinfo{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]%
         \printinfoLabeled{Instagram}{\faInstagram}{aaaak}[https://www.instagram.com/the.aaaak/]%
         % \printinfo{\faPaintBrush}{portfolio}[https://drive.google.com/file/d/1E0crUScmWWky5yYXZjb_2wz-YCOK5A_i/view?usp=share_link]%
@@ -75,3 +102,28 @@
 }
 
 \makecvheader
+
+
+\ificonasimage% after header, all icons will be body color except from publications
+    \renewcommand{\cvLocationMarker}{\faImgPdf[0.95em]{fa-map-marker*_body}}
+    \renewcommand{\cvDateMarker}{\faImgPdf[0.95em]{fa-calendar*[regular]_body}}
+
+    \renewcommand{\faUsers}{\faImgPdf[0.95em]{fa-users_accent}\,}
+    \newcommand{\iconPreprint}{\,\faImgPdf[0.95em]{fa-file*_accent}\,\,}
+
+    \renewcommand{\faCode}{\faImgPdf[0.95em]{fa-code_body}}
+    \renewcommand{\faCogs}{\faImgPdf[0.95em]{fa-cogs_body}\,}
+    \renewcommand{\faChartArea}{\faImgPdf[0.85em][-0.05em]{fa-chart-area_body}}
+    \renewcommand{\faGlobe}{\faImgPdf[0.95em]{fa-globe_body}}
+    \renewcommand{\faCubes}{\faImgPdf[0.95em]{fa-cubes_body}}
+    \renewcommand{\faWrench}{\faImgPdf[0.95em]{fa-wrench_body}}
+    \renewcommand{\faPaintBrush}{\faImgPdf[0.95em]{fa-paint-brush_body}}
+    \newcommand{\iconPencil}{\faImgPdf[0.95em]{fa-pencil*_body}}
+    \renewcommand{\faBullseye}{\faImgPdf[0.95em]{fa-bullseye_body}}
+    \renewcommand{\faTools}{\faImgPdf[0.95em]{fa-tools_body}}
+    \renewcommand{\faProjectDiagram}{\faImgPdf[0.95em]{fa-project-diagram_body}}
+    \renewcommand{\faBrain}{\faImgPdf[0.95em]{fa-brain_body}}
+\else
+    \newcommand{\iconPreprint}{\faFile*}
+    \newcommand{\iconPencil}{\faPencil*}
+\fi

@@ -3,16 +3,20 @@
     {\linked{Honeywell Aerospace}{https://aerospace.honeywell.com}}
     {May 2025 -- Aug 2025}{Phoenix, AZ}{}
 \begin{itemize}
-    \item Pioneered a LLM-powered chatbot agent prototype with RAG \& tool calling
+    \item Pioneered an LLM-powered chatbot agent prototype with RAG \& tool calling
     % powered by Google Gemma 3,
     for Jira tickets in Flight Management System (FMS) software development
     % collaborating with another intern for backend Jira ticket access
     \item Presented with live demos to Principal Engineer and Electronic Solutions (ES) directors 
     and received highest praise among 10+ projects
     % centralized
-    \item Designed an automated system generating bug-fix tracking table with LLM chains and issue grouping across 3 unstructured Jira projects \& 20K+ issues
-    \item Optimized LLM serving token throughput by 2X by exploring packages, parallelization \& quantization on legacy GPUs
-    \item Integrated LLM applications as backend API services and containerized services with Docker Compose
+    \item Designed an automated system generating bug-fix tracking table 
+    with LLM chains and issue grouping across 3 unstructured Jira projects \& 20K+ issues
+
+    \item Scaled LLM serving on RTX A5000 GPUs, improving token throughput by 4X (from 50 to 200) 
+    % by exploring packages, parallelization \& quantization 
+    with package configuration, parallelism \& quantization 
+    \item Integrated LLM applications as backend REST API services and containerized services with Docker Compose
     
     % \item Designed bug fix structured extraction across messy NL Jira projects with manual review 
     % \item Deployed using docker with docker compose 
@@ -26,20 +30,8 @@
     {\linked{22 Minds LLC.}{http://22minds.ai}}
     {Jan 2025 -- May 2025}{Atlanta, GA}{}
 \begin{itemize}
-    \item Built a robust 100M-parameter domain-specific LM for chatbot assistants running on edge/web, 
+    \item Built a tiny (100M-parameter) and robust domain-specific LM for chatbot assistants running on edge/web, 
     focused on the shopping domain
-
-    % \item Innovating new dialog data synthesis pipeline with RAG \& sub-billion-paremeter LM training pipeline for domain-specific chatbots running on edge/web
-    % \item Proposed and engineered an innovative and high-quality data synthesis pipeline,
-    \item Proposed and engineered an innovative data synthesis pipeline,
-    % leveraging Diverse query sampling, Syntactic \& semantic deduplication,
-    % Generative query transformations,
-    % RAG, Prompt-tuning and Structured outputs for reasoning elicitation
-    including deduplication, query transformation, RAG and reasoning elicitation
-    % Prompt-tuning for structured reasoning
-    %  and improved instruction following
-
-    % \item Presenting recent LLM advancements, data generation plan and ideas weekly within team of 6; Iteratively developing for a shopping mall case-study
 
     \item Delivered a near-deployable model substantially
     % outperform versions prior to joining,
@@ -53,21 +45,43 @@
     % with 40\% less data, 40\% fewer parameters and 10X less training compute
     while cutting data \& parameters by 40\% and training compute by 10X
 
+    % \item Innovating new dialog data synthesis pipeline with RAG \& sub-billion-paremeter LM training pipeline for domain-specific chatbots running on edge/web
+    % \item Proposed and engineered an innovative and high-quality data synthesis pipeline,
+    \item Proposed and engineered an innovative data synthesis pipeline,
+    % leveraging Diverse query sampling, Syntactic \& semantic deduplication,
+    % Generative query transformations,
+    % RAG, Prompt-tuning and Structured outputs for reasoning elicitation
+    including deduplication, query transformation, RAG and reasoning elicitation
+    % Prompt-tuning for structured reasoning
+    %  and improved instruction following
+
+    % \item Presenting recent LLM advancements, data generation plan and ideas weekly within team of 6; Iteratively developing for a shopping mall case-study
+
     \item Pioneered vLLM inference integration with distributed torchrun training
     % overcoming lack of existing solutions and high technical risk
     % overcoming significant technical challenges
     through vLLM codebase exploration,
     % overcoming significant technical barriers with lack of existing solutions,
     % achieving 2X training speedup
-    achieving 2X faster training
+    achieving -50\% wall-clock time
 
     % \item Prompt-tuning GPT4o-mini to elicit reasoning for high-quality instruction-following and diverse user query generation
 
     % Optimizing system prompts with general information & RAG  by manual inspection
 
     % \item Developed LM that matched performance of previous chatbot using 10X less data and compute in initial trial
-    \item Designed robust template-based hallucination benchmark targeting domain-specific data attributes,
-    reducing LM hallucination rate by 4X
+    % \item Designed 
+    \item Generated
+    % robust 
+    diverse
+    domain-attribute
+    hallucination 
+    % benchmark 
+    eval dataset (90K samples)
+    from templates,
+    % targeting domain-specific data attributes,
+    % targeting domain attributes,
+    reducing LM hallucination rate by 4X (from 50\% to 13\%)
 
     % \item Conducted extensive experiments (200+ training runs), evaluating advanced training techniques including
     % Dynamic user query augmentations via randomized programmatic editing,
@@ -91,7 +105,9 @@
 \begin{itemize}
     % \item Mentored by \linked{Wei Don}{https://www.linkedin.com/in/don-wei/} and Srini at Seller Experience team
 
-    \item Developed and launched new video feature in item listing tool at Seller Experience team, positively impacting >10\% eBay sellers
+    \item Developed \& launched new video feature in item listing tool at the Seller Experience team,
+    % positively impacting >10\% eBay sellers
+    adopted by >10\% active listing sellers within the first month
 
     % \item Presented architecture, implementation, upstream service challenges \& next steps; Live-demoed to internal team of 40+
     \item Presented system architecture and implementation, addressing upstream service challenges \& next steps;

@@ -144,30 +144,65 @@
   \myBeginAccSupp{method=escape,ActualText={#2}}#1\myEndAccSupp{}%
 }
 
+% clear out icons from ATS parsing
+% \newcommand{\hidefromextract}[1]{\BeginAccSupp{ActualText={}}#1\EndAccSupp{}}
+\newcommand{\hideFromExtract}[1]{\myBeginAccSupp{ActualText={}}#1\myEndAccSupp{}}
+
 
 % Pretty underline, inspired by https://tex.stackexchange.com/a/518546
-\RequirePackage{ulem}
-\normalem
-\RequirePackage{contour}
-\renewcommand{\ULdepth}{1.8pt}
-\contourlength{0.8pt}
+% \RequirePackage{ulem}
+% \normalem
+% \RequirePackage{contour}
+% \renewcommand{\ULdepth}{1.8pt}
+% \contourlength{0.8pt}
 % \newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
 % \newcommand{\ul}[1]{%
-%   \BeginAccSupp{method=escape,ActualText={#1}}%
-%     \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
-%   \EndAccSupp{}%
+  % \BeginAccSupp{method=escape,ActualText={#1}}%
+    % \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+  % \EndAccSupp{}%
 % }
-\newcommand{\ul}[1]{%
-  \iftoggle{inAccSupp}{%
-    % Already in an outer AccSupp—don’t add another one.
-    \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
-  }{%
-    % Not inside an AccSupp: wrap with one.
-    \BeginAccSupp{method=escape,ActualText={#1}}%
-      \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
-    \EndAccSupp{}%
-  }%
-}
+% \newcommand{\ul}[1]{%
+%   \iftoggle{inAccSupp}{%
+%     % Already in an outer AccSupp—don’t add another one.
+%     \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+%   }{%
+%     % Not inside an AccSupp: wrap with one.
+%     \BeginAccSupp{method=escape,ActualText={#1}}%
+%       \uline{\phantom{#1}}\llap{\contour{white}{#1}}%
+%     \EndAccSupp{}%
+%   }%
+% }
+
+% % ---- ATS-safe pretty underline (LuaLaTeX) ----
+\RequirePackage{ulem}
+\normalem
+% \RequirePackage{contour}
+% \RequirePackage{accsupp}
+% \RequirePackage{pdfrender}
+
+% \renewcommand{\ULdepth}{1.8pt}
+\renewcommand{\ULdepth}{2.2pt}
+% \contourlength{0.8pt}
+
+% \newcommand{\ul}[1]{%
+%   \BeginAccSupp{ActualText={}}%
+%     \uline{\phantom{#1}}%
+%   \EndAccSupp{}
+%   \llap{%
+%     \BeginAccSupp{method=escape,ActualText={#1}}%
+%       {\pdfrender{TextRenderingMode=3}#1}%
+%     \EndAccSupp{}
+%   }%
+%   \llap{%
+%     \BeginAccSupp{ActualText={}}%
+%       \contour{white}{#1}%
+%     \EndAccSupp{}
+%   }%
+% }
+% nice contour for escaping descender underlines will unfortunately cause repetition in PDF Miner parsing
+\newcommand{\ul}[1]{\uline{#1}}
+
+
 % ====================================== End of Added ======================================
 
 \RequirePackage{tikz}
@@ -283,7 +318,8 @@
     \myBeginAccSupp{method=escape,ActualText={- #1: ~#3 (#4)^^J}}%
       \mbox{%
         \textcolor{accent}{\normalfont #2}~%
-        \href{#4}{\utffriendlydetokenize{\ul{\textcolor{emphasis}{#3}}}}\hspace{2em}%
+        \href{#4}{\utffriendlydetokenize{\ul{\textcolor{link}{#3}}}}\hspace{2em}%
+        % \href{#4}{\utffriendlydetokenize{\textcolor{link}{#3}}}\hspace{2em}%
       }%
     \myEndAccSupp{}%
   }%
@@ -458,7 +494,8 @@
         }\par
     }
     % ====================================== End of Added ======================================
-    \medskip
+    % \medskip
+    \smallskip
     % ====================================== Begin of Modified ======================================
     % {\taglinefont\color{tagline}\@tagline\par}
     {\taglinefont\color{tagline}%
@@ -467,7 +504,8 @@
           \makebox[\linewidth][c]{\@tagline}%
         }\par
     }
-    \medskip
+    % \medskip
+    \smallskip
     % ====================================== End of Modified ======================================
     % ====================================== Begin of Added ======================================
     \raggedright
@@ -484,7 +522,7 @@
   % ====================================== Begin of Modified ======================================
   % \nointerlineskip\bigskip%  %% bugfix in v1.6.2
   % \nointerlineskip\medskip%
-  \vspace{1.25ex}
+  \vspace{1ex}
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
 %   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]% make smaller gap
@@ -492,7 +530,7 @@
   {\color{headingrule}\rule{\linewidth}{0.75pt}\par}
   % \medskip% make smaller gap
   % \smallskip
-  \vspace{0.25ex}
+  % \vspace{0.25ex}
   % ====================================== End of Modified ======================================
 }
 
@@ -540,6 +578,7 @@
 
 % ====================================== Begin of Added ======================================
 \newcommand{\cveventSameLine}[5]{% all content on the same line, date & time on the right
+    \vspace{0.25ex}
     \ifstrequal{#1}{}{}{
       % {\large\color{emphasis}#1}
       % \BeginAccSupp{method=pdfstringdef,ActualText={Organization: #1 ^^J}}% enclose to add a AccSup newline; TODO: doesn't seem to work when #1 is itself a link with AccSupp
@@ -594,9 +633,10 @@
               % \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\locationname: #4}}
                   % \cvLocationMarker~#4
               % \EndAccSupp{}%
-              \myBeginAccSupp{method=pdfstringdef,ActualText={Location:}}%
-                \cvLocationMarker%
-              \myEndAccSupp{}%
+              % \myBeginAccSupp{method=pdfstringdef,ActualText={Location:}}%
+                % \cvLocationMarker%
+              % \myEndAccSupp{}%
+              \hideFromExtract{\cvLocationMarker}%
               ~#4%
           }%
           % ~~~{%
@@ -623,9 +663,10 @@
           % \myBeginAccSupp{method=pdfstringdef,ActualText={^^J\datename: #3}}
               % \cvDateMarker~#3
           % \EndAccSupp{}%
-          \myBeginAccSupp{method=pdfstringdef,ActualText={Date:}}%
-            \cvDateMarker%
-          \myEndAccSupp{}%
+          % \myBeginAccSupp{method=pdfstringdef,ActualText={Date:}}%
+            % \cvDateMarker%
+          % \myEndAccSupp{}%
+          \hideFromExtract{\cvDateMarker}%
           ~#3%
           }%
       % ~~~{%

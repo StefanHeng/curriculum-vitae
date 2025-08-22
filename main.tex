@@ -113,6 +113,8 @@
 % ====================================== Begin of Added ======================================
 \setlength{\parskip}{0pt}%drop new paragraph spacing
 
+
+
 \colorlet{link}{emphasis}
 % \newcommand{\linked}[3][]{\ifthenelse{\equal{#1}{}}{\textcolor{link}{\href{#3}{\ul{#2}}}}{\href{#3}{#2}}}
 % \newcommand{\linked}[3][]{%
@@ -138,6 +140,8 @@
 % }
 \newcommand{\linked}[2]{\href{#2}{#1}} % 无下划线
 \newcommand{\linkedUl}[2]{\textcolor{link}{\href{#2}{\ul{#1}}}} % 有下划线
+\newcommand{\TranscriptLink}[2]{\href{#2}{\ul{\textcolor{link}{#1}}}~(\nolinkurl{#2})}
+% 用法： \TranscriptLink{Transcript}{https://...}
 
 
 \usepackage{calc}
@@ -164,6 +168,41 @@
   \pdfgentounicode=1
 \fi
 
+\pdfstringdefDisableCommands{%
+  \def\textbf#1{#1}%
+  \def\textit#1{#1}%
+  \def\emph#1{#1}%
+  \def\uline#1{#1}%
+  \def\ul#1{#1}%
+  \def\contour#1#2{#2}%
+  \def\textcolor#1#2{#2}%
+  \def\href#1#2{#2}%
+  \def\url#1{#1}%
+  \def\faGlobe{}%
+  \def\faLinkedin{}%
+  \def\faGithub{}%
+  \def\faAt{}%
+  \def\faPhone{}%
+  \def\faEnvelope{}%
+  \def\faTwitter{}%
+  \def\faMapMarker{}%
+  \def\faMapMarker*{}%
+  \def\faCalendar{}%
+  \def\faCalendar*[regular]{}%
+  \def\faCircle{}%
+  \def\faOrcid{}%
+}
+
+% convert fontawesome5 icons to pdf s.t. pdf-miner parsing cannot see them & add as noise
+% \newcommand{\faImgPdf}[2][1.05em]{%
+  % \raisebox{-0.12em}{\includegraphics[height=#1]{assets/icons/#2.pdf}}%
+% }
+\newcommand{\faIconHeightDefault}{1.05em}
+\newcommand{\faIconRaiseDefault}{-0.12em}
+% \faImgPdf[<height>][<raise>]{<name-without-.pdf>}
+\NewDocumentCommand{\faImgPdf}{ O{\faIconHeightDefault} O{\faIconRaiseDefault} m }{%
+  \raisebox{#2}{\includegraphics[height=#1]{assets/icons/#3.pdf}}%
+}
 
 % set header/footer
 \usepackage{fancyhdr}
@@ -307,9 +346,23 @@
 % ====================================== End of Modified ======================================
 
 
+\iftoggle{compact}{%
+  \vspace{-0.5em}
+  % career summary
+  New Grad ML Engineer (LLMs/NLP) focused on serving, post-training, and eval. 
+  Scaled vLLM serving on enterprise GPUs (4X throughput; 20k+ Jira issues triaged via RAG/tool-use at Honeywell). 
+  Trained a 100M domain LM with data synthesis and hallucination eval (-4X) at 22 Minds.
+  Stack: PyTorch, HF, vLLM, FastAPI, Docker. 
+  M.S. CS @ Georgia Tech (Dec 2025), U.S. Permanent Resident.
+  \vspace{0.5ex}
+}{
+  %
+}
+
+
 % \vspace*{-0.75em}
 \iftoggle{compact}{%
-  \vspace{-0.75em}
+  % \vspace{-0.75em}
 }{
   \vspace{-0.5em}
 }
