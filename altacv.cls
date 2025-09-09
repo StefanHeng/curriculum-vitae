@@ -522,7 +522,7 @@
   % ====================================== Begin of Modified ======================================
   % \nointerlineskip\bigskip%  %% bugfix in v1.6.2
   % \nointerlineskip\medskip%
-  \vspace{1ex}
+  \vspace{0.5ex}
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
 %   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
   {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1.5ex]% make smaller gap
