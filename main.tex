@@ -227,6 +227,11 @@
             % \footnotesize
             \scriptsize
             Last modified \mydate.%
+            \iftoggle{compact}{
+              ~~~See my full \linked{CV}{\cvLink} for the complete record.
+            }{
+                %
+            }
         \fi%
     }
 }%
@@ -352,8 +357,8 @@
   \vspace{-0.5em}
   % career summary
   New Grad ML Engineer (LLMs/NLP) focused on post-training, serving, and eval. 
-  Scaled vLLM serving on enterprise GPUs (4X throughput; 20k+ Jira issues triaged via RAG/tool-use at Honeywell). 
-  Trained a 100M domain LM with data synthesis and hallucination eval (-4X) at 22 Minds.
+  Scaled vLLM serving on multi-GPU setups (4X throughput; 20K+ Jira issues triaged via RAG/tool-use at Honeywell). 
+  Trained a 100M domain LM with data synthesis and hallucination evaluation (-4X) at 22 Minds.
   Stack: PyTorch, HF, vLLM, FastAPI, Docker. 
   M.S. CS @ Georgia Tech (Dec 2025), U.S. Permanent Resident.
   \vspace{0.5ex}
@@ -493,19 +498,19 @@
 % ====================================== End of Modified ======================================
 
 
-\iftoggle{compact}{
-    \vfill
+% \iftoggle{compact}{
+%     \vfill
 
-    % \bodyfontsize
-    \scriptsize
-    % Last modified \mydate. \par
-    % Feel free to see my \linked{CV}{\cvLink} for more detailed information. \par
-    % Earlier roles and a fuller skills breakdown are available in my \linked{CV}{\cvLink}.
-    % Feel free to see my full CV which provides the complete record. 
-    See my full \linked{CV}{\cvLink} for the complete record.
-}{
-    %
-}
+%     % \bodyfontsize
+%     \scriptsize
+%     % Last modified \mydate. \par
+%     % Feel free to see my \linked{CV}{\cvLink} for more detailed information. \par
+%     % Earlier roles and a fuller skills breakdown are available in my \linked{CV}{\cvLink}.
+%     % Feel free to see my full CV which provides the complete record. 
+%     See my full \linked{CV}{\cvLink} for the complete record.
+% }{
+%     %
+% }
 
 
 \end{document}
